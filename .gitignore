@@ -1,0 +1,8 @@
+node_modules
+temp
+.tmp
+dist
+.sass-cache
+build
+!src/assets/build
+reports

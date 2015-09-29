@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title" : "HTML5",
+    "text" : "5th major revision of the core language of the World Wide Web: the Hypertext Markup Language (HTML).",
+    "route" : "http://www.w3.org/TR/html5/",
+    "logo": "/images/HTML5.png",
+    "slug": "html5"
+  },
+  {
+    "id": 2,
+    "title" : "jQuery",
+    "text" : "jQuery is a fast, small, and feature-rich JavaScript library.",
+    "route" : "http://jquery.com/",
+    "logo": "/images/jquery.png",
+    "slug": "jquery"
+  },
+  {
+    "id": 3,
+    "title" : "React",
+    "text" : "A javascript library for building user interfaces.",
+    "route" : "https://facebook.github.io/react/index.html",
+    "logo": "/images/react.png",
+    "slug": "react"
+  },
+  {
+    "id": 4,
+    "title" : "Babel",
+    "text" : "Babel is a JavaScript compiler. Use next generation JavaScript, today.",
+    "route" : "https://babeljs.io/",
+    "logo": "/images/babel.png",
+    "slug": "babel"
+  }
+]
