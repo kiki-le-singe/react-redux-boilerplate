@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import ReactDom from 'react-dom';
 import AppRouter from './AppRouter';
@@ -15,7 +14,6 @@ import 'assets/vendors/icons.svg.scss';
 import 'font-awesome.scss';
 import 'styles/scss/index.scss';
 
-$(() => {
   window.f7App = new Framework7({
     swipePanel: 'left', // http://www.idangero.us/framework7/docs/side-panels.html#open-panels-with-swipe
     ajaxLinks: 'a.ajax',
