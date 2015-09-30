@@ -12,6 +12,7 @@ import App from 'components/App';
 import Home from 'components/pages/Home';
 import About from 'components/pages/About';
 import Hello from 'components/pages/Hello';
+import Counter from 'components/pages/Counter';
 import Tools from 'components/pages/Tools';
 
 const AppRouter = (
@@ -21,6 +22,7 @@ const AppRouter = (
       <Route path="home" component={Home} />
       <Route path="hello" component={Hello} />
       <Route path="about" component={About} />
+      <Route path="counter" component={Counter} />
       <Route path="tools" component={Tools} />
       { /* https://github.com/rackt/react-router/blob/master/UPGRADE_GUIDE.md#notfound-route */ }
       <Route path="*" component={Home}/>
