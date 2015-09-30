@@ -1,13 +1,19 @@
 // http://rackt.github.io/redux/docs/basics/Store.html
 // https://github.com/rackt/redux/blob/master/examples/todomvc/store/configureStore.js
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'; // Using Thunk Middleware for Async Actions
 
 import rootReducer from 'reducers';
 
+// applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
+// createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
+const createStoreWithMiddleware = applyMiddleware(
+  thunk
+)(createStore);
+
 const configureStore = (initialState) => {
-  // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
-  const store = createStore(rootReducer, initialState);
+  const store = createStoreWithMiddleware(rootReducer, initialState);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
