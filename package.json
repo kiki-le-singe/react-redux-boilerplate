@@ -14,7 +14,7 @@
     "boilerplate",
     "react",
     "react-router",
-    "flux",
+    "redux",
     "framework7",
     "font-awesome",
     "es6",
