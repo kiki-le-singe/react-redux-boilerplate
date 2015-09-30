@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
+
+import configureStore from 'stores';
+
 import AppRouter from './AppRouter';
 // The both Framework7 and Dom7 are exposed in window.*
 import 'framework7';
@@ -14,12 +18,17 @@ import 'assets/vendors/icons.svg.scss';
 import 'font-awesome.scss';
 import 'styles/scss/index.scss';
 
-  window.f7App = new Framework7({
-    swipePanel: 'left', // http://www.idangero.us/framework7/docs/side-panels.html#open-panels-with-swipe
-    ajaxLinks: 'a.ajax',
-    material: true,
-  });
+const store = configureStore();
 
-  React.render(AppRouter, document.getElementById('app'));
+window.f7App = new Framework7({
+  swipePanel: 'left', // http://www.idangero.us/framework7/docs/side-panels.html#open-panels-with-swipe
+  ajaxLinks: 'a.ajax',
+  material: true,
 });
+
 ReactDom.render(
+  <Provider store={store}>
+    {AppRouter}
+  </Provider>,
+  document.getElementById('app')
+);
