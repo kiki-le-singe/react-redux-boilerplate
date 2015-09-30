@@ -1,52 +1,24 @@
-import AppDispatcher from 'dispatcher/AppDispatcher';
-import ToolConstants from 'constants/ToolConstants';
+import * as types from 'constants/ToolConstants';
 import Tool from 'services/tool';
 
-// Docs:
-// - https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/actions/TodoActions.js
+/*
+ * action creators
+ */
 
-export default {
-  create(tool) {
-    return Tool.create(tool).then((data) => {
-      AppDispatcher.dispatch({
-        actionType: ToolConstants.TOOL_CREATE,
-        data: data,
-      });
-    });
-  },
+function receiveTools(data) {
+  return {
+    type: types.RECEIVE_TOOLS,
+    tools: data,
+  };
+}
 
-  fetchOne(id) {
-    return Tool.fetchOne(id).then((data) => {
-      AppDispatcher.dispatch({
-        actionType: ToolConstants.TOOL_FETCH,
-        data: data,
-      });
-    });
-  },
-
-  fetchAll() {
+function fetchTools() {
+  return dispatch => {
     return Tool.fetch().then((data) => {
-      AppDispatcher.dispatch({
-        actionType: ToolConstants.TOOLS_FETCH,
-        data: data,
-      });
+      // Update the app state with the results of the API call.
+      dispatch(receiveTools(data));
     });
-  },
+  };
+}
 
-  delete(id) {
-    return Tool.delete(id)
-      .then((data) => {  // eslint-disable-line
-        AppDispatcher.dispatch({
-          actionType: ToolConstants.TOOL_DELETE,
-          id: id,
-        });
-      });
-  },
-
-  search(value) {
-    AppDispatcher.dispatch({
-      actionType: ToolConstants.TOOL_SEARCH,
-      value: value,
-    });
-  },
-};
+export { fetchTools };
