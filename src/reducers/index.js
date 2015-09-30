@@ -3,10 +3,12 @@
 
 import { combineReducers } from 'redux';
 
+import tools from './tools';
 import counter from './counter';
 
 // combineReducers(reducers): http://rackt.github.io/redux/docs/api/combineReducers.html
 const rootReducer = combineReducers({
+  tools,
   counter,
 });
 
