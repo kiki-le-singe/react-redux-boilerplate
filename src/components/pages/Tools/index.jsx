@@ -4,23 +4,10 @@
 
 import React from 'react';
 
-import ToolStore from 'stores/ToolStore';
-import ToolActions from 'actions/ToolActions';
-
 import Page from 'components/pages/Page';
 import ListSwipeoutTools from 'components/tools/ListSwipeoutTools';
 import FloatingButtonTools from 'components/tools/FloatingButtonTools';
 import SearchTools from 'components/tools/SearchTools';
-
-/**
- * Retrieve the current TOOL data from the ToolStore
- */
-const getToolState = () => {
-  return {
-    tools: ToolStore.getAll(),
-    searchValue: ToolStore.searchValue(),
-  };
-};
 
 const defaultProps = {
   isFloatingButtonEnabled: true,
@@ -43,32 +30,11 @@ class Tools extends Page {
     // getInitialState() {
     //   return {data: []};
     // }
-    this.state = getToolState();
-  }
-
-  componentDidMount() {
-    super.componentDidMount();
-
-    ToolActions.fetchAll().then(() => {
-      // Hide loader
-      f7App.hideIndicator();
-    });
-    ToolStore.addChangeListener(this.onChange);
-  }
-
-  componentWillUnmount() {
-    ToolStore.removeChangeListener(this.onChange);
+    this.state = {tools: [], searchValue: ''};
   }
 
   getDataPage() {
     return 'tools';
-  }
-
-  /**
-   * Event handler for 'change' events coming from the TodoStore
-   */
-  onChange = () => {
-    this.setState(getToolState());
   }
 
   renderFloatingButton() {

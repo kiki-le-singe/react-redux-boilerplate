@@ -1,19 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import ToolStore from 'stores/ToolStore';
-
 import TopNavBar from 'components/TopNavBar';
 import Page from 'components/pages/Page';
-
-/**
- * Retrieve the current TOOL data from the ToolStore
- */
-const getToolState = () => {
-  return {
-    tool: ToolStore.getOne(),
-  };
-};
 
 const defaultProps = {
   isPageCached: true,
@@ -33,26 +22,11 @@ class Tool extends Page {
     // getInitialState() {
     //   return {data: []};
     // }
-    this.state = getToolState();
-  }
-
-  componentDidMount() {
-    ToolStore.addChangeListener(this.onChange);
-  }
-
-  componentWillUnmount() {
-    ToolStore.removeChangeListener(this.onChange);
+    this.state = {tool: {}};
   }
 
   getDataPage() {
     return 'tool';
-  }
-
-  /**
-   * Event handler for 'change' events coming from the TodoStore
-   */
-  onChange = () => {
-    this.setState(getToolState());
   }
 
   renderTopNavBar() {
