@@ -11,7 +11,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  title: 'React Boilerplate 2',
+  title: 'React Redux Boilerplate',
   isBackPage: false,
   isLeftIcon: true,
 };
