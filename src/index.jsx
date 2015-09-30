@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
+import ReactDom from 'react-dom';
 import AppRouter from './AppRouter';
 // The both Framework7 and Dom7 are exposed in window.*
 import 'framework7';
@@ -23,3 +24,4 @@ $(() => {
 
   React.render(AppRouter, document.getElementById('app'));
 });
+ReactDom.render(
