@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
-import LeftSidePanel from './LeftSidePanel';
-import RightSidePanel from './RightSidePanel';
+import LeftSidePanel from 'components/LeftSidePanel';
+import RightSidePanel from 'components/RightSidePanel';
 import ToolPage from 'components/pages/Tools/Tool';
 import PopupCreateTool from 'components/popup/tools/PopupCreateTool';
 

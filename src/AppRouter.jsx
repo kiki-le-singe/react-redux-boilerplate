@@ -8,7 +8,7 @@ import React from 'react';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import App from 'components/App';
+import App from 'containers/App';
 import Home from 'components/pages/Home';
 import About from 'components/pages/About';
 import Hello from 'components/pages/Hello';
