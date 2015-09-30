@@ -1,4 +1,5 @@
-import React, { Component, PropTypes, findDOMNode } from 'react';
+import React, { Component, PropTypes } from 'react';
+import ReactDom from 'react-dom';
 import classnames from 'classnames';
 
 // Docs:
@@ -26,7 +27,7 @@ class ListItemSwipeout extends Component {
   // Use React with Other Libraries:
   // - https://facebook.github.io/react/tips/use-react-with-other-libraries.html
   componentDidMount() {
-    this.swipeoutEl = findDOMNode(this.refs.swipeout);
+    this.swipeoutEl = ReactDom.findDOMNode(this.refs.swipeout);
 
     Dom7(this.swipeoutEl).on('deleted', this.showAlert); // eslint-disable-line
   }

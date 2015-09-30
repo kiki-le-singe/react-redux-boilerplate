@@ -1,4 +1,5 @@
-import React, { Component, findDOMNode } from 'react';
+import React, { Component } from 'react';
+import ReactDom, { findDOMNode } from 'react-dom'; // eslint-disable-line
 import _ from 'lodash';
 import uniqid from 'uniqid';
 
