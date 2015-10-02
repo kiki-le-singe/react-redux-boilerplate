@@ -1,17 +1,20 @@
 import * as types from 'constants/ToolConstants';
 
 const initialState = {
-  tools: [],
+  items: [],
   searchValue: '',
 };
 
 const tools = (state = initialState, action) => {
   switch (action.type) {
     case types.RECEIVE_TOOLS:
-      return action.tools;
+      return {
+        items: action.tools,
+        searchValue: '',
+      };
 
     default:
-      return state.tools;
+      return state;
   }
 };
 

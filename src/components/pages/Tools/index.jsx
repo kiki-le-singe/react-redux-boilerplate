@@ -21,7 +21,6 @@ const defaultProps = {
 @connect(
   state => ({
     tools: state.tools,
-    searchValue: state.searchValue,
   })
 )
 class Tools extends Page {
@@ -61,7 +60,7 @@ class Tools extends Page {
   }
 
   renderPage() {
-    const { tools, searchValue } = this.props;
+    const { tools } = this.props;
 
     return (
       <div className="page-content">
@@ -69,7 +68,7 @@ class Tools extends Page {
         <SearchTools />
 
         <div className="list-block media-list">
-          <ListSwipeoutTools searchValue={searchValue} data={tools} />
+          <ListSwipeoutTools searchValue={tools.searchValue} data={tools.items} />
         </div>
       </div>
     );
