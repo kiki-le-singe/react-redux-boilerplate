@@ -6,7 +6,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as ToolActions from 'actions/ToolActions';
+import ToolActions from 'actions/ToolActions';
 
 import Page from 'components/pages/Page';
 import ListSwipeoutTools from 'components/tools/ListSwipeoutTools';

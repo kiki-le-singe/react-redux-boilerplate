@@ -1,4 +1,4 @@
-import * as types from 'constants/ToolConstants';
+import types from 'constants/ToolConstants';
 import Tool from 'services/tool';
 
 /*
@@ -21,4 +21,4 @@ function fetchTools() {
   };
 }
 
-export { fetchTools };
+export default { fetchTools };

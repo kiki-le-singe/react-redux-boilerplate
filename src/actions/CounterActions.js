@@ -1,7 +1,7 @@
 // http://rackt.github.io/redux/docs/basics/Actions.html
 // https://github.com/rackt/redux/blob/master/examples/todomvc/actions/todos.js
 
-import * as types from 'constants/CounterConstants';
+import types from 'constants/CounterConstants';
 
 /*
  * action creators
@@ -15,4 +15,4 @@ const decrement = () => {
   return { type: types.DECREMENT_COUNTER };
 };
 
-export { increment, decrement };
+export default { increment, decrement };

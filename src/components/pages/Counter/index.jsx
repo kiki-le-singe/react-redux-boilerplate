@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as CounterActions from 'actions/CounterActions';
+import CounterActions from 'actions/CounterActions';
 
 import Page from 'components/pages/Page';
 
