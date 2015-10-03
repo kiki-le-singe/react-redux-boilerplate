@@ -35,18 +35,12 @@ class Tools extends Page {
     // bindActionCreators(actionCreators, dispatch): http://rackt.github.io/redux/docs/api/bindActionCreators.html
     // https://github.com/rackt/redux/blob/master/examples/todomvc/containers/App.js#L11
     this.actions = bindActionCreators(ToolActions, dispatch);
-
-    // Show loader
-    f7App.showIndicator();
   }
 
   componentDidMount() {
     super.componentDidMount();
 
-    this.actions.fetchTools().then(() => {
-      // Hide loader
-      f7App.hideIndicator();
-    });
+    this.actions.fetchTools();
   }
 
   getDataPage() {

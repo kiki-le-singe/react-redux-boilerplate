@@ -1,4 +1,5 @@
 import types from 'constants/ToolConstants';
+import IndicatorActions from 'actions/IndicatorActions';
 import Tool from 'services/tool';
 
 /*
@@ -14,9 +15,12 @@ function receiveTools(data) {
 
 function fetchTools() {
   return dispatch => {
+    dispatch(IndicatorActions.showIndicator());
+
     return Tool.fetch().then((data) => {
       // Update the app state with the results of the API call.
       dispatch(receiveTools(data));
+      dispatch(IndicatorActions.hideIndicator());
     });
   };
 }
