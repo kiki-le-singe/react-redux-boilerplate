@@ -26,7 +26,7 @@ class Tool {
   static fetchOne(id) {
     return new Promise((resolve, reject) => {
       request
-         .get(api.tools + '/' + id)
+         .get(`${api.tools}/${id}`)
          .end(end(resolve, reject));
     });
   }
@@ -44,7 +44,7 @@ class Tool {
   static delete(id) {
     return new Promise((resolve, reject) => {
       request
-         .del(api.tools + '/' + id)
+         .del(`${api.tools}/${id}`)
          .end(end(resolve, reject));
     });
   }
