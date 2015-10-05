@@ -1,6 +1,5 @@
 import types from 'constants/ToolConstants';
-import IndicatorActions from 'actions/IndicatorActions';
-import Tool from 'services/tool';
+import { CALL_API } from 'middleware/toolAPI';
 
 /*
  * action creators
@@ -14,14 +13,11 @@ function receiveTools(data) {
 }
 
 function fetchTools() {
-  return dispatch => {
-    dispatch(IndicatorActions.showIndicator());
-
-    return Tool.fetch().then((data) => {
-      // Update the app state with the results of the API call.
-      dispatch(receiveTools(data));
-      dispatch(IndicatorActions.hideIndicator());
-    });
+  return {
+    [CALL_API]: {
+      method: 'GET',
+      callbackAction: receiveTools,
+    },
   };
 }
 
