@@ -14,6 +14,12 @@ const tools = (state = initialState, action) => {
         items: action.tools,
       };
 
+    case types.RECEIVE_TOOL:
+      return {
+        ...state,
+        item: action.tools,
+      };
+
     default:
       return state;
   }
