@@ -15,12 +15,12 @@ const toolAPI = store => next => action => { // eslint-disable-line
     return next(action);
   }
 
-  const { callbackAction } = callAPI;
+  const { callbackAction, id, method } = callAPI;
 
   let r;
-  switch (action.method) {
+  switch (method) {
     case 'GET':
-      r = request.get(api.tools);
+      r = id ? request.get(`${api.tools}/${id}`) : request.get(api.tools);
       break;
 
     case 'POST':
