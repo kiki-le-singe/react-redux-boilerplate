@@ -1,4 +1,6 @@
 import React from 'react'; // eslint-disable-line
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import ToolActions from 'actions/ToolActions';
 
@@ -9,7 +11,19 @@ import ListItemSwipeout from 'components/lists/ListItemSwipeout';
 // - http://www.idangero.us/framework7/docs/pages-inline.html
 // - http://www.idangero.us/framework7/docs/modal.html#indicator
 
+@connect(
+  () => ({})
+)
 class ListItemSwipeoutTools extends ListItemSwipeout {
+
+  constructor(props) {
+    super(props);
+
+    // Injected by react-redux via connect() call:
+    const { dispatch } = props;
+
+    this.actions = bindActionCreators(ToolActions, dispatch);
+  }
 
   // Show the full Tool page.
   handleClick = () => {
@@ -18,13 +32,7 @@ class ListItemSwipeoutTools extends ListItemSwipeout {
       domCache: true, // enable inline pages
     });
 
-    // Show loader
-    f7App.showIndicator();
-
-    ToolActions.fetchOne(this.props.id).then(() => {
-      // Hide loader
-      f7App.hideIndicator();
-    });
+    this.actions.fetchOne(this.props.id);
 
     // Load about page:
     mainView.router.load({pageName: 'tool'});
