@@ -5,6 +5,13 @@ import { CALL_API } from 'middleware/toolAPI';
  * action creators
  */
 
+function receiveTool(data) {
+  return {
+    type: types.RECEIVE_TOOL,
+    tools: data,
+  };
+}
+
 function receiveTools(data) {
   return {
     type: types.RECEIVE_TOOLS,
@@ -21,4 +28,14 @@ function fetchTools() {
   };
 }
 
-export default { fetchTools };
+function fetchOne(id) {
+  return {
+    [CALL_API]: {
+      method: 'GET',
+      callbackAction: receiveTool,
+      id,
+    },
+  };
+}
+
+export default { fetchTools, fetchOne };
