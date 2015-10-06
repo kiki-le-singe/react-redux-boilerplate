@@ -1,6 +1,7 @@
 import types from 'constants/ToolConstants';
 
 const initialState = {
+  item: {},
   items: [],
   searchValue: '',
 };
