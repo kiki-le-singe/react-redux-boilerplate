@@ -34,7 +34,6 @@ const HTMLMinifier = {
 
 const vendorDependencies = [
   'react',
-  'flux',
   'react-router',
   'lodash',
   'framework7',

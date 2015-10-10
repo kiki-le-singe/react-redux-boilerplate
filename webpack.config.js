@@ -34,7 +34,6 @@ const framework7CSSDir = path.resolve(nodeModulesDir, 'framework7/dist/css');
 const FontAwesomeSCSSDir = path.resolve(nodeModulesDir, 'font-awesome/scss');
 
 const deps = [
-  'flux/dist/Flux.min.js',
   'jquery/dist/jquery.min.js',
   'framework7/dist/js/framework7.min.js',
   'font-awesome/css/font-awesome.min.css'
@@ -42,7 +41,6 @@ const deps = [
 
 const vendorDependencies = [
   'react',
-  'flux',
   'react-router',
   'lodash',
   'framework7',
