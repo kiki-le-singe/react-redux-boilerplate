@@ -7,12 +7,12 @@ var stubTools = require('./stubs/tools.json');
 
 // Module dependencies.
 var applicationRoot = __dirname,
+    projectConfig = require('../config'),
     express = require('express'), // Web framework
     app = express(), // define server
     path = require('path'), // Utilities for dealing with file paths
     mongoose = require('mongoose'), // MongoDB integration
     bodyParser = require('body-parser'),
-    nodeServerPort = process.env.PORT || 9000, // set our nodeServerPort
     args = process.argv,
     stubArg = ('true' === args[2]),
     api = require('./api/api')
@@ -95,6 +95,6 @@ app.get('*', function(request, response){
  START THE SERVER
 ******************/
 
-app.listen(nodeServerPort, function () {
-  console.log('Express server listening on nodeServerPort %d in %s node', nodeServerPort, app.settings.env);
+app.listen(projectConfig.SERVER_PORT, function () {
+  console.log('Express server listening on projectConfig.SERVER_PORT %d in %s node', projectConfig.SERVER_PORT, app.settings.env);
 });

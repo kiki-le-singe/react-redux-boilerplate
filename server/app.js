@@ -7,13 +7,12 @@ var stubTools = require('./stubs/tools.json');
 
 // Module dependencies.
 var applicationRoot = __dirname,
+    projectConfig = require('../config'),
     express = require('express'), // Web framework
     app = express(), // define server
     path = require('path'), // Utilities for dealing with file paths
     mongoose = require('mongoose'), // MongoDB integration
     bodyParser = require('body-parser'),
-    nodeServerPort = process.env.PORT || 9000, // set our nodeServerPort
-    webpackDevServerPort = 8080, // set our webpackDevServerPort
     args = process.argv,
     stubArg = ('true' === args[2]),
     api = require('./api/api')
@@ -101,8 +100,8 @@ app.get('*', function(request, response){
  START THE SERVER
 ******************/
 
-app.listen(nodeServerPort, function () {
-  console.log('Express server listening on nodeServerPort %d in %s node', nodeServerPort, app.settings.env);
+app.listen(projectConfig.SERVER_PORT, function () {
+  console.log('Express server listening on projectConfig.SERVER_PORT %d in %s node', projectConfig.SERVER_PORT, app.settings.env);
 });
 
 // http://webpack.github.io/docs/webpack-dev-server.html
@@ -112,12 +111,12 @@ new WebpackDevServer(webpack(config), {
   inline: true,
   historyApiFallback: true,
   proxy: {
-    '*': 'http://localhost:' + nodeServerPort
+    '*': 'http://localhost:' + projectConfig.SERVER_PORT
   }
-}).listen(webpackDevServerPort, 'localhost', function (err, result) {
+}).listen(projectConfig.WEBPACK_PORT, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:' + webpackDevServerPort);
+  console.log('Listening at localhost:' + projectConfig.WEBPACK_PORT);
 });

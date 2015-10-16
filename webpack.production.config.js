@@ -10,6 +10,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // https://github.com/ampedandwired/html-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// CONFIG
+const projectConfig = require('./config');
+
 // PATHS/DIRECTORIES
 const assetsDir = path.resolve(__dirname, 'src/assets');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
@@ -144,7 +147,16 @@ const config = {
     }),
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
-    new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js')
+    new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js'),
+
+    // https://webpack.github.io/docs/list-of-plugins.html#defineplugin
+    new webpack.DefinePlugin({
+      __CLIENT__: projectConfig.__CLIENT__,
+      __SERVER__: projectConfig.__SERVER__,
+      __DEV__: projectConfig.__DEV__,
+      __PROD__: projectConfig.__PROD__,
+      __DEBUG__: projectConfig.__DEBUG__
+    }),
   ]
 };
 
