@@ -1,21 +1,20 @@
 // http://rackt.github.io/redux/docs/basics/Store.html
 // https://github.com/rackt/redux/blob/master/examples/todomvc/store/configureStore.js
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 
 import logger from 'middleware/logger';
 import toolAPI from 'middleware/toolAPI';
 import rootReducer from 'reducers';
 
-// applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
-// createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
-const createStoreWithMiddleware = applyMiddleware(
-  logger,
-  toolAPI
+const finalCreateStore = compose(
+  // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
+  // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
+  applyMiddleware(logger, toolAPI),
 )(createStore);
 
 const configureStore = (initialState) => {
-  const store = createStoreWithMiddleware(rootReducer, initialState);
+  const store = finalCreateStore(rootReducer, initialState);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
