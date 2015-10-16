@@ -48,7 +48,8 @@
     "react-router": "^1.0.0-rc3",
     "redux": "^3.0.2",
     "superagent": "^1.4.0",
-    "uniqid": "^1.0.0"
+    "uniqid": "^1.0.0",
+    "yargs": "^3.27.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.25",
