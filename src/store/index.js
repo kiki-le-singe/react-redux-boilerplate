@@ -2,6 +2,7 @@
 // https://github.com/rackt/redux/blob/master/examples/todomvc/store/configureStore.js
 
 import { createStore, applyMiddleware, compose } from 'redux';
+import { devTools } from 'redux-devtools';
 
 import logger from 'middleware/logger';
 import toolAPI from 'middleware/toolAPI';
@@ -11,6 +12,8 @@ const finalCreateStore = compose(
   // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
   // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
   applyMiddleware(logger, toolAPI),
+  // Provides support for DevTools:
+  devTools()
 )(createStore);
 
 const configureStore = (initialState) => {
