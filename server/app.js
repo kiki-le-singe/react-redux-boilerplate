@@ -8,15 +8,17 @@ var stubTools = require('./stubs/tools.json');
 // Module dependencies.
 var applicationRoot = __dirname,
     projectConfig = require('../config'),
+    argv = require('yargs').argv,
     express = require('express'), // Web framework
     app = express(), // define server
     path = require('path'), // Utilities for dealing with file paths
     mongoose = require('mongoose'), // MongoDB integration
     bodyParser = require('body-parser'),
     args = process.argv,
-    stubArg = ('true' === args[2]),
-    api = require('./api/api')
-    uniqid = require('uniqid');
+    api = require('./api/api'),
+    uniqid = require('uniqid'),
+    QUIET_MODE = !!argv.quiet,
+    STUB_MODE = !!argv.stub;
 
 // We start a webpack-dev-server with our config
 var webpack = require('webpack');
@@ -44,7 +46,7 @@ router.get('/', function (request, response) {
 router.route('/tools')
   // Get a list of tools
   .get(function (request, response) {
-    if (stubArg) { // if stub enabled
+    if (STUB_MODE) { // if stub enabled
       return response.json(stubTools);
     }
     response.status(200).json(api.tools);
@@ -106,6 +108,7 @@ app.listen(projectConfig.SERVER_PORT, function () {
 
 // http://webpack.github.io/docs/webpack-dev-server.html
 new WebpackDevServer(webpack(config), {
+  quiet: QUIET_MODE,
   stats: { colors: true },
   hot: true,
   inline: true,

@@ -2,9 +2,6 @@
  BASE SETUP
 ************/
 
-// Stubs
-var stubTools = require('./stubs/tools.json');
-
 // Module dependencies.
 var applicationRoot = __dirname,
     projectConfig = require('../config'),
@@ -14,7 +11,6 @@ var applicationRoot = __dirname,
     mongoose = require('mongoose'), // MongoDB integration
     bodyParser = require('body-parser'),
     args = process.argv,
-    stubArg = ('true' === args[2]),
     api = require('./api/api')
     uniqid = require('uniqid');
 
@@ -39,9 +35,6 @@ router.get('/', function (request, response) {
 router.route('/tools')
   // Get a list of tools
   .get(function (request, response) {
-    if (stubArg) { // if stub enabled
-      return response.json(stubTools);
-    }
     response.status(200).json(api.tools);
   })
   // Post a tool
