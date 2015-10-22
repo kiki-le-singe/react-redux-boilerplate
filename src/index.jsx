@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Provider } from 'react-redux';
-import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 
 import configureStore from 'store';
 
-import AppRouter from './AppRouter';
+import Root from 'containers/Root';
+
 // The both Framework7 and Dom7 are exposed in window.*
 import 'framework7';
 
@@ -27,25 +26,4 @@ window.f7App = new Framework7({
   material: true,
 });
 
-const renderApp = () => {
-  let renderDevTools;
-
-  if (__DEBUG__) {
-    renderDevTools = (
-      <DebugPanel top={true} right={true} bottom={true}>
-        <DevTools store={store} monitor={LogMonitor} />
-      </DebugPanel>
-    );
-  }
-
-  return (
-    <div className="app-container">
-      <Provider store={store}>
-        {AppRouter}
-      </Provider>
-      { renderDevTools }
-    </div>
-  );
-};
-
-ReactDom.render(renderApp(), document.getElementById('app'));
+ReactDom.render(<Root store={ store } />, document.getElementById('app'));
