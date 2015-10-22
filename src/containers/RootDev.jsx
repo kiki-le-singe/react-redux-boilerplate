@@ -4,7 +4,11 @@ import { Provider } from 'react-redux';
 import DevTools from './DevTools';
 import AppRouter from '../AppRouter';
 
-class RootDebug extends Component {
+class RootDev extends Component {
+
+  showDevTools() {
+    return __DEBUG__ ? (<DevTools />) : false;
+  }
 
   render() {
     const { store } = this.props;
@@ -13,11 +17,11 @@ class RootDebug extends Component {
       <Provider store={store}>
         <div className="app-container">
           { AppRouter }
-          <DevTools />
+          { this.showDevTools() }
         </div>
       </Provider>
     );
   }
 }
 
-export default RootDebug;
+export default RootDev;

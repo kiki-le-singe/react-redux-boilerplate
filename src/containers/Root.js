@@ -1,7 +1,7 @@
 let Root;
 
-if (__DEBUG__) {
-  Root = require('./RootDebug');
+if (__DEV__) {
+  Root = require('./RootDev');
 } else {
   Root = require('./RootProd');
 }
