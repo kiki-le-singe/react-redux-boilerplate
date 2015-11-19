@@ -3,6 +3,5 @@ temp
 .tmp
 dist
 .sass-cache
-build
-!src/assets/build
+build/*
 reports
