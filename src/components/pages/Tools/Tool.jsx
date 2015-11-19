@@ -21,7 +21,7 @@ class Tool extends Page {
   }
 
   renderTopNavBar() {
-    return <TopNavBar title="Tool title" isBackPage={true} />;
+    return <TopNavBar title="Tool title" isBackPage />;
   }
 
   renderPage() {

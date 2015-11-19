@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 
 import DevTools from './DevTools';
 import AppRouter from '../AppRouter';
+
+const propTypes = {
+  store: PropTypes.object.isRequired,
+};
 
 class RootDev extends Component {
 
@@ -23,5 +27,7 @@ class RootDev extends Component {
     );
   }
 }
+
+RootDev.propTypes = propTypes;
 
 export default RootDev;
