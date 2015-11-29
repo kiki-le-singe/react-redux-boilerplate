@@ -14,6 +14,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const projectConfig = require('./config');
 
 // PATHS/DIRECTORIES
+const srcDir = path.resolve(__dirname, 'src');
 const assetsDir = path.resolve(__dirname, 'src/assets');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
@@ -75,12 +76,12 @@ const config = {
         test: /\.js[x]?$/,
         loaders: ['babel?stage=0'],
         // loaders: ['babel?optional[]=runtime&stage=0'],
-        exclude: /node_modules/
+        include: [srcDir]
       },
       {
         test: /\.json$/,
         loaders: ['json'],
-        exclude: /node_modules/
+        include: [srcDir]
       },
       {
         test: /\.css$/,
