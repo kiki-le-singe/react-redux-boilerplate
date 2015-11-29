@@ -3,10 +3,9 @@
 // - http://www.idangero.us/framework7/docs/modal.html#indicator
 
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import ToolActions from 'actions/ToolActions';
+import { fetchTools } from 'actions/ToolActions';
 
 import Page from 'components/pages/Page';
 import ListSwipeoutTools from 'components/tools/ListSwipeoutTools';
@@ -21,26 +20,16 @@ const defaultProps = {
 @connect(
   state => ({
     tools: state.tools,
-  })
+  }),
+  { fetchTools }
 )
 class Tools extends Page {
-
-  // The class' constructor now assumes the role previously filled by componentWillMount
-  constructor(props) {
-    super(props);
-
-    // Injected by react-redux via connect() call:
-    const { dispatch } = props;
-
-    // bindActionCreators(actionCreators, dispatch): http://rackt.github.io/redux/docs/api/bindActionCreators.html
-    // https://github.com/rackt/redux/blob/master/examples/todomvc/containers/App.js#L11
-    this.actions = bindActionCreators(ToolActions, dispatch);
-  }
-
   componentDidMount() {
     super.componentDidMount();
 
-    this.actions.fetchTools();
+    const { fetchTools: _fetchTools } = this.props;
+
+    _fetchTools();
   }
 
   getDataPage() {
