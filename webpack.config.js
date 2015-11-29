@@ -57,7 +57,7 @@ const config = {
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: 'source-map',
   entry: {
-    javascript: [
+    app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/dev-server',
       './src/index.jsx'
