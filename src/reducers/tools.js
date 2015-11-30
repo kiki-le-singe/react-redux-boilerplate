@@ -11,13 +11,13 @@ const tools = (state = initialState, action) => {
     case types.FETCH_TOOLS_SUCCESS:
       return {
         ...state,
-        items: action.tools,
+        items: action.response.body,
       };
 
     case types.FETCH_TOOL_SUCCESS:
       return {
         ...state,
-        item: action.tools,
+        item: action.response.body,
       };
 
     default:
