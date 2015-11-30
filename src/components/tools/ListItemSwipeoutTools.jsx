@@ -1,7 +1,7 @@
 import React from 'react'; // eslint-disable-line
 import { connect } from 'react-redux';
 
-import { fetchOne } from 'actions/ToolActions';
+import { fetchTool } from 'actions/ToolActions';
 
 import ListItemSwipeout from 'components/lists/ListItemSwipeout';
 
@@ -12,19 +12,19 @@ import ListItemSwipeout from 'components/lists/ListItemSwipeout';
 
 @connect(
   () => ({}),
-  { fetchOne }
+  { fetchTool }
 )
 class ListItemSwipeoutTools extends ListItemSwipeout {
   // Show the full Tool page.
   handleClick = () => {
-    const { fetchOne: _fetchOne } = this.props;
+    const { fetchTool: _fetchTool } = this.props;
 
     // Init main view
     const mainView = f7App.addView('.view-main', {
       domCache: true, // enable inline pages
     });
 
-    _fetchOne(this.props.id);
+    _fetchTool(this.props.id);
 
     // Load about page:
     mainView.router.load({pageName: 'tool'});
