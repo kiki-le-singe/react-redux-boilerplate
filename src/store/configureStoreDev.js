@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import DevTools from 'containers/DevTools';
 
 import logger from 'middleware/logger';
-import toolAPI from 'middleware/toolAPI';
+import api from 'middleware/api';
 import rootReducer from 'reducers';
 
 let finalCreateStore;
@@ -15,7 +15,7 @@ if (__DEBUG__) {
   finalCreateStore = compose(
     // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
     // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
-    applyMiddleware(logger, toolAPI),
+    applyMiddleware(logger, api),
     // Provides support for DevTools:
     DevTools.instrument()
   )(createStore);
@@ -23,7 +23,7 @@ if (__DEBUG__) {
   finalCreateStore = compose(
     // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
     // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
-    applyMiddleware(logger, toolAPI)
+    applyMiddleware(logger, api)
   )(createStore);
 }
 

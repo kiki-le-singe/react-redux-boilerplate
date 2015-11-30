@@ -12,14 +12,16 @@ const defaultProps = {
 @connect(
   state => ({
     indicator: state.indicator,
+    tools: state.tools,
   })
 )
 class Indicator extends Component {
 
   render() {
     const { indicator } = this.props;
+    const { isFetching } = this.props.tools;
 
-    if (indicator) {
+    if (indicator || isFetching) {
       f7App.showIndicator();
     } else {
       f7App.hideIndicator();

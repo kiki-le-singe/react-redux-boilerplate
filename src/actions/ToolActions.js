@@ -1,41 +1,32 @@
 import types from 'constants/ToolConstants';
-import { CALL_API } from 'middleware/toolAPI';
+import { fetch } from 'services/tool';
 
 /*
  * action creators
  */
 
-function receiveTool(data) {
-  return {
-    type: types.RECEIVE_TOOL,
-    tools: data,
-  };
-}
-
-function receiveTools(data) {
-  return {
-    type: types.RECEIVE_TOOLS,
-    tools: data,
-  };
-}
-
 function fetchTools() {
   return {
-    [CALL_API]: {
-      method: 'GET',
-      callbackAction: receiveTools,
-    },
+    // Types of actions to emit before and after
+    types: [types.FETCH_TOOLS_REQUEST, types.FETCH_TOOLS_SUCCESS, types.FETCH_TOOLS_FAILURE],
+    // Check the cache (optional):
+    shouldCallAPI: (state) => !state.tools.items.length,
+    // Perform the fetching:
+    callAPI: () => fetch(),
+    // Arguments to inject in begin/end actions
+    payload: {},
   };
 }
 
-function fetchOne(id) {
+function fetchTool(id) {
   return {
-    [CALL_API]: {
-      method: 'GET',
-      callbackAction: receiveTool,
-      id,
+    types: [types.FETCH_TOOL_REQUEST, types.FETCH_TOOL_SUCCESS, types.FETCH_TOOL_FAILURE],
+    shouldCallAPI: (state) => {
+      return (state.tools.item && state.tools.item.id === id) ? false : true;
     },
+    callAPI: () => fetch(id),
+    payload: { id },
   };
 }
 
-export default { fetchTools, fetchOne };
+export default { fetchTools, fetchTool };
