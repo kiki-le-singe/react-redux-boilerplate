@@ -8,13 +8,13 @@ const initialState = {
 
 const tools = (state = initialState, action) => {
   switch (action.type) {
-    case types.RECEIVE_TOOLS:
+    case types.FETCH_TOOLS_SUCCESS:
       return {
         ...state,
         items: action.tools,
       };
 
-    case types.RECEIVE_TOOL:
+    case types.FETCH_TOOL_SUCCESS:
       return {
         ...state,
         item: action.tools,
