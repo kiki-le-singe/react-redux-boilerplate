@@ -94,9 +94,9 @@ app.use('/api', router);
 
 // Histories:
 // https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md#configuring-your-server
-app.get('*', function(request, response){
-  response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
-});
+// app.get('*', function(request, response){
+//   response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
+// });
 
 /*****************
  START THE SERVER

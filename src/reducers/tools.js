@@ -5,6 +5,7 @@ const initialState = {
   items: [],
   searchValue: '',
   isFetching: false,
+  error: false,
 };
 
 const tools = (state = initialState, action) => {
@@ -19,6 +20,7 @@ const tools = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
+        error: action.error.response,
       };
 
     case types.FETCH_TOOLS_SUCCESS:
@@ -26,6 +28,7 @@ const tools = (state = initialState, action) => {
         ...state,
         items: action.response.body,
         isFetching: false,
+        error: false,
       };
 
     case types.FETCH_TOOL_REQUEST:
@@ -38,6 +41,7 @@ const tools = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
+        error: action.error.response,
       };
 
     case types.FETCH_TOOL_SUCCESS:
@@ -45,6 +49,7 @@ const tools = (state = initialState, action) => {
         ...state,
         item: action.response.body,
         isFetching: false,
+        error: false,
       };
 
     default:

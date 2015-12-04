@@ -5,7 +5,10 @@
   // - https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md
 
 import React from 'react';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import createHistory from 'history/lib/createHashHistory';
+// To use createBrowserHistory uncomment:
+// https://github.com/kiki-le-singe/react-redux-boilerplate/blob/master/server/app.js#L97
+// import createHistory from 'history/lib/createBrowserHistory';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import App from 'containers/App';
@@ -16,7 +19,7 @@ import Counter from 'components/pages/Counter';
 import Tools from 'components/pages/Tools';
 
 const AppRouter = (
-  <Router history={createBrowserHistory()}>
+  <Router history={createHistory()}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="home" component={Home} />
