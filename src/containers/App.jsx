@@ -5,6 +5,7 @@ import RightSidePanel from 'components/RightSidePanel';
 import ToolPage from 'components/pages/Tools/Tool';
 import PopupCreateTool from 'components/popup/tools/PopupCreateTool';
 import Indicator from 'components/Indicator';
+import Alert from 'components/Alert';
 
 const propTypes = {
   children: PropTypes.object,
@@ -35,6 +36,7 @@ class App extends Component {
         </div>
         <PopupCreateTool />
         <Indicator />
+        <Alert />
       </div>
     );
   }
