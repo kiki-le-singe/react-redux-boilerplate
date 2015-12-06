@@ -8,6 +8,7 @@ import Page from 'components/pages/Page';
 // Which props do we want to inject, given the global state?
 @connect(
   state => ({
+    router: state.router,
     counter: state.counter,
   }),
   { increment, decrement }
