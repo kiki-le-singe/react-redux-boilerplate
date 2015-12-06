@@ -1,7 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Page from 'components/pages/Page';
 
+@connect(
+  state => ({
+    router: state.router,
+  })
+)
 class Home extends Page {
 
   getDataPage() {
