@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
+import { ReduxRouter } from 'redux-router';
 
 import DevTools from './DevTools';
-import AppRouter from '../AppRouter';
+import routes from 'routes';
 
 const propTypes = {
   store: PropTypes.object.isRequired,
@@ -20,7 +21,9 @@ class RootDev extends Component {
     return (
       <Provider store={store}>
         <div className="app-container">
-          { AppRouter }
+          <ReduxRouter>
+            { routes }
+          </ReduxRouter>
           { this.showDevTools() }
         </div>
       </Provider>

@@ -1,7 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
+import { ReduxRouter } from 'redux-router';
 
-import AppRouter from '../AppRouter';
+import routes from 'routes';
+
+const propTypes = {
+  store: PropTypes.object.isRequired,
+};
 
 class RootProd extends Component {
 
@@ -11,11 +16,15 @@ class RootProd extends Component {
     return (
       <Provider store={store}>
         <div className="app-container">
-          { AppRouter }
+          <ReduxRouter>
+            { routes }
+          </ReduxRouter>
         </div>
       </Provider>
     );
   }
 }
+
+RootProd.propTypes = propTypes;
 
 export default RootProd;
