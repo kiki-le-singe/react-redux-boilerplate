@@ -2,7 +2,13 @@
 // https://github.com/rackt/redux/blob/master/examples/todomvc/store/configureStore.js
 
 import { createStore, applyMiddleware, compose } from 'redux';
+import { reduxReactRouter } from 'redux-router';
+import createHistory from 'history/lib/createHashHistory';
+// To use createBrowserHistory uncomment:
+// https://github.com/kiki-le-singe/react-redux-boilerplate/blob/master/server/app.js#L97
+// import createHistory from 'history/lib/createBrowserHistory';
 
+import routes from 'routes';
 import DevTools from 'containers/DevTools';
 
 import logger from 'middleware/logger';
@@ -16,6 +22,7 @@ if (__DEBUG__) {
     // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
     // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
     applyMiddleware(logger, api),
+    reduxReactRouter({ routes, createHistory }),
     // Provides support for DevTools:
     DevTools.instrument()
   )(createStore);
@@ -23,7 +30,8 @@ if (__DEBUG__) {
   finalCreateStore = compose(
     // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
     // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
-    applyMiddleware(logger, api)
+    applyMiddleware(logger, api),
+    reduxReactRouter({ routes, createHistory })
   )(createStore);
 }
 
