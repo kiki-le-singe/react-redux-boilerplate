@@ -34,7 +34,7 @@ const API = store => next => action => { // eslint-disable-line
     return; // eslint-disable-line
   }
 
-  const [ requestType, successType, failureType ] = types;
+  const [requestType, successType, failureType] = types;
 
   next({
     type: requestType,

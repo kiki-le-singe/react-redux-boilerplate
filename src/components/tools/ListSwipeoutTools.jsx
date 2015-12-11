@@ -20,7 +20,7 @@ class ListSwipeoutTools extends ListSwipeout {
     let tools = data;
 
     if (searchValue) {
-      tools = tools.filter( tool => {
+      tools = tools.filter(tool => {
         return tool.title.toLowerCase().search(searchValue.toLowerCase()) !== -1;
       });
     }

@@ -25,7 +25,7 @@ class Tool extends Page {
   }
 
   renderPage() {
-    const { tools: {item} } = this.props;
+    const { tools: { item } } = this.props;
     const iconClassName = classnames('icon', ['icon-', item.slug].join(''));
 
     return (

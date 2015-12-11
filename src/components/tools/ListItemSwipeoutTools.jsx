@@ -27,7 +27,7 @@ class ListItemSwipeoutTools extends ListItemSwipeout {
     _fetchTool(this.props.id);
 
     // Load about page:
-    mainView.router.load({pageName: 'tool'});
+    mainView.router.load({ pageName: 'tool' });
   }
 
   showAlert() {
