@@ -58,9 +58,9 @@ const config = {
   devtool: 'source-map',
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:8080',
+      'webpack-dev-server/client?http://localhost:' + projectConfig.WEBPACK_PORT,
       'webpack/hot/dev-server',
-      './src/index.jsx'
+      './src/index.js'
     ],
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
