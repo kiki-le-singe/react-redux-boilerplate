@@ -50,7 +50,7 @@ const config = {
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: 'source-map',
   entry: {
-    app: path.resolve(__dirname, 'src/index.jsx'),
+    app: path.resolve(__dirname, 'src/client.js'),
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
     vendors: vendorDependencies
