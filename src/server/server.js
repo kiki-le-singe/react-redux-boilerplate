@@ -1,23 +1,26 @@
-/***********
- BASE SETUP
-************/
+import webpackDevServer from '../../webpack-dev-server';
+
+// Stubs
+var stubTools = require('./stubs/tools.json');
 
 // Module dependencies.
 var applicationRoot = __dirname,
-    projectConfig = require('../config'),
+    projectConfig = require('../../config'),
+    argv = require('yargs').argv,
     express = require('express'), // Web framework
     app = express(), // define server
     path = require('path'), // Utilities for dealing with file paths
     mongoose = require('mongoose'), // MongoDB integration
     bodyParser = require('body-parser'),
     args = process.argv,
-    api = require('./api/api')
-    uniqid = require('uniqid');
+    api = require('./api/api'),
+    uniqid = require('uniqid'),
+    STUB_MODE = !!argv.stub;
 
 // parses request body and populates request.body
 app.use(bodyParser.urlencoded({extended: true}));
 // where to serve static content
-app.use(express.static(path.join(applicationRoot, '../dist')));
+app.use(express.static(path.join(applicationRoot, '../../build')));
 
 /*******************
  ROUTES FOR OUR API
@@ -35,6 +38,9 @@ router.get('/', function (request, response) {
 router.route('/tools')
   // Get a list of tools
   .get(function (request, response) {
+    if (STUB_MODE) { // if stub enabled
+      return response.json(stubTools);
+    }
     response.status(200).json(api.tools);
   })
   // Post a tool
@@ -80,9 +86,9 @@ app.use('/api', router);
 
 // Histories:
 // https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md#configuring-your-server
-app.get('*', function(request, response){
-  response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
-});
+// app.get('*', function(request, response){
+//   response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
+// });
 
 /*****************
  START THE SERVER
@@ -91,3 +97,5 @@ app.get('*', function(request, response){
 app.listen(projectConfig.SERVER_PORT, function () {
   console.log('Express server listening on projectConfig.SERVER_PORT %d in %s node', projectConfig.SERVER_PORT, app.settings.env);
 });
+
+webpackDevServer();
