@@ -60,7 +60,7 @@ const config = {
     app: [
       'webpack-dev-server/client?http://localhost:' + projectConfig.WEBPACK_PORT,
       'webpack/hot/dev-server',
-      './src/client.js'
+      './src/index.js'
     ],
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html

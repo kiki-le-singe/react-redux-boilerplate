@@ -92,7 +92,7 @@
   },
   "scripts": {
     "deploy": "NODE_ENV=production webpack -p --progress --config webpack.production.config.js",
-    "start": "npm run build | node src/server/index.js",
+    "start": "npm run build | node server/index.js",
     "start:debug": "npm start -- --debug",
     "start:quiet": "npm start -- --quiet",
     "start:stub": "npm start -- --stub",
