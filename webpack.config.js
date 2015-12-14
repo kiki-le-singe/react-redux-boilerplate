@@ -58,7 +58,7 @@ const config = {
   devtool: 'source-map',
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:8080',
+      'webpack-dev-server/client?http://localhost:' + projectConfig.WEBPACK_PORT,
       'webpack/hot/dev-server',
       './src/client.js'
     ],
