@@ -9,7 +9,11 @@ export default function (compiler, publicPath) {
     publicPath, // http://webpack.github.io/docs/webpack-dev-middleware.html#publicpath
     quiet: QUIET_MODE,
     noInfo: QUIET_MODE,
-    stats: { colors: true },
+    stats: {
+      colors: true,
+      chunks: false,
+      chunkModules: false,
+    },
     hot: true,
     lazy: false,
     historyApiFallback: true,
