@@ -1,5 +1,6 @@
 import express from 'express'; // Web framework
 import webpack from 'webpack';
+import path from 'path';
 
 import routes from './routes';
 import webpackDevMiddleware from './middleware/webpack-dev';
@@ -10,6 +11,8 @@ import webpackConfig from '../webpack.config.js';
 const app = express(); // define server
 const compiler = webpack(webpackConfig);
 
+
+app.use(express.static(path.resolve('src/assets')));
 
 /* *******************
 webpack configuration
