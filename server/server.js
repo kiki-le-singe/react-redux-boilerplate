@@ -3,36 +3,26 @@ import express from 'express'; // Web framework
 import path from 'path'; // Utilities for dealing with file paths
 import uniqid from 'uniqid';
 import webpack from 'webpack';
-import WebpackDevMiddleware from 'webpack-dev-middleware';
-import WebpackHotMiddleware from 'webpack-hot-middleware';
 
 import toolsApi from './api/tools';
 import stubTools from './stubs/tools.json';
+import webpackDevMiddleware from './middleware/webpack-dev';
+import webpackHotMiddleware from './middleware/webpack-hot';
 import projectConfig from '../config';
 import webpackConfig from '../webpack.config.js';
 
 const app = express(); // define server
 const STUB_MODE = !!argv.stub;
+const compiler = webpack(webpackConfig);
+
 
 /* *******************
 webpack configuration
 ******************* */
 
-const compiler = webpack(webpackConfig);
-const QUIET_MODE = !!argv.quiet;
-const webpackDevMiddlewareOptions = {
-  publicPath: webpackConfig.output.publicPath,
-  quiet: QUIET_MODE,
-  noInfo: QUIET_MODE,
-  stats: { colors: true },
-  hot: true,
-  inline: true,
-  historyApiFallback: true,
-};
-const webpackDevMiddleware = WebpackDevMiddleware(compiler, webpackDevMiddlewareOptions); // eslint-disable-line
+app.use(webpackDevMiddleware(compiler, webpackConfig.output.publicPath));
+app.use(webpackHotMiddleware(compiler));
 
-app.use(webpackDevMiddleware);
-app.use(WebpackHotMiddleware(compiler)); // eslint-disable-line
 
 /* ******************
  ROUTES FOR OUR API
