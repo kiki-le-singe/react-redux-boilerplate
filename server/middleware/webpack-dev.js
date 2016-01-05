@@ -12,6 +12,7 @@ export default function (compiler, publicPath) {
     stats: { colors: true },
     hot: true,
     inline: true,
+    lazy: false,
     historyApiFallback: true,
   };
 
