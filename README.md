@@ -2,45 +2,89 @@
 
 ## Introduction
 
-> This project is mainly to train with tools like [babeljs.io](https://babeljs.io/), [React](https://facebook.github.io/react/), [Flux](https://facebook.github.io/flux/), ES6/ES2015... And then I used it as Boilerplate for my react projects.
+> This project is mainly to train with tools like [babeljs.io](https://babeljs.io/), [React](https://facebook.github.io/react/), [Redux](https://github.com/rackt/redux), ES6/ES2015... And then I used it as Boilerplate for my react projects. So don't worry it works :)
 
 ## Requirements
 
  * [nodejs](http://nodejs.org/)
+
+> Node `^5.0.0`
+
  * [sass](http://sass-lang.com/)
 
 ## Optional
 
  * [Gulp](http://gulpjs.com/)
+
+> Gulp is used to manage icons. I do not use it as builder, so it is not mandatory.
+
  * [Mongodb](http://www.mongodb.org/)
   * [Install on Ubuntu](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
   * [Install on OS X](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
 
+> Mongodb is useful if you want used a database. In this project I used a fake API.
+
 ## Installation
 
-* `$ git clone git@github.com:kiki-le-singe/react-flux-boilerplate.git`
-* `$ cd react-flux-boilerplate`
-* `$ npm install`
+```shell
+$ git clone git@github.com:kiki-le-singe/react-redux-boilerplate.git
+$ cd react-redux-boilerplate
+$ npm install
+```
 
 ## Scripts
 
-* `$ npm start`
+```shell
+$ npm start
+```
 
-Built the project and starts a web service on `localhost:8080`. It uses a proxy to hit on `localhost:9000` and to consume the api.
+Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development.
 
-* `$ npm run build`
+```shell
+$ npm compile
+```
 
-Built the project.
+It does some optimizations and Compiles the application, for the production, to disk (`~/dist` by default).
 
-> Results is located in the ./build directory.
+```shell
+$ npm run dev:debug
+```
 
-* `$ npm run deploy`
+Same as `npm start`, but displays the redux devtools.
 
-It does some optimizations and builds the project for the production.
+```shell
+$ npm run dev:quiet
+```
 
-> Results is located in the ./dist directory.
+Same as `npm start`, but displays no webpack informations in the terminal.
 
-* `$ node server app.production.js`
+```shell
+$ npm run dev:stub
+```
+
+Same as `npm start`, but in stub mode.
+
+```shell
+$ npm run test
+```
+
+Soon...
+
+```shell
+$ npm run deploy
+```
+
+Cleans the `dist` folder previously created and compiles your application to disk.
+
+```shell
+$ npm run lint
+```
+
+Lint all `.js` files.
+
+```shell
+$ node server app.production.js
+```
 
 Serves the app in production mode on `localhost:9000`.
 
@@ -48,25 +92,102 @@ Serves the app in production mode on `localhost:9000`.
 
 ## Gulp Tasks
 
-* `$ gulp iconify`
+```shell
+$ gulp iconify
+```
 
 See ['A mystical CSS icon solution', grunticon-like build system.](https://github.com/gavro/gulp-iconify).
 
-## Included JavaScript libraries
+## Configuration
+
+Soon...
+
+## Structure
+
+```
+.
+└── __tests__                # Unit tests (Soon...)
+├── config                   # Project configuration settings (Server, Webpack, ...)
+├── gulp                     # Gulp configuration tasks
+├── server                   # Express application (uses webpack middleware)
+│   └── index.js             # Server application entry point
+├── src                      # Application source code
+│   ├── actions              # Redux actions
+│   ├── assets               # Static assets
+│   ├── components           # Generic React Components
+│   ├── config               # Project configuration settings (api, ...)
+│   ├── constants            # Redux constants
+│   ├── middleware           # Redux middleware
+│   ├── reducers             # Redux reducers
+│   ├── routes               # Application route definitions
+│   ├── services             # All kinds of services (Email, User, ...)
+│   ├── store                # Redux store
+│   ├── styles               # Application-wide styles
+│   └── index.js             # Application bootstrap and rendering
+├── webpack                  # Environment-specific configuration files for webpack (Soon...)
+```
+
+## Webpack
+
+### Configuration
+
+The webpack compiler configuration is located to the root `~/webpack.config.js` and `~/webpack.production.config.js`. You can also see the `~/.babelrc` configuration file.
+
+### Vendor Bundle
+
+These default to:
+
+```js
+[
+  'history',
+  'react',
+  'react-router',
+  'redux',
+  'redux-simple-router',
+  'lodash',
+  'framework7',
+  'classnames',
+  'superagent'
+]
+```
+
+### Globals
+
+These are global variables available to you anywhere in your source code. They can be found  in `~/config/index.js`.
+
+```js
+new webpack.DefinePlugin({
+  __CLIENT__: projectConfig.__CLIENT__,
+  __SERVER__: projectConfig.__SERVER__,
+  __DEV__: projectConfig.__DEV__,
+  __PROD__: projectConfig.__PROD__,
+  __DEBUG__: projectConfig.__DEBUG__
+})
+```
+
+## Styles
+
+You can use both `.scss` and `.css` file extensions. See the `~/src/styles` directory.
+
+## Features
 
  * [React](https://facebook.github.io/react/)
  * [React Router](https://github.com/rackt/react-router)
- * [Flux](https://facebook.github.io/flux/)
- * [jQuery](http://jquery.com/)
+ * [Redux](https://github.com/rackt/redux)
+ * [Redux Simple Router](https://github.com/rackt/redux-simple-router)
+ * [Redux DevTools](https://github.com/gaearon/redux-devtools)
  * [Lo-Dash](http://lodash.com/)
  * [classnames](https://www.npmjs.com/package/classnames)
  * [superagent](https://github.com/visionmedia/superagent)
+ * [Express](http://expressjs.com/)
  * [Framework7](http://www.idangero.us/framework7/)
+
+> Framework7 is used as HTML framework to develop hybrid mobile apps or web apps. You can use what you want.
 
 ## Build Tools
 
  * [ESlint](http://eslint.org/)
-  * [React .eslintrc](https://github.com/facebook/react/blob/master/.eslintrc)
+  * [Airbnb's .eslintrc](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
  * [Babel](https://babeljs.io/)
  * [Webpack](https://github.com/webpack/webpack)
 
@@ -76,12 +197,17 @@ By default the root access for the API is http://localhost:8080/api. Available e
 
 ## Sources
 
- * [Getting Started](https://facebook.github.io/react/docs/getting-started.html)
+ * [React Getting Started](https://facebook.github.io/react/docs/getting-started.html)
  * [React tutorial](https://facebook.github.io/react/docs/tutorial.html)
  * [React Router](https://github.com/rackt/react-router)
-  * [Upgrade Guide](https://github.com/rackt/react-router/blob/master/UPGRADE_GUIDE.md)
+  * [Upgrade Guide](https://github.com/rackt/react-router/tree/master/upgrade-guides)
   * [React Router Histories](https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md)
- * [Flux](https://facebook.github.io/flux/)
+ * [Redux](https://github.com/rackt/redux)
+ * [Redux Middleware](http://redux.js.org/docs/advanced/Middleware.html)
+ * [Redux applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html)
+ * [Understanding Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a#.jky3inddd)
+ * [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)
+ * [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
  * [Framework7](http://www.idangero.us/framework7/get-started/)
  * [React Webpack Cookbook](http://christianalfoni.github.io/react-webpack-cookbook/index.html)
  * [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
@@ -114,18 +240,10 @@ By default the root access for the API is http://localhost:8080/api. Available e
  * [Example of components in ES6](https://github.com/soundblogs/react-soundplayer/tree/master/src/components)
  * [React on ES6+](http://babeljs.io/blog/2015/06/07/react-on-es6-plus/)
 
-#### Autobinding/No Autobinding
+### Autobinding/No Autobinding
 
 * [Autobinding](https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#autobinding)
 * [No Autobinding](https://facebook.github.io/react/docs/reusable-components.html#no-autobinding)
 
 > In React's class model you'll have to explicitly use .bind(this) or arrow functions =>.
 > See also [Can't get `this.prop` when use ES6 classes in React](https://github.com/facebook/react/issues/4425) and [Why this.setState is undefined in React ES6 class?](https://github.com/goatslacker/alt/issues/283)
-
-### Experimental ES7 features
-
- * [Babel - What are the various transformers?](http://babeljs.io/docs/advanced/transformers/)
- * [Babel - How to use experimental ES7 features](https://babeljs.io/docs/usage/experimental/)
- * [babelify](https://www.npmjs.com/package/babelify)
-
- > babelify - Set stage option to 0 for to have all ES7 experimental features
