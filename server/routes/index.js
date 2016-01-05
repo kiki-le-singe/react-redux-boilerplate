@@ -1,7 +1,7 @@
 import { argv } from 'yargs';
 import express from 'express'; // Web framework
 import uniqid from 'uniqid';
-import path from 'path'; // Utilities for dealing with file paths
+// import path from 'path'; // Utilities for dealing with file paths
 
 import toolsApi from '../api/tools';
 import stubTools from '../stubs/tools.json';
@@ -68,7 +68,9 @@ export default function (app) {
   // all of our routes will be prefixed with /api
   app.use('/api', router);
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
-  });
+  // Comment for now because I don't know if is it mandatory to work with
+  // WebpackDevMiddleware and Express.
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'dist/index.html'));
+  // });
 }
