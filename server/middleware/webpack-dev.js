@@ -4,8 +4,9 @@ import WebpackDevMiddleware from 'webpack-dev-middleware';
 const QUIET_MODE = !!argv.quiet;
 
 export default function (compiler, publicPath) {
+  // http://webpack.github.io/docs/webpack-dev-server.html
   const webpackDevMiddlewareOptions = {
-    publicPath,
+    publicPath, // http://webpack.github.io/docs/webpack-dev-middleware.html#publicpath
     quiet: QUIET_MODE,
     noInfo: QUIET_MODE,
     stats: { colors: true },
