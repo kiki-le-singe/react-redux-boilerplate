@@ -101,5 +101,6 @@
     "start:debug": "npm start -- --debug",
     "start:quiet": "npm start -- --quiet",
     "start:stub": "npm start -- --stub",
+    "lint": "eslint src"
   }
 }
