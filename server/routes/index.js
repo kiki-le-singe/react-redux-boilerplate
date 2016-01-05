@@ -70,6 +70,8 @@ export default function (app) {
 
   // Comment for now because I don't know if is it mandatory to work with
   // WebpackDevMiddleware and Express.
+  // Histories:
+  // https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md#configuring-your-server
   // app.get('*', (req, res) => {
   //   res.sendFile(path.resolve('dist/index.html'));
   // });
