@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 
 import Page from 'components/pages/Page';
 
-@connect(
-  state => ({
-    router: state.router,
-  })
-)
-class Home extends Page {
+const mapStateToProps = (state) => ({
+  router: state.router,
+});
+export class Home extends Page {
 
   getDataPage() {
     return 'home';
@@ -29,4 +27,4 @@ class Home extends Page {
   }
 }
 
-export default Home;
+export default connect(mapStateToProps)(Home);

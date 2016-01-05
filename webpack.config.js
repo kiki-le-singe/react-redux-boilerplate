@@ -38,7 +38,6 @@ const framework7CSSDir = path.resolve(nodeModulesDir, 'framework7/dist/css');
 const FontAwesomeSCSSDir = path.resolve(nodeModulesDir, 'font-awesome/scss');
 
 const deps = [
-  'jquery/dist/jquery.min.js',
   'framework7/dist/js/framework7.min.js',
   'font-awesome/css/font-awesome.min.css'
 ];
@@ -49,22 +48,25 @@ const vendorDependencies = [
   'lodash',
   'framework7',
   'classnames',
-  'jquery',
   'superagent'
 ];
 
 const config = {
   // http://webpack.github.io/docs/configuration.html#devtool
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:' + projectConfig.WEBPACK_PORT,
-      'webpack/hot/dev-server',
-      './src/index.js'
+      'webpack-hot-middleware/client?reload=true',
+      './src/index'
     ],
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
     vendors: vendorDependencies
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name]-[hash].js',
+    publicPath: '/',
   },
   resolve: {
     alias: {},
@@ -79,19 +81,25 @@ const config = {
 
     extensions: ['', '.js', '.jsx']
   },
-  output: {
-    path: __dirname + '/build',
-    filename: '[name]-[hash].js'
-  },
   module: {
     noParse: [],
 
+    preLoaders: [
+      {
+        test: /\.js[x]?$/,
+        loader: 'eslint',
+        include: [srcDir],
+      }
+    ],
     // http://webpack.github.io/docs/loaders.html
     // http://webpack.github.io/docs/list-of-loaders.html
     loaders: [
       {
         test: /\.js[x]?$/,
-        loaders: ['react-hot', 'babel?optional[]=runtime&stage=0', 'eslint'],
+        loader: 'babel',
+        query: {
+          cacheDirectory: true,
+        },
         include: [srcDir]
       },
       {
@@ -121,20 +129,26 @@ const config = {
     new HtmlWebpackPlugin({
       title: 'React Redux Boilerplate',
       hash: true,
+      favicon: path.resolve(assetsDir, 'build/favicon.ico'),
       inject: 'body',
-      template: path.resolve(assetsDir, 'build/index.html')
+      template: path.resolve(assetsDir, 'build/index.tpl.html')
     }),
     new HtmlWebpackPlugin({ // Also generate a 404.html
+      title: 'Page Not Found :(',
       filename: '404.html',
-      template: path.resolve(assetsDir, 'build/404.html')
+      template: path.resolve(assetsDir, 'build/404.tpl.html')
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
 
-    // https://github.com/webpack/docs/wiki/list-of-plugins#noerrorsplugin
-    new webpack.NoErrorsPlugin(),
+    // https://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin
+    new webpack.optimize.OccurenceOrderPlugin(),
 
     // switch the server to hot mode
     new webpack.HotModuleReplacementPlugin(),
+
+    // causes error avec eslint-loader, comment for now.
+    // https://github.com/webpack/docs/wiki/list-of-plugins#noerrorsplugin
+    // new webpack.NoErrorsPlugin(),
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
     new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js'),

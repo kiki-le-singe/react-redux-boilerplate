@@ -45,9 +45,9 @@ class PopupCreateTool extends Component {
     // Send request to the server
     ToolActions.create({
       id: uniqid(),
-      title: title,
-      text: text,
-      route: route,
+      title,
+      text,
+      route,
       slug: _.kebabCase(title),
     }).then(() => {
       titleEL.value = '';

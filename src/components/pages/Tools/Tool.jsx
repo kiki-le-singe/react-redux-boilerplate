@@ -9,12 +9,10 @@ const defaultProps = {
   isPageCached: true,
 };
 
-@connect(
-  state => ({
-    tools: state.tools,
-  })
-)
-class Tool extends Page {
+const mapStateToProps = (state) => ({
+  tools: state.tools,
+});
+export class Tool extends Page {
 
   getDataPage() {
     return 'tool';
@@ -46,4 +44,4 @@ class Tool extends Page {
 
 Tool.defaultProps = defaultProps;
 
-export default Tool;
+export default connect(mapStateToProps)(Tool);

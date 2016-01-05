@@ -43,12 +43,12 @@ const API = store => next => action => { // eslint-disable-line
 
   return callAPI().then(
     response => next({
-      response: response,
+      response,
       type: successType,
       payload,
     }),
     error => next({
-      error: error,
+      error,
       type: failureType,
       payload,
     })

@@ -42,7 +42,6 @@ const vendorDependencies = [
   'lodash',
   'framework7',
   'classnames',
-  'jquery',
   'superagent'
 ];
 
@@ -74,8 +73,10 @@ const config = {
     loaders: [
       {
         test: /\.js[x]?$/,
-        loaders: ['babel?stage=0'],
-        // loaders: ['babel?optional[]=runtime&stage=0'],
+        loader: 'babel',
+        query: {
+          cacheDirectory: true,
+        },
         include: [srcDir]
       },
       {
@@ -108,14 +109,16 @@ const config = {
       favicon: path.resolve(assetsDir, 'build/favicon.ico'),
       minify: HTMLMinifier,
       inject: 'body',
-      template: path.resolve(assetsDir, 'build/index.html')
+      template: path.resolve(assetsDir, 'build/index.tpl.html')
     }),
     new HtmlWebpackPlugin({ // Also generate a 404.html
+      title: 'Page Not Found :(',
       filename: '404.html',
       minify: HTMLMinifier,
-      template: path.resolve(assetsDir, 'build/404.html')
+      template: path.resolve(assetsDir, 'build/404.tpl.html')
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
+    new webpack.optimize.OccurenceOrderPlugin(),
 
     // optimizations
     // http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
