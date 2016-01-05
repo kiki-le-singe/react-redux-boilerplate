@@ -210,6 +210,7 @@ By default the root access for the API is http://localhost:8080/api. Available e
  * [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
  * [Framework7](http://www.idangero.us/framework7/get-started/)
  * [React Webpack Cookbook](http://christianalfoni.github.io/react-webpack-cookbook/index.html)
+ * [Webpack](http://webpack.github.io/docs/)
  * [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 ## Tips and tricks
