@@ -2,20 +2,20 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
-  show: PropTypes.bool,
+  indicator: PropTypes.bool,
+  tools: PropTypes.object,
 };
 
 const defaultProps = {
-  show: false,
+  indicator: false,
+  isFetching: false,
 };
 
-@connect(
-  state => ({
-    indicator: state.indicator,
-    tools: state.tools,
-  })
-)
-class Indicator extends Component {
+const mapStateToProps = (state) => ({
+  indicator: state.indicator,
+  tools: state.tools,
+});
+export class Indicator extends Component {
 
   render() {
     const { indicator } = this.props;
@@ -34,4 +34,4 @@ class Indicator extends Component {
 Indicator.propTypes = propTypes;
 Indicator.defaultProps = defaultProps;
 
-export default Indicator;
+export default connect(mapStateToProps)(Indicator);

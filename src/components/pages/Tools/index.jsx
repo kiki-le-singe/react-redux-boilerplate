@@ -5,7 +5,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchTools } from 'actions/ToolActions';
+import toolsActions from 'actions/ToolActions';
 
 import Page from 'components/pages/Page';
 import ListSwipeoutTools from 'components/tools/ListSwipeoutTools';
@@ -16,20 +16,16 @@ const defaultProps = {
   isFloatingButtonEnabled: true,
 };
 
-// Which props do we want to inject, given the global state?
-@connect(
-  state => ({
-    tools: state.tools,
-  }),
-  { fetchTools }
-)
-class Tools extends Page {
+const mapStateToProps = (state) => ({
+  tools: state.tools,
+});
+export class Tools extends Page {
   componentDidMount() {
     super.componentDidMount();
 
-    const { fetchTools: _fetchTools } = this.props;
+    const { fetchTools } = this.props;
 
-    _fetchTools();
+    fetchTools();
   }
 
   getDataPage() {
@@ -60,4 +56,4 @@ class Tools extends Page {
 
 Tools.defaultProps = defaultProps;
 
-export default Tools;
+export default connect(mapStateToProps, toolsActions)(Tools);

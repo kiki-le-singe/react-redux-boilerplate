@@ -2,15 +2,14 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
+  tools: PropTypes.object,
   error: PropTypes.bool,
 };
 
-@connect(
-  state => ({
-    tools: state.tools,
-  })
-)
-class Alert extends Component {
+const mapStateToProps = (state) => ({
+  tools: state.tools,
+});
+export class Alert extends Component {
 
   render() {
     const { error } = this.props.tools;
@@ -26,4 +25,4 @@ class Alert extends Component {
 
 Alert.propTypes = propTypes;
 
-export default Alert;
+export default connect(mapStateToProps)(Alert);
