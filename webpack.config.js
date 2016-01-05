@@ -130,7 +130,7 @@ const config = {
     new HtmlWebpackPlugin({
       title: 'React Redux Boilerplate',
       hash: true,
-      favicon: path.resolve(assetsDir, 'build/favicon.ico'),
+      favicon: path.resolve(assetsDir, 'favicon.ico'),
       inject: 'body',
       template: path.resolve(assetsDir, 'build/index.tpl.html')
     }),
