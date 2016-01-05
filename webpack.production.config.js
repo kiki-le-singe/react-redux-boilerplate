@@ -37,8 +37,11 @@ const HTMLMinifier = {
 };
 
 const vendorDependencies = [
+  'history',
   'react',
   'react-router',
+  'redux',
+  'redux-simple-router',
   'lodash',
   'framework7',
   'classnames',
