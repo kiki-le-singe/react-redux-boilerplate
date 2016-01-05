@@ -133,12 +133,12 @@ const config = {
       hash: true,
       favicon: path.resolve(assetsDir, 'favicon.ico'),
       inject: 'body',
-      template: path.resolve(assetsDir, 'build/index.tpl.html')
+      template: path.resolve(srcDir, 'index.tpl.html')
     }),
     new HtmlWebpackPlugin({ // Also generate a 404.html
       title: 'Page Not Found :(',
       filename: '404.html',
-      template: path.resolve(assetsDir, 'build/404.tpl.html')
+      template: path.resolve(srcDir, '404.tpl.html')
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
 
