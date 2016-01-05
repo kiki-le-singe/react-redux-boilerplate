@@ -11,7 +11,6 @@ export default function (compiler, publicPath) {
     noInfo: QUIET_MODE,
     stats: { colors: true },
     hot: true,
-    inline: true,
     lazy: false,
     historyApiFallback: true,
   };
