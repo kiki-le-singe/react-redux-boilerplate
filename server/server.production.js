@@ -6,7 +6,7 @@ import projectConfig from '../config';
 
 const app = express();
 
-app.use(express.static(path.join(applicationRoot, '../dist')));
+app.use(express.static(path.resolve('dist')));
 
 
 /* ******************
