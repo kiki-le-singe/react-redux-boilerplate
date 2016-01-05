@@ -21,8 +21,11 @@
     "font-awesome",
     "es6",
     "ES2015",
-    "babeljs",
+    "babel",
     "webpack",
+    "hot",
+    "reload",
+    "hmr",
     "express"
   ],
   "description": "Get started with React, Redux, Express...",
