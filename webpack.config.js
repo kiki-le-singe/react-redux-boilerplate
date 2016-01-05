@@ -38,6 +38,7 @@ const framework7CSSDir = path.resolve(nodeModulesDir, 'framework7/dist/css');
 const FontAwesomeSCSSDir = path.resolve(nodeModulesDir, 'font-awesome/scss');
 
 const deps = [
+  'redux/dist/redux.min.js',
   'framework7/dist/js/framework7.min.js',
   'font-awesome/css/font-awesome.min.css'
 ];
