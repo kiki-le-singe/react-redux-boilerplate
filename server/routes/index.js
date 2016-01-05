@@ -71,6 +71,6 @@ export default function (app) {
   // Comment for now because I don't know if is it mandatory to work with
   // WebpackDevMiddleware and Express.
   // app.get('*', (req, res) => {
-  //   res.sendFile(path.join(__dirname, 'dist/index.html'));
+  //   res.sendFile(path.resolve('dist/index.html'));
   // });
 }
