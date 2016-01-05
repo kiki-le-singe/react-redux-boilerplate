@@ -97,11 +97,14 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "scripts": {
-    "deploy": "NODE_ENV=production webpack -p --progress --config webpack.production.config.js",
-    "start": "node server/index.js",
-    "start:debug": "npm start -- --debug",
-    "start:quiet": "npm start -- --quiet",
-    "start:stub": "npm start -- --stub",
+    "clean": "rm -rf dist",
+    "deploy": "npm run clean && npm run compile",
+    "start": "npm run dev",
+    "dev": "node server/index.js",
+    "dev:debug": "npm run dev -- --debug",
+    "dev:quiet": "npm run dev -- --quiet",
+    "dev:stub": "npm run dev -- --stub",
+    "compile": "NODE_ENV=production webpack -p --progress --config webpack.production.config.js",
     "lint": "eslint src"
   }
 }
