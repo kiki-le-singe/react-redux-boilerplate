@@ -1,5 +1,5 @@
 import { argv } from 'yargs';
-import WebpackDevMiddleware from 'webpack-dev-middleware';
+import webpackDevMiddleware from 'webpack-dev-middleware';
 
 const QUIET_MODE = !!argv.quiet;
 
@@ -19,5 +19,5 @@ export default function (compiler, publicPath) {
     historyApiFallback: true,
   };
 
-  return WebpackDevMiddleware(compiler, webpackDevMiddlewareOptions); // eslint-disable-line
+  return webpackDevMiddleware(compiler, webpackDevMiddlewareOptions);
 }

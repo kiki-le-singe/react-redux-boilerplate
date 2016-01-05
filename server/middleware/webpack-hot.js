@@ -1,5 +1,5 @@
-import WebpackHotMiddleware from 'webpack-hot-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
 export default function (compiler) {
-  return WebpackHotMiddleware(compiler); // eslint-disable-line
+  return webpackHotMiddleware(compiler);
 }
