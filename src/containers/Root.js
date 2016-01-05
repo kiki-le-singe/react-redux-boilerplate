@@ -1,9 +1,9 @@
 let Root;
 
 if (__DEV__) {
-  Root = require('./RootDev');
+  Root = require('./RootDev').default;
 } else {
-  Root = require('./RootProd');
+  Root = require('./RootProd').default;
 }
 
 export default Root;
