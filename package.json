@@ -4,6 +4,7 @@
   "author": {
     "name": "Kiki le singe"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/kiki-le-singe/react-redux-boilerplate.git"
@@ -24,9 +25,10 @@
     "webpack",
     "express"
   ],
-  "description": "This is a boilerplate for starting a project with ReactJS... Webpack Dev Server is used to serve the application in dev mode. Express is used for the api",
+  "description": "Get started with React, Redux, Express...",
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">=5.0.0",
+    "npm": "^3.3.12"
   },
   "files": [
     "CHANGELOG.md",
