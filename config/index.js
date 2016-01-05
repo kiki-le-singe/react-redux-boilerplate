@@ -12,6 +12,5 @@ module.exports = {
   __DEBUG__: !!argv.debug,
 
   // server configuration
-  WEBPACK_PORT: 8080,
-  SERVER_PORT: process.env.PORT || 9000,
+  SERVER_PORT: process.env.PORT || 8080,
 };

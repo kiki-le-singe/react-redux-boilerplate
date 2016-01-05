@@ -1,24 +1,38 @@
 import { argv } from 'yargs';
 import express from 'express'; // Web framework
 import path from 'path'; // Utilities for dealing with file paths
-// import mongoose from 'mongoose'; // MongoDB integration
-import bodyParser from 'body-parser';
 import uniqid from 'uniqid';
+import webpack from 'webpack';
+import WebpackDevMiddleware from 'webpack-dev-middleware';
+import WebpackHotMiddleware from 'webpack-hot-middleware';
 
-import webpackDevServer from '../webpack-dev-server';
 import toolsApi from './api/tools';
 import stubTools from './stubs/tools.json';
 import projectConfig from '../config';
+import webpackConfig from '../webpack.config.js';
 
-const applicationRoot = __dirname;
 const app = express(); // define server
 const STUB_MODE = !!argv.stub;
 
-// parses request body and populates request.body
-app.use(bodyParser.urlencoded({ extended: true }));
-// where to serve static content
-app.use(express.static(path.join(applicationRoot, '../build')));
+/* *******************
+webpack configuration
+******************* */
 
+const compiler = webpack(webpackConfig);
+const QUIET_MODE = !!argv.quiet;
+const webpackDevMiddlewareOptions = {
+  publicPath: webpackConfig.output.publicPath,
+  quiet: QUIET_MODE,
+  noInfo: QUIET_MODE,
+  stats: { colors: true },
+  hot: true,
+  inline: true,
+  historyApiFallback: true,
+};
+const webpackDevMiddleware = WebpackDevMiddleware(compiler, webpackDevMiddlewareOptions); // eslint-disable-line
+
+app.use(webpackDevMiddleware);
+app.use(WebpackHotMiddleware(compiler)); // eslint-disable-line
 
 /* ******************
  ROUTES FOR OUR API
@@ -82,11 +96,9 @@ router.route('/tools/:id')
 // all of our routes will be prefixed with /api
 app.use('/api', router);
 
-// Histories:
-// https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md#configuring-your-server
-// app.get('*', function(request, response){
-//   response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
 
 /* ****************
@@ -96,6 +108,3 @@ app.use('/api', router);
 app.listen(projectConfig.SERVER_PORT, () => {
   console.log(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
 });
-
-// We start a webpack-dev-server
-webpackDevServer();
