@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Page from 'components/pages/Page';
 
 const mapStateToProps = (state) => ({
-  router: state.router,
+  routing: state.routing,
 });
 export class Home extends Page {
 

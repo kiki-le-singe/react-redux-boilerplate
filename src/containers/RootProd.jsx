@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { ReduxRouter } from 'redux-router';
+import { Router } from 'react-router';
 
 import routes from 'routes';
 
 const propTypes = {
+  history: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired,
 };
 
@@ -16,9 +17,9 @@ class RootProd extends Component {
     return (
       <Provider store={store}>
         <div className="app-container">
-          <ReduxRouter>
+          <Router history={history}>
             { routes }
-          </ReduxRouter>
+          </Router>
         </div>
       </Provider>
     );

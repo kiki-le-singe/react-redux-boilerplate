@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import createHistory from 'history/lib/createHashHistory';
+import { syncReduxAndRouter } from 'redux-simple-router';
 
 import configureStore from 'store';
 
@@ -18,7 +20,10 @@ import 'assets/vendors/icons.svg.scss';
 import 'font-awesome.scss';
 import 'styles/scss/index.scss';
 
+const history = createHistory();
 const store = configureStore();
+
+syncReduxAndRouter(history, store);
 
 window.f7App = new Framework7({
   swipePanel: 'left', // http://www.idangero.us/framework7/docs/side-panels.html#open-panels-with-swipe
@@ -26,4 +31,4 @@ window.f7App = new Framework7({
   material: true,
 });
 
-ReactDom.render(<Root store={ store } />, document.getElementById('app'));
+ReactDom.render(<Root history={ history } store={ store } />, document.getElementById('app'));
