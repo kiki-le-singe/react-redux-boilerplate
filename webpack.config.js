@@ -43,8 +43,11 @@ const deps = [
 ];
 
 const vendorDependencies = [
+  'history',
   'react',
   'react-router',
+  'redux',
+  'redux-simple-router',
   'lodash',
   'framework7',
   'classnames',
@@ -71,13 +74,11 @@ const config = {
   resolve: {
     alias: {},
 
-    // Resolve the `./src` directory so we can avoid writing
-    // ../../styles/base.css but styles/base.css
-    modulesDirectories: ['node_modules', './src'],
-
     // https://github.com/webpack/docs/wiki/configuration#resolveroot
     // See: http://stackoverflow.com/questions/27502608/resolving-require-paths-with-webpack
-    root: [FontAwesomeSCSSDir, framework7CSSDir, framework7JSDir],
+    // Resolve the `./src` directory so we can avoid writing
+    // ../../styles/base.css but styles/base.css
+    root: [srcDir, FontAwesomeSCSSDir, framework7CSSDir, framework7JSDir],
 
     extensions: ['', '.js', '.jsx']
   },
