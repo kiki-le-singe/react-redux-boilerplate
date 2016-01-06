@@ -2,6 +2,7 @@ import express from 'express'; // Web framework
 import webpack from 'webpack';
 import path from 'path';
 
+import logger from './logger';
 import routes from './routes';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHotMiddleware from './middleware/webpack-hot';
@@ -34,5 +35,5 @@ routes(app);
 ***************** */
 
 app.listen(projectConfig.SERVER_PORT, () => {
-  console.log(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
+  logger.info(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
 });
