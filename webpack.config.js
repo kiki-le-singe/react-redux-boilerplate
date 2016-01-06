@@ -21,8 +21,6 @@
 // PACKAGES
 const webpack = require('webpack');
 const path = require('path');
-// https://github.com/webpack/extract-text-webpack-plugin
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // https://github.com/ampedandwired/html-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -111,11 +109,11 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css')
+        loader: 'style!css'
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+        loader: 'style!css?sourceMap!sass?sourceMap'
       },
       {
         test: /\.(png|jpe?g)$/,
@@ -140,7 +138,6 @@ const config = {
       filename: '404.html',
       template: path.resolve(srcDir, '404.tpl.html')
     }),
-    new ExtractTextPlugin('[name].[contenthash].css'),
 
     // https://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin
     new webpack.optimize.OccurenceOrderPlugin(),
