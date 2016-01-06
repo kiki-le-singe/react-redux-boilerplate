@@ -5,6 +5,7 @@ const QUIET_MODE = !!argv.quiet;
 
 export default function (compiler, publicPath) {
   // http://webpack.github.io/docs/webpack-dev-server.html
+  // http://webpack.github.io/docs/webpack-dev-middleware.html
   const webpackDevMiddlewareOptions = {
     publicPath, // http://webpack.github.io/docs/webpack-dev-middleware.html#publicpath
     quiet: QUIET_MODE,
