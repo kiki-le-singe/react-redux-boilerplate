@@ -64,7 +64,14 @@ class ListItemSwipeout extends Component {
         </div>
         <div className="swipeout-actions-right">
           <a href="#" className="mark bg-orange ajax">Mark</a>
-          <a href="#" className="swipeout-delete swipeout-overswipe ajax" data-confirm="Are you sure want to delete this item?" data-confirm-title="Delete?">Delete</a>
+          <a
+            href="#"
+            className="swipeout-delete swipeout-overswipe ajax"
+            data-confirm="Are you sure want to delete this item?"
+            data-confirm-title="Delete?"
+          >
+            Delete
+          </a>
         </div>
       </li>
     );

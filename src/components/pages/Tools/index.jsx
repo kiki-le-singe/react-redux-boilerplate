@@ -1,5 +1,4 @@
 // Docs:
-// - https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/components/TodoApp.react.js
 // - http://www.idangero.us/framework7/docs/modal.html#indicator
 
 import React from 'react';

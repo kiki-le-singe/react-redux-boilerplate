@@ -7,7 +7,11 @@ class FloatingButtonTools extends React.Component {
 
   render() {
     return (
-      <a href="#" data-popup=".popup-create-tool" className="floating-button color-pink open-popup ajax">
+      <a
+        href="#"
+        data-popup=".popup-create-tool"
+        className="floating-button color-pink open-popup ajax"
+      >
         <i className="icon icon-plus"></i>
       </a>
     );

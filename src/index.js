@@ -26,7 +26,8 @@ const store = configureStore();
 syncReduxAndRouter(history, store);
 
 window.f7App = new Framework7({
-  swipePanel: 'left', // http://www.idangero.us/framework7/docs/side-panels.html#open-panels-with-swipe
+  // http://www.idangero.us/framework7/docs/side-panels.html#open-panels-with-swipe
+  swipePanel: 'left',
   ajaxLinks: 'a.ajax',
   material: true,
 });

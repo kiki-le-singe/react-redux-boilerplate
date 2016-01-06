@@ -24,9 +24,7 @@ export class Counter extends Page {
         <div className="content-block">
           <p><a href="#" className="ajax" onClick={increment}>Increment Counter</a></p>
           <p><a href="#" className="ajax" onClick={decrement}>Decrement Counter</a></p>
-          {/* If no data-panel attribute, Left panel will be opened by default */}
           <p><a href="#" className="open-panel ajax">Open Left Panel</a></p>
-          {/* Click on link with "open-panel" and data-panel="right" attribute will open Right panel */}
           <p><a href="#" data-panel="right" className="open-panel ajax">Open Right Panel</a></p>
         </div>
       </div>

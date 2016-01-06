@@ -111,7 +111,13 @@ class PopupCreateTool extends Component {
                     </ul>
                   </div>
                   <div className="content-block">
-                    <a href="#" className="button button-big button-fill button-raised color-red ajax" onClick={this.handleClick}>Submit</a>
+                    <a
+                      href="#"
+                      className="button button-big button-fill button-raised color-red ajax"
+                      onClick={this.handleClick}
+                    >
+                      Submit
+                    </a>
                   </div>
                 </form>
               </div>

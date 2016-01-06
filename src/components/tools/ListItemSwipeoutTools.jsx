@@ -6,7 +6,6 @@ import toolActions from 'actions/ToolActions';
 import ListItemSwipeout from 'components/lists/ListItemSwipeout';
 
 // Docs:
-// - https://github.com/facebook/flux/blob/master/examples/flux-todomvc/js/components/TodoItem.react.js
 // - http://www.idangero.us/framework7/docs/pages-inline.html
 // - http://www.idangero.us/framework7/docs/modal.html#indicator
 
