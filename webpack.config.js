@@ -148,9 +148,8 @@ const config = {
     // switch the server to hot mode
     new webpack.HotModuleReplacementPlugin(),
 
-    // causes error avec eslint-loader, comment for now.
     // https://github.com/webpack/docs/wiki/list-of-plugins#noerrorsplugin
-    // new webpack.NoErrorsPlugin(),
+    new webpack.NoErrorsPlugin(),
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
     new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js'),
