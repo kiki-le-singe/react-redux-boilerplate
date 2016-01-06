@@ -68,7 +68,7 @@ const config = {
     vendors: vendorDependencies
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: '/',
     filename: '[name]-[hash].js',
     publicPath: '/',
   },
