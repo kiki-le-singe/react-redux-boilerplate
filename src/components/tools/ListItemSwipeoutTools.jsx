@@ -23,7 +23,7 @@ export class ListItemSwipeoutTools extends ListItemSwipeout {
 
     // Load about page:
     mainView.router.load({ pageName: 'tool' });
-  }
+  };
 
   showAlert() {
     super.showAlert();

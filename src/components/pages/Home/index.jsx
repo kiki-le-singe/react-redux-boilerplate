@@ -1,12 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import Page from 'components/pages/Page';
 
-const mapStateToProps = (state) => ({
-  routing: state.routing,
-});
-export class Home extends Page {
+export default class Home extends Page {
 
   getDataPage() {
     return 'home';
@@ -29,5 +25,3 @@ export class Home extends Page {
     );
   }
 }
-
-export default connect(mapStateToProps)(Home);

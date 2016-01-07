@@ -21,7 +21,6 @@
 // PACKAGES
 const webpack = require('webpack');
 const path = require('path');
-// https://github.com/ampedandwired/html-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // CONFIG
@@ -32,8 +31,6 @@ const srcDir = path.resolve(__dirname, 'src');
 const assetsDir = path.resolve(__dirname, 'src/assets');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
-const framework7CSSDir = path.resolve(nodeModulesDir, 'framework7/dist/css');
-const FontAwesomeSCSSDir = path.resolve(nodeModulesDir, 'font-awesome/scss');
 
 const deps = [
   'redux/dist/redux.min.js',
@@ -42,11 +39,9 @@ const deps = [
 ];
 
 const vendorDependencies = [
-  'history',
   'react',
   'react-router',
   'redux',
-  'redux-simple-router',
   'lodash',
   'framework7',
   'classnames',
@@ -77,7 +72,7 @@ const config = {
     // See: http://stackoverflow.com/questions/27502608/resolving-require-paths-with-webpack
     // Resolve the `./src` directory so we can avoid writing
     // ../../styles/base.css but styles/base.css
-    root: [srcDir, FontAwesomeSCSSDir, framework7CSSDir, framework7JSDir],
+    root: [srcDir, framework7JSDir],
 
     extensions: ['', '.js', '.jsx']
   },
@@ -109,11 +104,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style!css?sourceMap!sass?sourceMap'
+        loader: 'style!css!postcss'
       },
       {
         test: /\.(png|jpe?g)$/,
@@ -125,7 +116,19 @@ const config = {
       }
     ]
   },
+  // https://github.com/postcss/postcss-loader
+  // http://cssnext.io/postcss/
+  postcss: function (webpack) {
+    return [
+      require('postcss-import')({ addDependencyTo: webpack }),
+      require('postcss-url')(),
+      require('postcss-cssnext')(),
+      require('autoprefixer')({ browsers: [ 'last 2 versions' ] }),
+      require('postcss-browser-reporter')(),
+    ]
+  },
   plugins: [
+    // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       title: 'React Redux Boilerplate',
       hash: true,
@@ -159,6 +162,9 @@ const config = {
       __PROD__: projectConfig.__PROD__,
       __DEBUG__: projectConfig.__DEBUG__
     }),
+
+    // https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
+    new webpack.optimize.DedupePlugin(),
   ]
 };
 

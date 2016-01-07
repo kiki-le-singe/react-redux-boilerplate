@@ -10,8 +10,6 @@
 
 > Node `^5.0.0`
 
- * [sass](http://sass-lang.com/)
-
 ## Optional
 
  * [Gulp](http://gulpjs.com/)
@@ -139,11 +137,9 @@ These default to:
 
 ```js
 [
-  'history',
   'react',
   'react-router',
   'redux',
-  'redux-simple-router',
   'lodash',
   'framework7',
   'classnames',
@@ -167,19 +163,19 @@ new webpack.DefinePlugin({
 
 ## Styles
 
-You can use both `.scss` and `.css` file extensions. See the `~/src/styles` directory.
+You can use `.css` file extensions using the latest CSS syntax with `PostCSS-cssnext`. See the `~/src/styles` directory.
 
 ## Features
 
  * [React](https://facebook.github.io/react/)
- * [React Router](https://github.com/rackt/react-router)
+ * [React Router](https://github.com/rackt/react-router) `2.0.0-rc4`
  * [Redux](https://github.com/rackt/redux)
- * [Redux Simple Router](https://github.com/rackt/redux-simple-router)
  * [Redux DevTools](https://github.com/gaearon/redux-devtools)
  * [Lo-Dash](http://lodash.com/)
  * [classnames](https://www.npmjs.com/package/classnames)
  * [superagent](https://github.com/visionmedia/superagent)
  * [Express](http://expressjs.com/)
+ * [cssnext](http://cssnext.io/)
  * [Framework7](http://www.idangero.us/framework7/)
 
 > Framework7 is used as HTML framework to develop hybrid mobile apps or web apps. You can use what you want.
@@ -190,6 +186,7 @@ You can use both `.scss` and `.css` file extensions. See the `~/src/styles` dire
   * [Airbnb's .eslintrc](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
  * [Babel](https://babeljs.io/)
  * [Webpack](https://github.com/webpack/webpack)
+ * [PostCSS](https://github.com/postcss/postcss)
 
 ## API
 
@@ -229,8 +226,7 @@ By default the root access for the API is http://localhost:8080/api. Available e
 
 ### Contexts
 
- * [Contexts in React](https://facebook.github.io/react/blog/2014/03/28/the-road-to-1.0.html#context)
- * [Introduction to contexts in reactjs](https://www.tildedave.com/2014/11/15/introduction-to-contexts-in-react-js.html)
+ * [Contexts in React](https://facebook.github.io/react/docs/context.html)
 
  > Contexts allow to pass values through a tree without having to use props.
 

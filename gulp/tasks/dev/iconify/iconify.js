@@ -11,7 +11,7 @@ var config = require('./config').iconify;
 gulp.task('iconify', function(){
   iconify({
     src: config.src,
-    cssOutput: false,
-    scssOutput: config.scssOutput
+    cssOutput: config.output,
+    scssOutput: false
   });
 });

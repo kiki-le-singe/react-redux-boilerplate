@@ -3,6 +3,6 @@
 module.exports = {
   iconify: {
     src: ['src/assets/images/logos/*.svg'],
-    scssOutput: 'src/assets/vendors',
-  }
+    output: 'src/assets/vendors',
+  },
 };
