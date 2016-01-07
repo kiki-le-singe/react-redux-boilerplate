@@ -18,8 +18,6 @@ const srcDir = path.resolve(__dirname, 'src');
 const assetsDir = path.resolve(__dirname, 'src/assets');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
-const framework7CSSDir = path.resolve(nodeModulesDir, 'framework7/dist/css');
-const FontAwesomeSCSSDir = path.resolve(nodeModulesDir, 'font-awesome/scss');
 
 const HTMLMinifier = {
   removeComments: true,
@@ -63,7 +61,7 @@ const config = {
     // See: http://stackoverflow.com/questions/27502608/resolving-require-paths-with-webpack
     // Resolve the `./src` directory so we can avoid writing
     // ../../styles/base.css but styles/base.css
-    root: [srcDir, FontAwesomeSCSSDir, framework7CSSDir, framework7JSDir],
+    root: [srcDir, framework7JSDir],
 
     extensions: ['', '.js', '.jsx']
   },
@@ -88,11 +86,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css')
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
       },
       {
         test: /\.(png|jpe?g)$/,
@@ -102,6 +96,14 @@ const config = {
         test: /\.(woff|woff2|eot|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file?name=fonts/[name].[ext]'
       }
+    ]
+  },
+  postcss: function (webpack) {
+    return [
+      require('postcss-import')({ addDependencyTo: webpack }),
+      require('postcss-url')(),
+      require('postcss-cssnext')(),
+      require('autoprefixer')({ browsers: [ 'last 2 versions' ] }),
     ]
   },
   plugins: [
@@ -119,7 +121,9 @@ const config = {
       minify: HTMLMinifier,
       template: path.resolve(srcDir, '404.tpl.html')
     }),
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('[name].[contenthash].css', {
+      allChunks: true
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
 
     // optimizations

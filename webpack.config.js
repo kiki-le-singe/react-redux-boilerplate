@@ -32,8 +32,6 @@ const srcDir = path.resolve(__dirname, 'src');
 const assetsDir = path.resolve(__dirname, 'src/assets');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
-const framework7CSSDir = path.resolve(nodeModulesDir, 'framework7/dist/css');
-const FontAwesomeSCSSDir = path.resolve(nodeModulesDir, 'font-awesome/scss');
 
 const deps = [
   'redux/dist/redux.min.js',
@@ -77,7 +75,7 @@ const config = {
     // See: http://stackoverflow.com/questions/27502608/resolving-require-paths-with-webpack
     // Resolve the `./src` directory so we can avoid writing
     // ../../styles/base.css but styles/base.css
-    root: [srcDir, FontAwesomeSCSSDir, framework7CSSDir, framework7JSDir],
+    root: [srcDir, framework7JSDir],
 
     extensions: ['', '.js', '.jsx']
   },
@@ -109,11 +107,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style!css?sourceMap!sass?sourceMap'
+        loader: 'style!css!postcss'
       },
       {
         test: /\.(png|jpe?g)$/,
@@ -123,6 +117,17 @@ const config = {
         test: /\.(woff|woff2|eot|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file?name=fonts/[name].[ext]'
       }
+    ]
+  },
+  // https://github.com/postcss/postcss-loader
+  // http://cssnext.io/postcss/
+  postcss: function (webpack) {
+    return [
+      require('postcss-import')({ addDependencyTo: webpack }),
+      require('postcss-url')(),
+      require('postcss-cssnext')(),
+      require('autoprefixer')({ browsers: [ 'last 2 versions' ] }),
+      require('postcss-browser-reporter')(),
     ]
   },
   plugins: [
