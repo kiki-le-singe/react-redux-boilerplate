@@ -21,7 +21,6 @@
 // PACKAGES
 const webpack = require('webpack');
 const path = require('path');
-// https://github.com/ampedandwired/html-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // CONFIG
@@ -129,6 +128,7 @@ const config = {
     ]
   },
   plugins: [
+    // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       title: 'React Redux Boilerplate',
       hash: true,
