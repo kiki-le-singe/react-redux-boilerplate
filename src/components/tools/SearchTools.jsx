@@ -6,7 +6,7 @@ class SearchTools extends Component {
 
   handleChange = (e) => {
     ToolActions.search(e.target.value);
-  }
+  };
 
   render() {
     return (

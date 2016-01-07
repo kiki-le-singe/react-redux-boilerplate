@@ -59,7 +59,7 @@ class PopupCreateTool extends Component {
 
       f7App.closeModal(popupCreateToolEl);
     });
-  }
+  };
 
   render() {
     return (
