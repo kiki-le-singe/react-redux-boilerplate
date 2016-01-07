@@ -7,7 +7,6 @@ import Page from 'components/pages/Page';
 
 // Which props do we want to inject, given the global state?
 const mapStateToProps = (state) => ({
-  routing: state.routing,
   counter: state.counter,
 });
 export class Counter extends Page {
