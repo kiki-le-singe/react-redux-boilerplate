@@ -162,6 +162,9 @@ const config = {
       __PROD__: projectConfig.__PROD__,
       __DEBUG__: projectConfig.__DEBUG__
     }),
+
+    // https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
+    new webpack.optimize.DedupePlugin(),
   ]
 };
 
