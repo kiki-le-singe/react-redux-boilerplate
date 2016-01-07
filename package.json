@@ -16,17 +16,19 @@
     "react",
     "react-router",
     "redux",
-    "redux-simple-router",
     "framework7",
     "font-awesome",
     "es6",
     "ES2015",
+    "es7",
     "babel",
     "webpack",
     "hot",
     "reload",
     "hmr",
-    "express"
+    "express",
+    "postcss",
+    "cssnext"
   ],
   "description": "Get started with React, Redux, Express...",
   "engines": {
