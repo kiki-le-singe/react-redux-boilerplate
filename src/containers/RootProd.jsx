@@ -12,7 +12,7 @@ const propTypes = {
 class RootProd extends Component {
 
   render() {
-    const { store } = this.props;
+    const { history, store } = this.props;
 
     return (
       <Provider store={store}>
