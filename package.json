@@ -116,6 +116,7 @@
     "dev:quiet": "npm run dev -- --quiet",
     "dev:stub": "npm run dev -- --stub",
     "compile": "NODE_ENV=production webpack -p --progress --config webpack.production.config.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "styleguide": "rm -rf build_styleguide && webpack --config webpack.styleguide.config.js"
   }
 }
