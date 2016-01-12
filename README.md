@@ -36,7 +36,7 @@ $ npm install
 $ npm start
 ```
 
-Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development.
+Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development. The style guides will be generated in `~/styleguide`.
 
 ```shell
 $ npm compile
@@ -81,6 +81,12 @@ $ npm run lint
 Lint all `.js` files.
 
 ```shell
+$ npm run styleguide
+```
+
+Build style guides.
+
+```shell
 $ node server app.production.js
 ```
 
@@ -122,6 +128,7 @@ Soon...
 │   ├── store                # Redux store
 │   ├── styles               # Application-wide styles
 │   └── index.js             # Application bootstrap and rendering
+├── styleguide               # Application style guides
 ├── webpack                  # Environment-specific configuration files for webpack (Soon...)
 ```
 
@@ -129,7 +136,16 @@ Soon...
 
 ### Configuration
 
-The webpack compiler configuration is located to the root `~/webpack.config.js` and `~/webpack.production.config.js`. You can also see the `~/.babelrc` configuration file.
+The webpack compiler configuration is located to the root:
+
+* `~/webpack.config.js`
+> Webpack configuration for the development mode.
+* `~/webpack.production.config.js`
+> Webpack configuration for the production mode.
+* `~/webpack.styleguide.config.js`
+> Webpack configuration to build assets for the style guides.
+
+You can also see the `~/.babelrc` configuration file.
 
 ### Vendor Bundle
 
@@ -163,7 +179,7 @@ new webpack.DefinePlugin({
 
 ## Styles
 
-You can use `.css` file extensions using the latest CSS syntax with `PostCSS-cssnext`. See the `~/src/styles` directory.
+You can use `.css` file extensions using the latest CSS syntax with `PostCSS-cssnext`. See the `~/src/styles` directory. `mdcss` is used to generate a style guide of the application, you can see both the [repository](https://github.com/jonathantneal/mdcss) and the [official documentation](http://jonathantneal.github.io/mdcss-theme-github/demo/).
 
 ## Features
 
@@ -187,6 +203,7 @@ You can use `.css` file extensions using the latest CSS syntax with `PostCSS-css
  * [Babel](https://babeljs.io/)
  * [Webpack](https://github.com/webpack/webpack)
  * [PostCSS](https://github.com/postcss/postcss)
+  * [A searchable catalog of PostCSS plugins](http://postcss.parts/)
 
 ## API
 
