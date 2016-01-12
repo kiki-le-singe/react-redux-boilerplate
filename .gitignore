@@ -5,4 +5,5 @@ temp
 dist
 .sass-cache
 build/*
+build_styleguide
 reports
