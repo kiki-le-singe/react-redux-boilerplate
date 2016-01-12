@@ -6,4 +6,5 @@ dist
 .sass-cache
 build/*
 build_styleguide
+styleguide
 reports
