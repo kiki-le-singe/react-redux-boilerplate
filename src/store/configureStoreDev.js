@@ -2,6 +2,7 @@
 // https://github.com/rackt/redux/blob/master/examples/todomvc/store/configureStore.js
 
 import { createStore, applyMiddleware, compose } from 'redux';
+import { syncHistory } from 'redux-simple-router';
 
 import DevTools from 'containers/DevTools';
 
@@ -11,22 +12,28 @@ import rootReducer from 'reducers';
 
 let finalCreateStore;
 
-if (__DEBUG__) {
-  finalCreateStore = compose(
-    // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
-    // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
-    applyMiddleware(logger, api),
-    // Provides support for DevTools:
-    DevTools.instrument()
-  )(createStore);
-} else {
-  finalCreateStore = compose(
-    applyMiddleware(logger, api)
-  )(createStore);
-}
+const configureStoreDev = (initialState = {}, history) => {
+  // Sync dispatched route actions to the history
+  const reduxRouterMiddleware = syncHistory(history);
 
-const configureStoreDev = (initialState) => {
+  if (__DEBUG__) {
+    finalCreateStore = compose(
+      // applyMiddleware(...middlewares): http://rackt.github.io/redux/docs/api/applyMiddleware.html
+      // createStore(reducer, [initialState]): http://rackt.github.io/redux/docs/api/createStore.html
+      applyMiddleware(reduxRouterMiddleware, logger, api),
+      // Provides support for DevTools:
+      DevTools.instrument()
+    )(createStore);
+  } else {
+    finalCreateStore = compose(
+      applyMiddleware(reduxRouterMiddleware, logger, api)
+    )(createStore);
+  }
+
   const store = finalCreateStore(rootReducer, initialState);
+
+  // Required for replaying actions from devtools to work
+  // if (__DEBUG__) reduxRouterMiddleware.listenForReplays(store);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

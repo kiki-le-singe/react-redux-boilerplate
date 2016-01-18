@@ -1,8 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Page from 'components/pages/Page';
 
-class Hello extends Page {
+const mapStateToProps = (state) => ({
+  routing: state.routing, // Available with `redux-simple-router`
+  tools: state.tools,
+});
+export class Hello extends Page {
 
   getDataPage() {
     return 'hello-world';
@@ -21,4 +26,4 @@ class Hello extends Page {
   }
 }
 
-export default Hello;
+export default connect(mapStateToProps)(Hello);

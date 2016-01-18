@@ -14,7 +14,7 @@ import 'framework7';
 import 'assets/vendors/icons.svg.css';
 import 'styles/app.css';
 
-const store = configureStore();
+const store = configureStore({}, hashHistory);
 const root = (<Root history={ hashHistory } store={ store } />);
 
 window.f7App = new Framework7({
