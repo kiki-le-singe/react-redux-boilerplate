@@ -2,6 +2,7 @@
 // https://github.com/rackt/redux/blob/master/examples/todomvc/reducers/index.js
 
 import { combineReducers } from 'redux';
+import { routeReducer } from 'redux-simple-router';
 
 import tools from './tools';
 import counter from './counter';
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   tools,
   counter,
   indicator,
+  routing: routeReducer,
 });
 
 export default rootReducer;
