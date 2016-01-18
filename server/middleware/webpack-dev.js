@@ -6,6 +6,7 @@ const QUIET_MODE = !!argv.quiet;
 export default function (compiler, publicPath) {
   // http://webpack.github.io/docs/webpack-dev-server.html
   // http://webpack.github.io/docs/webpack-dev-middleware.html
+  // http://stackoverflow.com/questions/26845101/webpack-dev-middleware-does-not-compile-output-into-folder
   const webpackDevMiddlewareOptions = {
     publicPath, // http://webpack.github.io/docs/webpack-dev-middleware.html#publicpath
     quiet: QUIET_MODE,
