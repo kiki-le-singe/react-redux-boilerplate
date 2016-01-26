@@ -10,16 +10,16 @@ class ListSwipeout extends Component {
   getDatas() {
     const { data } = this.props;
 
-    return data.map((item, index) => {
-      return (
+    return data.map((item, index) => (
+      (
         <ListItemSwipeout
           title={item.title}
           text={item.text}
           slug={item.slug}
           key={index}
         />
-      );
-    });
+      )
+    ));
   }
 
   render() {

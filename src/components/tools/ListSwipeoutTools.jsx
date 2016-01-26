@@ -20,13 +20,13 @@ class ListSwipeoutTools extends ListSwipeout {
     let tools = data;
 
     if (searchValue) {
-      tools = tools.filter(tool => {
-        return tool.title.toLowerCase().search(searchValue.toLowerCase()) !== -1;
-      });
+      tools = tools.filter(tool => (
+        tool.title.toLowerCase().search(searchValue.toLowerCase()) !== -1
+      ));
     }
 
-    return tools.map((item, index) => {
-      return (
+    return tools.map((item, index) => (
+      (
         <ListItemSwipeoutTools
           id={item.id}
           title={item.title}
@@ -34,8 +34,8 @@ class ListSwipeoutTools extends ListSwipeout {
           slug={item.slug}
           key={index}
         />
-      );
-    });
+      )
+    ));
   }
 }
 
