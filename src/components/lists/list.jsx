@@ -10,11 +10,9 @@ class List extends Component {
   getMenuItems() {
     const { menuItems } = this.props;
 
-    return menuItems.map((item, index) => {
-      return (
-        <ListItem route={item.route} text={item.text} key={index} />
-      );
-    });
+    return menuItems.map((item, index) => (
+      (<ListItem route={item.route} text={item.text} key={index} />)
+    ));
   }
 
   render() {

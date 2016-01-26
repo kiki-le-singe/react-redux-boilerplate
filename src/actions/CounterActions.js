@@ -7,12 +7,12 @@ import types from 'constants/CounterConstants';
  * action creators
  */
 
-const increment = () => {
-  return { type: types.INCREMENT_COUNTER };
-};
+const increment = () => (
+  { type: types.INCREMENT_COUNTER }
+);
 
-const decrement = () => {
-  return { type: types.DECREMENT_COUNTER };
-};
+const decrement = () => (
+  { type: types.DECREMENT_COUNTER }
+);
 
 export default { increment, decrement };
