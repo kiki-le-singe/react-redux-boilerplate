@@ -1,7 +1,7 @@
 // http://rackt.github.io/redux/docs/basics/Actions.html
 // https://github.com/rackt/redux/blob/master/examples/todomvc/actions/todos.js
 
-import types from 'constants/CounterConstants';
+import types from '../constants/CounterConstants';
 
 /*
  * action creators

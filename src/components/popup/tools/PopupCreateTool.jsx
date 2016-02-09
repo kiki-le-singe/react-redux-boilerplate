@@ -3,7 +3,7 @@ import ReactDom, { findDOMNode } from 'react-dom'; // eslint-disable-line
 import { kebabCase } from 'lodash/string';
 import uniqid from 'uniqid';
 
-import ToolActions from 'actions/ToolActions';
+import ToolActions from 'redux/actions/ToolActions';
 
 import TopNavBar from 'components/TopNavBar';
 import IconButton from 'components/IconButton';

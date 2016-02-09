@@ -1,4 +1,4 @@
-import types from 'constants/ToolConstants';
+import types from '../constants/ToolConstants';
 import { fetch } from 'services/tool';
 
 /*

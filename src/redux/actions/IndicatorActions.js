@@ -1,4 +1,4 @@
-import types from 'constants/IndicatorConstants';
+import types from '../constants/IndicatorConstants';
 
 /*
  * action creators

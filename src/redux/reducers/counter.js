@@ -1,7 +1,7 @@
 // http://rackt.github.io/redux/docs/basics/Reducers.html
 // https://github.com/rackt/redux/blob/master/examples/todomvc/reducers/todos.js
 
-import types from 'constants/CounterConstants';
+import types from '../constants/CounterConstants';
 
 const counter = (state = 0, action) => {
   switch (action.type) {

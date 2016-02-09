@@ -1,4 +1,4 @@
-import types from 'constants/IndicatorConstants';
+import types from '../constants/IndicatorConstants';
 
 const indicator = (state = false, action) => {
   switch (action.type) {
