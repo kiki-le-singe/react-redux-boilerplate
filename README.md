@@ -75,6 +75,13 @@ $ npm run deploy
 Cleans the `dist` folder previously created and compiles your application to disk.
 
 ```shell
+$ npm prod
+```
+
+Starts up express server to serve your app at `localhost:8080`.
+
+
+```shell
 $ npm run lint
 ```
 
@@ -114,22 +121,19 @@ Soon...
 ├── config                   # Project configuration settings (Server, Webpack, ...)
 ├── gulp                     # Gulp configuration tasks
 ├── server                   # Express application (uses webpack middleware)
-│   └── index.js             # Server application entry point
+│   └── server.dev.js        # Server dev application
+│   └── server.production.js # Server prod application
 ├── src                      # Application source code
-│   ├── actions              # Redux actions
 │   ├── assets               # Static assets
 │   ├── components           # Generic React Components
 │   ├── config               # Project configuration settings (api, ...)
-│   ├── constants            # Redux constants
-│   ├── middleware           # Redux middleware
-│   ├── reducers             # Redux reducers
+│   ├── redux                # Redux actions|constants|middleware|reducers|store
 │   ├── routes               # Application route definitions
 │   ├── services             # All kinds of services (Email, User, ...)
-│   ├── store                # Redux store
 │   ├── styles               # Application-wide styles
 │   └── index.js             # Application bootstrap and rendering
 ├── styleguide               # Application style guides
-├── webpack                  # Environment-specific configuration files for webpack (Soon...)
+├── webpack                  # Environment-specific configuration files for webpack
 ```
 
 ## Webpack
@@ -138,11 +142,11 @@ Soon...
 
 The webpack compiler configuration is located to the root:
 
-* `~/webpack.config.js`
+* `~/webpack/dev.config.js`
 > Webpack configuration for the development mode.
-* `~/webpack.production.config.js`
+* `~/webpack/prod.config.js`
 > Webpack configuration for the production mode.
-* `~/webpack.styleguide.config.js`
+* `~/webpack/styleguide.config.js`
 > Webpack configuration to build assets for the style guides.
 
 You can also see the `~/.babelrc` configuration file.
