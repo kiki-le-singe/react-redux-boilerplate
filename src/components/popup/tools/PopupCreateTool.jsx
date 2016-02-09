@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDom, { findDOMNode } from 'react-dom'; // eslint-disable-line
-import _ from 'lodash';
+import { kebabCase } from 'lodash/string';
 import uniqid from 'uniqid';
 
 import ToolActions from 'actions/ToolActions';
@@ -48,7 +48,7 @@ class PopupCreateTool extends Component {
       title,
       text,
       route,
-      slug: _.kebabCase(title),
+      slug: kebabCase(title),
     }).then(() => {
       titleEL.value = '';
       textEl.value = '';
