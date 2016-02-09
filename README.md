@@ -127,6 +127,8 @@ Soon...
 │   ├── assets               # Static assets
 │   ├── components           # Generic React Components
 │   ├── config               # Project configuration settings (api, ...)
+│   ├── containers           # Root components (Redux Provider, Router, DevTools, ...)
+│   ├── layouts              # Components page structure
 │   ├── redux                # Redux actions|constants|middleware|reducers|store
 │   ├── routes               # Application route definitions
 │   ├── services             # All kinds of services (Email, User, ...)
