@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
+    "babel-cli": "^6.5.1",
     "babel-core": "^6.5.1",
     "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.2",
@@ -113,12 +114,13 @@
     "clean:dist": "rm -rf dist",
     "deploy": "npm run clean:dist && npm run compile",
     "start": "npm run dev",
-    "dev": "npm run clean:styleguide && node server/index.js",
+    "dev": "npm run clean:styleguide && babel-node -- server/server.dev.js",
     "dev:debug": "npm run dev -- --debug",
     "dev:quiet": "npm run dev -- --quiet",
     "dev:stub": "npm run dev -- --stub",
-    "compile": "NODE_ENV=production webpack -p --progress --config webpack.production.config.js",
+    "prod": "babel-node server/server.production",
+    "compile": "NODE_ENV=production babel-node ./node_modules/.bin/webpack --optimize-minimize --progress --config ./webpack/prod.config",
     "lint": "eslint src",
-    "styleguide": "npm run clean:build:styleguide && webpack --config webpack.styleguide.config.js"
+    "styleguide": "npm run clean:build:styleguide && babel-node ./node_modules/.bin/webpack --config ./webpack/styleguide.config"
   }
 }

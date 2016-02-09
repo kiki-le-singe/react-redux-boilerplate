@@ -7,7 +7,7 @@ import routes from './routes';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHotMiddleware from './middleware/webpack-hot';
 import projectConfig from '../config';
-import webpackConfig from '../webpack.config.js';
+import webpackConfig from '../webpack/dev.config.js';
 
 const app = express(); // define server
 const compiler = webpack(webpackConfig);
