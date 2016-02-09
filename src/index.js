@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { hashHistory } from 'react-router';
 
-import configureStore from 'store';
+import configureStore from 'redux/store';
 
 import Root from 'containers/Root';
 
