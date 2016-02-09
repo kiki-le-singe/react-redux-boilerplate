@@ -1,8 +1,9 @@
 // https://github.com/bcoe/yargs
-const argv = require('yargs').argv;
+import { argv } from 'yargs';
+
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-module.exports = {
+export default {
 
   // environment
   __CLIENT__: true,
