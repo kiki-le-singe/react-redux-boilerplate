@@ -33,6 +33,7 @@ const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
 
 const deps = [
+  'redux/dist/redux.min.js',
   'framework7/dist/js/framework7.min.js',
   'font-awesome/css/font-awesome.min.css'
 ];
