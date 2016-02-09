@@ -1,7 +1,7 @@
 import React from 'react'; // eslint-disable-line
 import { connect } from 'react-redux';
 
-import toolActions from 'redux/actions/ToolActions';
+import toolActions from '../../redux/actions/ToolActions';
 
 import ListItemSwipeout from 'components/lists/ListItemSwipeout';
 

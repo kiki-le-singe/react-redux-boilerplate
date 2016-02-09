@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistory } from 'react-router-redux';
 
-import api from 'redux/middleware/api';
-import rootReducer from 'redux/reducers';
+import api from '../middleware/api';
+import rootReducer from '../reducers';
 
 const configureStoreProd = (initialState = {}, history) => {
   const finalCreateStore = compose(

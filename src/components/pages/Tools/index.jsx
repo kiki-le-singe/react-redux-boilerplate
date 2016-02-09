@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import toolsActions from 'redux/actions/ToolActions';
+import toolsActions from '../../../redux/actions/ToolActions';
 
 import Page from 'components/pages/Page';
 import ListSwipeoutTools from 'components/tools/ListSwipeoutTools';

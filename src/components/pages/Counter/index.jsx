@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import counterActions from 'redux/actions/CounterActions';
+import counterActions from '../../../redux/actions/CounterActions';
 
 import Page from 'components/pages/Page';
 

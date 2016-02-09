@@ -6,9 +6,9 @@ import { syncHistory } from 'react-router-redux';
 
 import DevTools from 'containers/DevTools';
 
-import logger from 'redux/middleware/logger';
-import api from 'redux/middleware/api';
-import rootReducer from 'redux/reducers';
+import logger from '../middleware/logger';
+import api from '../middleware/api';
+import rootReducer from '../reducers';
 
 let finalCreateStore;
 
@@ -37,8 +37,8 @@ const configureStoreDev = (initialState = {}, history) => {
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('redux/reducers', () => {
-      const nextReducer = require('redux/reducers').default;
+    module.hot.accept('../reducers', () => {
+      const nextReducer = require('../reducers').default;
       store.replaceReducer(nextReducer);
     });
   }
