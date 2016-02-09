@@ -2,7 +2,7 @@
 // https://github.com/rackt/redux/blob/master/examples/todomvc/store/configureStore.js
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { syncHistory } from 'redux-simple-router';
+import { syncHistory } from 'react-router-redux';
 
 import DevTools from 'containers/DevTools';
 
@@ -33,7 +33,7 @@ const configureStoreDev = (initialState = {}, history) => {
   const store = finalCreateStore(rootReducer, initialState);
 
   // Required for replaying actions from devtools to work
-  // if (__DEBUG__) reduxRouterMiddleware.listenForReplays(store);
+  if (__DEBUG__) reduxRouterMiddleware.listenForReplays(store);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

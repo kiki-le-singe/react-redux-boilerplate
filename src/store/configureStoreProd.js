@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { syncHistory } from 'redux-simple-router';
+import { syncHistory } from 'react-router-redux';
 
 import api from 'middleware/api';
 import rootReducer from 'reducers';
