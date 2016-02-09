@@ -7,7 +7,7 @@
 import React from 'react';
 import { Route, IndexRoute, Redirect } from 'react-router';
 
-import App from 'containers/App';
+import AppLayout from 'layouts/AppLayout';
 import Home from 'components/pages/Home';
 import About from 'components/pages/About';
 import Hello from 'components/pages/Hello';
@@ -16,7 +16,7 @@ import Tools from 'components/pages/Tools';
 import NotFound from 'components/pages/NotFound';
 
 export default (
-  <Route path="/" component={App}>
+  <Route path="/" component={AppLayout}>
     <IndexRoute component={Home} />
     <Route path="home" component={Home} />
     <Route path="hello" component={Hello} />

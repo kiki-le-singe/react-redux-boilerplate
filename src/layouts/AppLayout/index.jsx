@@ -11,7 +11,7 @@ const propTypes = {
   children: PropTypes.object,
 };
 
-class App extends Component {
+class AppLayout extends Component {
 
   render() {
     return (
@@ -42,6 +42,6 @@ class App extends Component {
   }
 }
 
-App.propTypes = propTypes;
+AppLayout.propTypes = propTypes;
 
-export default App;
+export default AppLayout;
