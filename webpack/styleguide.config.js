@@ -1,15 +1,11 @@
-/* eslint-disable */
+import webpack from 'webpack';
+import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-// PACKAGES
-const webpack = require('webpack');
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-// PATHS/DIRECTORIES
-const srcDir = path.resolve(__dirname, 'src');
-const assetsDir = path.resolve(__dirname, 'src/assets');
-const nodeModulesDir = path.resolve(__dirname, 'node_modules');
+const srcDir = path.resolve(__dirname, '../src');
+const assetsDir = path.resolve(srcDir, 'assets');
+const nodeModulesDir = path.resolve(__dirname, '../node_modules');
 const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
 
 const config = {
@@ -36,7 +32,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css!postcss'),
       },
       {
         test: /\.(png|jpe?g)$/,
@@ -48,22 +44,20 @@ const config = {
       },
     ],
   },
-  postcss: function (webpack) {
-    return [
-      require('postcss-import')({ addDependencyTo: webpack }),
-      require('postcss-url')(),
-      require('postcss-cssnext')(),
-    ]
-  },
+  postcss: webpack => ([ // eslint-disable-line
+    require('postcss-import')({ addDependencyTo: webpack }),
+    require('postcss-url')(),
+    require('postcss-cssnext')(),
+  ]),
   plugins: [
     new ExtractTextPlugin('app.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new CopyWebpackPlugin([
-      { from: assetsDir + '/images/logos/react.svg' },
+      { from: `${assetsDir}/images/logos/react.svg` },
     ]),
-  ]
+  ],
 };
 
-module.exports = config;
+export default config;
