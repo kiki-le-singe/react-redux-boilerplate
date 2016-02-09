@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
   tools,
   counter,
   indicator,
-  routing: routeReducer,
+  router: routeReducer,
 });
 
 export default rootReducer;
