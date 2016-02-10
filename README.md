@@ -111,7 +111,7 @@ See ['A mystical CSS icon solution', grunticon-like build system.](https://githu
 
 ## Configuration
 
-Soon...
+Basic project configuration is in `~/config/index.js`
 
 ## Structure
 
