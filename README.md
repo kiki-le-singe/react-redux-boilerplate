@@ -190,7 +190,7 @@ You can use `.css` file extensions using the latest CSS syntax with `PostCSS-css
 ## Features
 
  * [React](https://facebook.github.io/react/)
- * [React Router](https://github.com/rackt/react-router) `2.0.0-rc4`
+ * [React Router](https://github.com/rackt/react-router) `2.0.0-rc6`
  * [Redux](https://github.com/rackt/redux)
  * [Redux DevTools](https://github.com/gaearon/redux-devtools)
  * [Lo-Dash](http://lodash.com/)
@@ -220,8 +220,8 @@ By default the root access for the API is http://localhost:8080/api. Available e
  * [React Getting Started](https://facebook.github.io/react/docs/getting-started.html)
  * [React tutorial](https://facebook.github.io/react/docs/tutorial.html)
  * [React Router](https://github.com/rackt/react-router)
+  * [React Router Tutorial](https://github.com/rackt/react-router-tutorial)
   * [Upgrade Guide](https://github.com/rackt/react-router/tree/master/upgrade-guides)
-  * [React Router Histories](https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md)
  * [Redux](https://github.com/rackt/redux)
  * [Redux Middleware](http://redux.js.org/docs/advanced/Middleware.html)
  * [Redux applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html)
