@@ -5,12 +5,11 @@ import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import projectConfig from '../config';
+import projectConfig, { paths } from '../config';
 
-const srcDir = path.resolve(__dirname, '../src');
-const assetsDir = path.resolve(srcDir, 'assets');
-const nodeModulesDir = path.resolve(__dirname, '../node_modules');
-const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
+const srcDir = paths('src');
+const assetsDir = paths('assets');
+const framework7JSDir = paths('framework7JS');
 
 const HTMLMinifier = {
   removeComments: true,
@@ -27,28 +26,18 @@ const HTMLMinifier = {
   minifyCSS: true,
 };
 
-const vendorDependencies = [
-  'react',
-  'react-router',
-  'redux',
-  'lodash',
-  'framework7',
-  'classnames',
-  'superagent',
-];
-
 const config = {
   devtool: 'source-map',
   entry: {
-    app: './src/index',
-    vendors: vendorDependencies,
+    app: paths('entryApp'),
+    vendors: projectConfig.VENDOR_DEPENDENCIES,
   },
   resolve: {
     root: [srcDir, framework7JSDir],
     extensions: ['', '.js', '.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: paths('dist'),
     filename: '[name]-[hash].js',
   },
   module: {
@@ -94,12 +83,6 @@ const config = {
       minify: HTMLMinifier,
       inject: 'body',
       template: path.resolve(srcDir, 'index.tpl.html'),
-    }),
-    new HtmlWebpackPlugin({ // Also generate a 404.html
-      title: 'Page Not Found :(',
-      filename: '404.html',
-      minify: HTMLMinifier,
-      template: path.resolve(srcDir, '404.tpl.html'),
     }),
     new ExtractTextPlugin('[name].[contenthash].css', {
       allChunks: true,

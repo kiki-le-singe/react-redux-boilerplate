@@ -20,27 +20,17 @@ import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import projectConfig from '../config';
+import projectConfig, { paths } from '../config';
 
-const srcDir = path.resolve(__dirname, '../src');
-const assetsDir = path.resolve(srcDir, 'assets');
-const nodeModulesDir = path.resolve(__dirname, '../node_modules');
-const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
+const srcDir = paths('src');
+const assetsDir = paths('assets');
+const nodeModulesDir = paths('nodeModules');
+const framework7JSDir = paths('framework7JS');
 
 const deps = [
   'redux/dist/redux.min.js',
   'framework7/dist/js/framework7.min.js',
   'font-awesome/css/font-awesome.min.css',
-];
-
-const vendorDependencies = [
-  'react',
-  'react-router',
-  'redux',
-  'lodash',
-  'framework7',
-  'classnames',
-  'superagent',
 ];
 
 const config = {
@@ -49,11 +39,11 @@ const config = {
   entry: {
     app: [
       'webpack-hot-middleware/client?reload=true',
-      './src/index',
+      paths('entryApp'),
     ],
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
-    vendors: vendorDependencies,
+    vendors: projectConfig.VENDOR_DEPENDENCIES,
   },
   output: {
     path: '/',
@@ -137,11 +127,6 @@ const config = {
       favicon: path.resolve(assetsDir, 'favicon.ico'),
       inject: 'body',
       template: path.resolve(srcDir, 'index.tpl.html'),
-    }),
-    new HtmlWebpackPlugin({ // Also generate a 404.html
-      title: 'Page Not Found :(',
-      filename: '404.html',
-      template: path.resolve(srcDir, '404.tpl.html'),
     }),
 
     // https://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin

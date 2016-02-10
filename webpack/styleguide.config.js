@@ -1,17 +1,17 @@
 import webpack from 'webpack';
-import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-const srcDir = path.resolve(__dirname, '../src');
-const assetsDir = path.resolve(srcDir, 'assets');
-const nodeModulesDir = path.resolve(__dirname, '../node_modules');
-const framework7JSDir = path.resolve(nodeModulesDir, 'framework7/dist/js');
+import { paths } from '../config';
+
+const srcDir = paths('src');
+const assetsDir = paths('assets');
+const framework7JSDir = paths('framework7JS');
 
 const config = {
-  entry: './src/index',
+  entry: paths('entryApp'),
   output: {
-    path: path.resolve(__dirname, 'build_styleguide'),
+    path: paths('styleguideBuild'),
     filename: 'app.js',
   },
   resolve: {
