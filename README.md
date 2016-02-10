@@ -2,7 +2,12 @@
 
 ## Introduction
 
-> This project is mainly to train with tools like [babeljs.io](https://babeljs.io/), [React](https://facebook.github.io/react/), [Redux](https://github.com/rackt/redux), ES6/ES2015... And then I used it as Boilerplate for my react projects. So don't worry it works :)
+> I started this project to learn tools like [React](https://facebook.github.io/react/), [Redux](https://github.com/rackt/redux), [Webpack](https://webpack.github.io/), [babeljs.io](https://babeljs.io/), [ES6/ES2015](https://babeljs.io/docs/learn-es2015/)... I did it mainly for fun. And then I used it as Boilerplate for my React|Redux projects. So don't worry it works :p. It's not perfect but it works :).
+
+> I use `Framework7` as HTML framework but it's not mandatory. Its implementation with `React` is not perfect. I use it just to simplify my life with HTML/CSS in a mobile context.
+You are free to choose another tool. You will need to change some configs and create your own pages, component...
+
+> Enjoy it! :)
 
 ## Requirements
 
