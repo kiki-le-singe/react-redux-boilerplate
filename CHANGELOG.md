@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2016-02-10)
+
+
+### docs
+
+* docs(README): update `Introduction` ([2f18d2a](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/2f18d2a))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-02-10)
 
