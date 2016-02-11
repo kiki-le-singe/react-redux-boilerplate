@@ -1,3 +1,21 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2016-02-11)
+
+
+### chore
+
+* chore(package): update packages ([ba23799](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/ba23799))
+
+### docs
+
+* docs(README): update documentation ([a6da3f9](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/a6da3f9))
+
+### release
+
+* release(package): release 1.0.2 ([b367b90](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/b367b90))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2016-02-10)
 
