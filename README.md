@@ -195,7 +195,7 @@ You can use `.css` file extensions using the latest CSS syntax with `PostCSS-css
 ## Features
 
  * [React](https://facebook.github.io/react/)
- * [React Router](https://github.com/rackt/react-router) `2.0.0-rc6`
+ * [React Router](https://github.com/rackt/react-router)
  * [Redux](https://github.com/rackt/redux)
  * [Redux DevTools](https://github.com/gaearon/redux-devtools)
  * [Lo-Dash](http://lodash.com/)
