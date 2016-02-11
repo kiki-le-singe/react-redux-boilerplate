@@ -48,7 +48,7 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
-    "react-router": "^2.0.0-rc6",
+    "react-router": "^2.0.0",
     "react-router-redux": "^3.0.0",
     "redux": "^3.3.1",
     "superagent": "^1.7.2",
@@ -57,10 +57,10 @@
     "yargs": "^3.32.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
+    "autoprefixer": "^6.3.2",
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.1",
-    "babel-eslint": "^5.0.0-beta6",
+    "babel-eslint": "^5.0.0-beta9",
     "babel-loader": "^6.2.2",
     "babel-plugin-transform-runtime": "^6.5.0",
     "babel-preset-es2015": "^6.5.0",
@@ -79,7 +79,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.1",
-    "gulp-conventional-changelog": "^1.0.0",
+    "gulp-conventional-changelog": "^1.0.1",
     "gulp-iconify": "^0.4.0",
     "gulp-load-plugins": "^1.0.0",
     "html-webpack-plugin": "^2.8.1",
@@ -92,7 +92,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-safari-launcher": "^0.1.1",
-    "mdcss": "^1.3.0",
+    "mdcss": "^1.5.1",
     "mdcss-theme-github": "^2.0.1",
     "node-sass": "^3.4.2",
     "postcss-cssnext": "^2.4.0",
@@ -107,7 +107,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.6.4"
+    "webpack-hot-middleware": "^2.7.1"
   },
   "scripts": {
     "clean:build:styleguide": "rm -rf build_styleguide",
