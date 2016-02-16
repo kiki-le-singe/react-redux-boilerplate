@@ -1,12 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { syncHistory } from 'react-router-redux';
 
 import api from '../middleware/api';
 import rootReducer from '../reducers';
 
-const configureStoreProd = (initialState = {}, history) => {
+const configureStoreProd = (initialState = {}) => {
   const finalCreateStore = compose(
-    applyMiddleware(syncHistory(history), api)
+    applyMiddleware(api)
   )(createStore);
 
   return finalCreateStore(rootReducer, initialState);
