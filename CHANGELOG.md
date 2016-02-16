@@ -1,3 +1,21 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2016-02-16)
+
+
+### chore
+
+* chore(package): update react-router-redux package ([ba98994](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/ba98994))
+
+### feat
+
+* feat(react-redux-router): upgrade app with the beta version of react-redux-router ([dcb8c7c](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/dcb8c7c))
+
+### release
+
+* release(package): release 1.1.0 ([233ce04](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/233ce04))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2016-02-16)
 
