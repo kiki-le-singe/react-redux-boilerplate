@@ -1,3 +1,18 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2016-02-16)
+
+
+### refactor
+
+* refactor(__tests__): remove for now unused/unfunctional tests ([7641381](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/7641381))
+* refactor(package): remove for now unused packages ([a9746d9](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/a9746d9))
+
+### release
+
+* release(package): release 1.0.3 ([3078776](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/3078776))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2016-02-11)
 
