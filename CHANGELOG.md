@@ -1,3 +1,33 @@
+<a name="1.1.2"></a>
+## 1.1.2 (2016-02-25)
+
+
+### chore
+
+* chore(package): upgrade packages ([d66f9a3](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/d66f9a3))
+
+### docs
+
+* docs(README): update documentation ([d7b4197](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/d7b4197))
+
+### fix
+
+* fix(webpack): You may need an appropriate loader to handle this file type. ([02e13e7](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/02e13e7))
+
+### refactor
+
+* refactor(webpack): remove duplicate line ([38ae008](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/38ae008))
+
+### release
+
+* release(package): release 1.1.2 ([d789d36](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/d789d36))
+
+### style
+
+* style(linter): fix linter ([292447e](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/292447e))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2016-02-25)
 

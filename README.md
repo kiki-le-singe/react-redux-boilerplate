@@ -44,7 +44,7 @@ $ npm start
 Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development. The style guides will be generated in `~/styleguide`.
 
 ```shell
-$ npm compile
+$ npm run compile
 ```
 
 It does some optimizations and Compiles the application, for the production, to disk (`~/dist` by default).
@@ -80,7 +80,7 @@ $ npm run deploy
 Cleans the `dist` folder previously created and compiles your application to disk.
 
 ```shell
-$ npm prod
+$ npm run prod
 ```
 
 Starts up express server to serve your app at `localhost:8080`.

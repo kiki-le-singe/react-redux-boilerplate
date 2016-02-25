@@ -27,8 +27,7 @@ const config = {
       },
       {
         test: /\.json$/,
-        loaders: ['json'],
-        include: [srcDir],
+        loader: 'json',
       },
       {
         test: /\.css$/,

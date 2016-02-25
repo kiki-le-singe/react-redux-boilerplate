@@ -52,8 +52,7 @@ const config = {
       },
       {
         test: /\.json$/,
-        loaders: ['json'],
-        include: [srcDir],
+        loader: 'json',
       },
       {
         test: /\.css$/,
@@ -87,7 +86,6 @@ const config = {
     new ExtractTextPlugin('[name].[contenthash].css', {
       allChunks: true,
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
 
     // optimizations
     // http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin

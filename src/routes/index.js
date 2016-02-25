@@ -23,7 +23,7 @@ export default (
     <Route path="about" component={About} />
     <Route path="counter" component={Counter} />
     <Route path="tools" component={Tools} />
-    <Route path="404" component={NotFound}/>
+    <Route path="404" component={NotFound} />
     <Redirect from="*" to="404" />
   </Route>
 );
