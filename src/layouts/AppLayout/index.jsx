@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 
 import LeftSidePanel from 'components/LeftSidePanel';
 import RightSidePanel from 'components/RightSidePanel';
