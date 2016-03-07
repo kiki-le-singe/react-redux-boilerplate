@@ -1,3 +1,14 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2016-03-07)
+
+* release(package): release 1.2.0 ([eacab4d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/eacab4d))
+* style(AppLayout): remove unused `Component instance ([05fcedc](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/05fcedc))
+* style(linter): fix prefer-stateless-function ([e8a158e](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/e8a158e))
+* fix(stateless.component): cannot return null in a stateless function ([6461895](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/6461895))
+* chore(package): upgrade packages ([8baa017](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/8baa017))
+
+
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2016-02-25)
 
