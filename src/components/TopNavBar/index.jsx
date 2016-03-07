@@ -16,10 +16,10 @@ const defaultProps = {
   isLeftIcon: true,
 };
 
-class TopNavBar extends React.Component {
+function TopNavBar(props) {
+  const { title, isLeftIcon, isBackPage, iconElementRight } = props;
 
-  renderLeftIcon() {
-    const { isLeftIcon, isBackPage } = this.props;
+  const renderLeftIcon = () => {
     let icon;
 
     if (!isLeftIcon) {
@@ -45,11 +45,9 @@ class TopNavBar extends React.Component {
         {icon}
       </div>
     );
-  }
+  };
 
-  renderRightIcon() {
-    const { iconElementRight } = this.props;
-
+  const renderRightIcon = () => {
     if (!iconElementRight) {
       return false;
     }
@@ -59,21 +57,17 @@ class TopNavBar extends React.Component {
         {iconElementRight}
       </div>
     );
-  }
+  };
 
-  render() {
-    const { title } = this.props;
-
-    return (
-      <div className="navbar">
-        <div className="navbar-inner">
-          {this.renderLeftIcon()}
-          <div className="left">{title}</div>
-          {this.renderRightIcon()}
-        </div>
+  return (
+    <div className="navbar">
+      <div className="navbar-inner">
+        {renderLeftIcon()}
+        <div className="left">{title}</div>
+        {renderRightIcon()}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 TopNavBar.propTypes = propTypes;

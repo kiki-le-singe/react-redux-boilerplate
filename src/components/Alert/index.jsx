@@ -1,4 +1,4 @@
-import { PropTypes, Component } from 'react';
+import { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
@@ -9,18 +9,15 @@ const propTypes = {
 const mapStateToProps = (state) => ({
   tools: state.tools,
 });
-export class Alert extends Component {
+export function Alert(props) {
+  const { error } = props.tools;
+  const { status, statusText } = error;
 
-  render() {
-    const { error } = this.props.tools;
-    const { status, statusText } = error;
-
-    if (error) {
-      f7App.alert(statusText, status);
-    }
-
-    return null;
+  if (error) {
+    f7App.alert(statusText, status);
   }
+
+  return null;
 }
 
 Alert.propTypes = propTypes;

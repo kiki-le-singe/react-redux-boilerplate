@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 const propTypes = {
@@ -13,27 +13,16 @@ const defaultProps = {
   prefixClassIcon: 'icon-',
 };
 
-class IconButton extends Component {
+function IconButton(props) {
+  const { classIcon, prefixClassIcon, iconClassName, className } = props;
+  const getIconClassName = () => classnames(classIcon, [prefixClassIcon, iconClassName].join(''));
+  const getClassName = () => classnames('link', 'ajax', className);
 
-  getIconClassName() {
-    const { classIcon, prefixClassIcon, iconClassName } = this.props;
-
-    return classnames(classIcon, [prefixClassIcon, iconClassName].join(''));
-  }
-
-  getClassName() {
-    const { className } = this.props;
-
-    return classnames('link', 'ajax', className);
-  }
-
-  render() {
-    return (
-      <a href="#" className={this.getClassName()}>
-        <i className={this.getIconClassName()}></i>
-      </a>
-    );
-  }
+  return (
+    <a href="#" className={getClassName()}>
+      <i className={getIconClassName()}></i>
+    </a>
+  );
 }
 
 IconButton.propTypes = propTypes;

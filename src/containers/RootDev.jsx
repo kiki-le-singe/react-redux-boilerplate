@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
@@ -10,26 +10,20 @@ const propTypes = {
   store: PropTypes.object.isRequired,
 };
 
-class RootDev extends Component {
+function RootDev(props) {
+  const { history, store } = props;
+  const showDevTools = () => __DEBUG__ ? (<DevTools />) : false;
 
-  showDevTools() {
-    return __DEBUG__ ? (<DevTools />) : false;
-  }
-
-  render() {
-    const { history, store } = this.props;
-
-    return (
-      <Provider store={store}>
-        <div className="app-container">
-          <Router history={history}>
-            { routes }
-          </Router>
-          { this.showDevTools() }
-        </div>
-      </Provider>
-    );
-  }
+  return (
+    <Provider store={store}>
+      <div className="app-container">
+        <Router history={history}>
+          { routes }
+        </Router>
+        { showDevTools() }
+      </div>
+    </Provider>
+  );
 }
 
 RootDev.propTypes = propTypes;
