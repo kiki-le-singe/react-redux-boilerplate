@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
@@ -25,7 +25,7 @@ export function Indicator(props) {
     f7App.hideIndicator();
   }
 
-  return false;
+  return <noscript />;
 }
 
 Indicator.propTypes = propTypes;

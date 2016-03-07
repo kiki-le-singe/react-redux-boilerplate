@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
@@ -17,7 +17,7 @@ export function Alert(props) {
     f7App.alert(statusText, status);
   }
 
-  return null;
+  return <noscript />;
 }
 
 Alert.propTypes = propTypes;
