@@ -1,0 +1,27 @@
+/*---
+title: framework7.material.min.css
+section: Vendors
+---
+
+Framework7 MATERIAL CSS theme styles
+*/
+
+/*---
+title: framework7.material.colors.min.css
+section: Vendors
+---
+
+Framework7 MATERIAL related color styles
+*/
+
+/*---
+title: font-awesome.css
+section: Vendors
+---
+
+The iconic font and CSS toolkit
+*/
+
+@import 'framework7/dist/css/framework7.material.min.css';
+@import 'framework7/dist/css/framework7.material.colors.min.css';
+@import 'font-awesome/css/font-awesome.css';

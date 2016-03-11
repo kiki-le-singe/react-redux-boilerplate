@@ -1,0 +1,17 @@
+/*---
+title: Icons
+section: Components
+---
+
+Icons styles can be applied to the `<i>` element:
+
+```example:html
+<i class="icon icon-html5"></i>
+<i class="icon icon-react"></i>
+```
+*/
+
+.icon {
+  width: 44px;
+  height: 44px;
+}
