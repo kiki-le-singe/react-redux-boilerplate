@@ -5,7 +5,7 @@ import ListItemSwipeout from './ListItemSwipeout';
 // Docs:
 // - http://www.idangero.us/framework7/docs/swipeout.html
 
-class ListSwipeout extends Component {
+class ListSwipeout extends Component { // eslint-disable-line
 
   getDatas() {
     const { data } = this.props;

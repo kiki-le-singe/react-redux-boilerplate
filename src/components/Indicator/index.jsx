@@ -1,4 +1,4 @@
-import { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
@@ -15,20 +15,17 @@ const mapStateToProps = (state) => ({
   indicator: state.indicator,
   tools: state.tools,
 });
-export class Indicator extends Component {
+export function Indicator(props) {
+  const { indicator } = props;
+  const { isFetching } = props.tools;
 
-  render() {
-    const { indicator } = this.props;
-    const { isFetching } = this.props.tools;
-
-    if (indicator || isFetching) {
-      f7App.showIndicator();
-    } else {
-      f7App.hideIndicator();
-    }
-
-    return false;
+  if (indicator || isFetching) {
+    f7App.showIndicator();
+  } else {
+    f7App.hideIndicator();
   }
+
+  return <noscript />;
 }
 
 Indicator.propTypes = propTypes;

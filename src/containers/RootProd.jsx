@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
@@ -9,21 +9,18 @@ const propTypes = {
   store: PropTypes.object.isRequired,
 };
 
-class RootProd extends Component {
+function RootProd(props) {
+  const { history, store } = props;
 
-  render() {
-    const { history, store } = this.props;
-
-    return (
-      <Provider store={store}>
-        <div className="app-container">
-          <Router history={history}>
-            { routes }
-          </Router>
-        </div>
-      </Provider>
-    );
-  }
+  return (
+    <Provider store={store}>
+      <div className="app-container">
+        <Router history={history}>
+          { routes }
+        </Router>
+      </div>
+    </Provider>
+  );
 }
 
 RootProd.propTypes = propTypes;
