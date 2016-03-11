@@ -47,6 +47,16 @@ const config = {
     require('postcss-import')({ addDependencyTo: webpack }),
     require('postcss-url')(),
     require('postcss-cssnext')(),
+    require('mdcss')({
+      theme: require('mdcss-theme-github')({
+        title: 'Style Guide of React Redux Boilerplate',
+        logo: '../build_styleguide/react.svg',
+        examples: {
+          base: '../',
+          css: ['build_styleguide/app.css'],
+        },
+      }),
+    }),
   ]),
   plugins: [
     new ExtractTextPlugin('app.css'),

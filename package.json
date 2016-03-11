@@ -109,13 +109,13 @@
     "clean:dist": "rm -rf dist",
     "deploy": "npm run clean:dist && npm run compile",
     "start": "npm run dev",
-    "dev": "npm run clean:styleguide && babel-node -- server/server.dev.js",
+    "dev": "babel-node -- server/server.dev.js",
     "dev:debug": "npm run dev -- --debug",
     "dev:quiet": "npm run dev -- --quiet",
     "dev:stub": "npm run dev -- --stub",
     "prod": "babel-node server/server.production",
     "compile": "NODE_ENV=production babel-node ./node_modules/.bin/webpack --optimize-minimize --progress --config ./webpack/prod.config",
     "lint": "eslint src",
-    "styleguide": "npm run clean:build:styleguide && babel-node ./node_modules/.bin/webpack --config ./webpack/styleguide.config"
+    "styleguide": "npm run clean:styleguide && npm run clean:build:styleguide && babel-node ./node_modules/.bin/webpack --config ./webpack/styleguide.config"
   }
 }

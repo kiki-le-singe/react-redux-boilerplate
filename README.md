@@ -41,7 +41,7 @@ $ npm install
 $ npm start
 ```
 
-Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development. The style guides will be generated in `~/styleguide`.
+Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development.
 
 ```shell
 $ npm run compile
@@ -96,7 +96,9 @@ Lint all `.js` files.
 $ npm run styleguide
 ```
 
-Build style guides.
+Build style guides to disk `~/styleguide` and `~/build_styleguide`. The `build_styleguide` dir is only generated to get the css styles of project. This allow to use them in the style guide.
+
+> See `~/webpack/styleguide.config.js`.
 
 ```shell
 $ node server app.production.js
