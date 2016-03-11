@@ -1,3 +1,19 @@
+<a name="1.2.1"></a>
+## 1.2.1 (2016-03-11)
+
+* release(package): release 1.2.0 ([eacab4d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/eacab4d))
+* release(package): release 1.2.1 ([58a7a96](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/58a7a96))
+* docs(CHANGELOG): update CHANGELOG ([0affeeb](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/0affeeb))
+* docs(README): update title project ([57009e5](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/57009e5))
+* chore(babel): implement some plugins to improve the prod build ([cfc1b7b](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/cfc1b7b))
+* chore(package): upgrade packages ([5f3232c](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/5f3232c))
+* chore(package): upgrade packages ([8baa017](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/8baa017))
+* style(AppLayout): remove unused `Component instance ([05fcedc](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/05fcedc))
+* style(linter): fix prefer-stateless-function ([e8a158e](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/e8a158e))
+* fix(stateless.component): cannot return null in a stateless function ([6461895](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/6461895))
+
+
+
 <a name="1.2.0"></a>
 # 1.2.0 (2016-03-07)
 
