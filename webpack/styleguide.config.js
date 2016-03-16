@@ -6,7 +6,6 @@ import { paths } from '../config';
 
 const srcDir = paths('src');
 const assetsDir = paths('assets');
-const framework7JSDir = paths('framework7JS');
 
 const config = {
   entry: paths('entryApp'),
@@ -15,7 +14,7 @@ const config = {
     filename: 'app.js',
   },
   resolve: {
-    root: [srcDir, framework7JSDir],
+    root: [srcDir],
     extensions: ['', '.js', '.jsx'],
   },
   module: {

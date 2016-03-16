@@ -1,47 +1,50 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 
-import TopNavBar from 'components/TopNavBar';
-import Page from 'components/pages/Page';
+import toolActions from '../../../redux/actions/ToolActions';
 
 const defaultProps = {
   isPageCached: true,
 };
 
+const propTypes = {
+  routeParams: PropTypes.object.isRequired,
+  tools: PropTypes.object.isRequired,
+  fetchTool: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   tools: state.tools,
+  routing: state.routing, // Available with `react-router-redux`
 });
-export class Tool extends Page {
+export class Tool extends Component {
 
-  getDataPage() {
-    return 'tool';
+  componentDidMount() {
+    const { fetchTool, routeParams: { id } } = this.props;
+
+    fetchTool(id);
   }
 
-  renderTopNavBar() {
-    return <TopNavBar title="Tool title" isBackPage />;
-  }
-
-  renderPage() {
+  render() {
     const { tools: { item } } = this.props;
     const iconClassName = classnames('icon', ['icon-', item.slug].join(''));
 
     return (
-      <div className="page-content">
-        <div className="card">
-          <div className="card-header"><i className={iconClassName}></i>{item.title}</div>
-          <div className="card-content">
-            <div className="card-content-inner">{item.text}</div>
-          </div>
-          <div className="card-footer">
-            <a href={item.route} target="_blank">Read more</a>
-          </div>
+      <div>
+        <header><i className={iconClassName}></i>{item.title}</header>
+        <div className="content">
+          {item.text}
         </div>
+        <footer>
+          <a href={item.route} target="_blank">Read more</a>
+        </footer>
       </div>
     );
   }
 }
 
 Tool.defaultProps = defaultProps;
+Tool.propTypes = propTypes;
 
-export default connect(mapStateToProps)(Tool);
+export default connect(mapStateToProps, toolActions)(Tool);

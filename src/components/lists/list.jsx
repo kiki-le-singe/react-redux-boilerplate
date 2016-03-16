@@ -2,31 +2,34 @@ import React, { PropTypes } from 'react';
 
 import ListItem from './ListItem';
 
-// Docs:
-// - http://www.idangero.us/framework7/docs/list-view.html
-
-const propTypes = {
-  menuItems: PropTypes.array.isRequired,
-};
-
 function List(props) {
-  const getMenuItems = () => {
-    const { menuItems } = props;
+  const getDatas = () => {
+    const { data } = props;
 
-    return menuItems.map((item, index) => (
-      (<ListItem route={item.route} text={item.text} key={index} />)
+    return data.map((item, index) => (
+      (
+        <ListItem
+          id={item.id}
+          title={item.title}
+          text={item.text}
+          slug={item.slug}
+          key={index}
+        />
+      )
     ));
   };
 
   return (
     <div className="list-block">
       <ul>
-        {getMenuItems()}
+        {getDatas()}
       </ul>
     </div>
   );
 }
 
-List.propTypes = propTypes;
+List.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default List;
