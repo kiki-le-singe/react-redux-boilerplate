@@ -106,7 +106,6 @@ const config = {
     require('postcss-import')({ addDependencyTo: webpack }),
     require('postcss-url')(),
     require('postcss-cssnext')(),
-    require('autoprefixer')({ browsers: ['last 2 versions'] }),
   ]),
   plugins: [
     // https://github.com/ampedandwired/html-webpack-plugin
