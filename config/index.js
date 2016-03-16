@@ -22,7 +22,6 @@ const config = {
     'react-router',
     'redux',
     'lodash',
-    'framework7',
     'classnames',
     'superagent',
   ],
@@ -38,7 +37,6 @@ const config = {
   DIR_STYLEGUIDE: 'styleguide',
   DIR_STYLEGUIDE_BUILD: 'build_styleguide',
   DIR_NODE_MODULES: 'node_modules',
-  DIR_FRAMEWORK7: 'framework7',
 };
 
 const paths = (dir = 'base') => {
@@ -57,8 +55,6 @@ const paths = (dir = 'base') => {
     styleguide: base(config.DIR_STYLEGUIDE),
     styleguideBuild: base(config.DIR_STYLEGUIDE_BUILD),
     nodeModules: base(config.DIR_NODE_MODULES),
-    framework7: base(config.DIR_NODE_MODULES, config.DIR_FRAMEWORK7),
-    framework7JS: base(config.DIR_NODE_MODULES, config.DIR_FRAMEWORK7, 'dist/js'),
   };
 
   return _paths[dir];

@@ -4,9 +4,6 @@
 
 > I started this project to learn tools like [React](https://facebook.github.io/react/), [Redux](https://github.com/rackt/redux), [Webpack](https://webpack.github.io/), [babeljs.io](https://babeljs.io/), [ES6/ES2015](https://babeljs.io/docs/learn-es2015/)... I did it mainly for fun. And then I used it as Boilerplate for my React|Redux projects. So don't worry it works :p. It's not perfect but it works :).
 
-> I use `Framework7` as HTML framework but it's not mandatory. Its implementation with `React` is not perfect. I use it just to simplify my life with HTML/CSS in a mobile context.
-You are free to choose another tool. You will need to change some configs and create your own pages, component...
-
 > Enjoy it! :)
 
 ## Requirements
@@ -41,7 +38,7 @@ $ npm install
 $ npm start
 ```
 
-Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development. The style guides will be generated in `~/styleguide`.
+Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development.
 
 ```shell
 $ npm run compile
@@ -96,7 +93,9 @@ Lint all `.js` files.
 $ npm run styleguide
 ```
 
-Build style guides.
+Build style guides to disk `~/styleguide` and `~/build_styleguide`. The `build_styleguide` dir is only generated to get the css styles of project. This allow to use them in the style guide.
+
+> See `~/webpack/styleguide.config.js`.
 
 ```shell
 $ node server app.production.js
@@ -168,7 +167,6 @@ These default to:
   'react-router',
   'redux',
   'lodash',
-  'framework7',
   'classnames',
   'superagent'
 ]
@@ -203,9 +201,6 @@ You can use `.css` file extensions using the latest CSS syntax with `PostCSS-css
  * [superagent](https://github.com/visionmedia/superagent)
  * [Express](http://expressjs.com/)
  * [cssnext](http://cssnext.io/)
- * [Framework7](http://www.idangero.us/framework7/)
-
-> Framework7 is used as HTML framework to develop hybrid mobile apps or web apps. You can use what you want.
 
 ## Build Tools
 
@@ -233,7 +228,6 @@ By default the root access for the API is http://localhost:8080/api. Available e
  * [Understanding Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a#.jky3inddd)
  * [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)
  * [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
- * [Framework7](http://www.idangero.us/framework7/get-started/)
  * [React Webpack Cookbook](http://christianalfoni.github.io/react-webpack-cookbook/index.html)
  * [Webpack](http://webpack.github.io/docs/)
  * [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)

@@ -1,34 +1,31 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import counterActions from '../../../redux/actions/CounterActions';
 
-import Page from 'components/pages/Page';
+const propTypes = {
+  counter: PropTypes.number,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+};
 
 // Which props do we want to inject, given the global state?
 const mapStateToProps = (state) => ({
   counter: state.counter,
 });
-export class Counter extends Page {
-  getDataPage() {
-    return 'counter';
-  }
 
-  renderPage() {
-    const { counter, increment, decrement } = this.props;
+export function Counter(props) {
+  const { counter, increment, decrement } = props;
 
-    return (
-      <div className="page-content">
-        <div className="content-block-title">Clicked: {counter} times</div>
-        <div className="content-block">
-          <p><a href="#" className="ajax" onClick={increment}>Increment Counter</a></p>
-          <p><a href="#" className="ajax" onClick={decrement}>Decrement Counter</a></p>
-          <p><a href="#" className="open-panel ajax">Open Left Panel</a></p>
-          <p><a href="#" data-panel="right" className="open-panel ajax">Open Right Panel</a></p>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <div>Clicked: {counter} times</div>
+      <p><button onClick={increment}>Increment Counter</button></p>
+      <p><button onClick={decrement}>Decrement Counter</button></p>
+    </div>
+  );
 }
+
+Counter.propTypes = propTypes;
 
 export default connect(mapStateToProps, counterActions)(Counter);

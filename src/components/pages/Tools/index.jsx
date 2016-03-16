@@ -1,58 +1,37 @@
-// Docs:
-// - http://www.idangero.us/framework7/docs/modal.html#indicator
-
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import toolsActions from '../../../redux/actions/ToolActions';
 
-import Page from 'components/pages/Page';
-import ListSwipeoutTools from 'components/tools/ListSwipeoutTools';
-import FloatingButtonTools from 'components/tools/FloatingButtonTools';
-import SearchTools from 'components/tools/SearchTools';
+import List from 'components/lists/List';
 
-const defaultProps = {
-  isFloatingButtonEnabled: true,
+const propTypes = {
+  fetchTools: PropTypes.func.isRequired,
+  tools: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   tools: state.tools,
 });
-export class Tools extends Page {
-  componentDidMount() {
-    super.componentDidMount();
 
+export class Tools extends Component {
+  componentDidMount() {
     const { fetchTools } = this.props;
 
     fetchTools();
   }
 
-  getDataPage() {
-    return 'tools';
-  }
-
-  renderFloatingButton() {
-    return (
-      <FloatingButtonTools />
-    );
-  }
-
-  renderPage() {
+  render() {
     const { tools } = this.props;
 
     return (
-      <div className="page-content">
-
-        <SearchTools />
-
-        <div className="list-block media-list">
-          <ListSwipeoutTools searchValue={tools.searchValue} data={tools.items} />
-        </div>
+      <div>
+        <List data={tools.items} />
       </div>
     );
   }
 }
 
-Tools.defaultProps = defaultProps;
+Tools.propTypes = propTypes;
 
 export default connect(mapStateToProps, toolsActions)(Tools);

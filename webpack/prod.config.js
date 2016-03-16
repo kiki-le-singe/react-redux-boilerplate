@@ -9,7 +9,6 @@ import projectConfig, { paths } from '../config';
 
 const srcDir = paths('src');
 const assetsDir = paths('assets');
-const framework7JSDir = paths('framework7JS');
 
 const HTMLMinifier = {
   removeComments: true,
@@ -33,7 +32,7 @@ const config = {
     vendors: projectConfig.VENDOR_DEPENDENCIES,
   },
   resolve: {
-    root: [srcDir, framework7JSDir],
+    root: [srcDir],
     extensions: ['', '.js', '.jsx'],
   },
   output: {
@@ -72,7 +71,6 @@ const config = {
     require('postcss-import')({ addDependencyTo: webpack }),
     require('postcss-url')(),
     require('postcss-cssnext')(),
-    require('autoprefixer')({ browsers: ['last 2 versions'] }),
   ]),
   plugins: [
     new HtmlWebpackPlugin({

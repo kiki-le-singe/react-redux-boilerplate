@@ -6,13 +6,11 @@ import { routerReducer } from 'react-router-redux';
 
 import tools from './tools';
 import counter from './counter';
-import indicator from './indicator';
 
 // combineReducers(reducers): http://rackt.github.io/redux/docs/api/combineReducers.html
 const rootReducer = combineReducers({
   tools,
   counter,
-  indicator,
   routing: routerReducer,
 });
 

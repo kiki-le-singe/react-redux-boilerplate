@@ -25,11 +25,9 @@ import projectConfig, { paths } from '../config';
 const srcDir = paths('src');
 const assetsDir = paths('assets');
 const nodeModulesDir = paths('nodeModules');
-const framework7JSDir = paths('framework7JS');
 
 const deps = [
   'redux/dist/redux.min.js',
-  'framework7/dist/js/framework7.min.js',
   'font-awesome/css/font-awesome.min.css',
 ];
 
@@ -57,7 +55,7 @@ const config = {
     // See: http://stackoverflow.com/questions/27502608/resolving-require-paths-with-webpack
     // Resolve the `./src` directory so we can avoid writing
     // ../../styles/base.css but styles/base.css
-    root: [srcDir, framework7JSDir],
+    root: [srcDir],
 
     extensions: ['', '.js', '.jsx'],
   },
@@ -106,17 +104,6 @@ const config = {
     require('postcss-import')({ addDependencyTo: webpack }),
     require('postcss-url')(),
     require('postcss-cssnext')(),
-    require('autoprefixer')({ browsers: ['last 2 versions'] }),
-    require('mdcss')({
-      theme: require('mdcss-theme-github')({
-        title: 'Style Guide of React Redux Boilerplate',
-        logo: '../build_styleguide/react.svg',
-        examples: {
-          base: '../',
-          css: ['build_styleguide/app.css'],
-        },
-      }),
-    }),
   ]),
   plugins: [
     // https://github.com/ampedandwired/html-webpack-plugin

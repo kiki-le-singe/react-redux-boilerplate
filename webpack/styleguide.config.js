@@ -6,7 +6,6 @@ import { paths } from '../config';
 
 const srcDir = paths('src');
 const assetsDir = paths('assets');
-const framework7JSDir = paths('framework7JS');
 
 const config = {
   entry: paths('entryApp'),
@@ -15,7 +14,7 @@ const config = {
     filename: 'app.js',
   },
   resolve: {
-    root: [srcDir, framework7JSDir],
+    root: [srcDir],
     extensions: ['', '.js', '.jsx'],
   },
   module: {
@@ -47,6 +46,16 @@ const config = {
     require('postcss-import')({ addDependencyTo: webpack }),
     require('postcss-url')(),
     require('postcss-cssnext')(),
+    require('mdcss')({
+      theme: require('mdcss-theme-github')({
+        title: 'Style Guide of React Redux Boilerplate',
+        logo: '../build_styleguide/react.svg',
+        examples: {
+          base: '../',
+          css: ['build_styleguide/app.css'],
+        },
+      }),
+    }),
   ]),
   plugins: [
     new ExtractTextPlugin('app.css'),
