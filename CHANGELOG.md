@@ -1,3 +1,16 @@
+<a name="2.0.0"></a>
+# 2.0.0 (2016-03-16)
+
+* release(package): release 2.0.0 ([5362cd3](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/5362cd3))
+* docs(README): update documentation ([eb5dcf0](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/eb5dcf0))
+* refactor(app): Spring cleaning ([8602868](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/8602868))
+* chore(autoprefixer): remove useless package ([408e971](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/408e971))
+* chore(package): update packages ([0579d54](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/0579d54))
+* feat(examples.f7): add Framework7 example ([070cecf](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/070cecf))
+* feat(package): The `styleguide` script is completely independent now from development ([afdec91](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/afdec91))
+
+
+
 <a name="1.2.1"></a>
 ## 1.2.1 (2016-03-11)
 
