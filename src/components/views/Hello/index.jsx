@@ -6,7 +6,11 @@ const mapStateToProps = (state) => ({
 });
 
 export function Hello() {
-  return (<div>Hello World</div>);
+  return (
+    <div className="page">
+      <div className="page-content">Hello World</div>
+    </div>
+  );
 }
 
 export default connect(mapStateToProps)(Hello);

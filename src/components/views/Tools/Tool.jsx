@@ -31,14 +31,16 @@ export class Tool extends Component {
     const iconClassName = classnames('icon', ['icon-', item.slug].join(''));
 
     return (
-      <div>
-        <header><i className={iconClassName}></i>{item.title}</header>
-        <div className="content">
-          {item.text}
+      <div className="page">
+        <div className="page-content">
+          <header><i className={iconClassName}></i>{item.title}</header>
+          <div className="content">
+            {item.text}
+          </div>
+          <footer>
+            <a href={item.route} target="_blank">Read more</a>
+          </footer>
         </div>
-        <footer>
-          <a href={item.route} target="_blank">Read more</a>
-        </footer>
       </div>
     );
   }
