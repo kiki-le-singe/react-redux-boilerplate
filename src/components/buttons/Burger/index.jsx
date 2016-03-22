@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import Slideout from 'slideout';
 
+import { toggleMenu } from 'utils/menu';
+
 const contextTypes = {
   slideout: PropTypes.instanceOf(Slideout),
 };
@@ -8,12 +10,12 @@ const contextTypes = {
 // Referencing context in stateless functional components:
 // https://facebook.github.io/react/docs/context.html#referencing-context-in-stateless-functional-components
 function Burger(props, context) {
-  const toggleMenu = () => {
-    context.slideout.toggle();
+  const _toggleMenu = () => {
+    toggleMenu(context);
   };
 
   return (
-    <a className="link" onClick={ toggleMenu }><i className="fa fa-bars fa-2x"></i></a>
+    <a className="link" onClick={ _toggleMenu }><i className="fa fa-bars fa-2x"></i></a>
   );
 }
 
