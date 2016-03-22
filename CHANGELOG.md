@@ -1,3 +1,26 @@
+<a name="2.1.0"></a>
+# 2.1.0 (2016-03-22)
+
+* release(package): release 2.1.0 ([64bd8c2](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/64bd8c2))
+* chore(package): add slideout package ([7bbf962](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/7bbf962))
+* chore(package): update packages ([82e15bb](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/82e15bb))
+* chore(webpack): improve building ([922b87d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/922b87d))
+* refactor(app): rename className ([deaa0d3](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/deaa0d3))
+* refactor(ListItem): restructure html ([032df66](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/032df66))
+* refactor(routes): use good path ([63d927d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/63d927d))
+* refactor(utils.menu): use toggleMenu from menu utils ([f3233da](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/f3233da))
+* refactor(views): move pages component in views dir ([53ebe8a](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/53ebe8a))
+* feat(AppLayout): implement Slideout ([31e11c4](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/31e11c4))
+* feat(Burger): add Burger component ([e67e580](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/e67e580))
+* feat(Menu): add Menu component ([057ab7c](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/057ab7c))
+* feat(Menu): toggle menu on click ([e67f639](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/e67f639))
+* feat(NavBar): add NavBar component ([956cca9](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/956cca9))
+* feat(styles): add/update styles ([6a32cd3](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/6a32cd3))
+* feat(ToolBar): add ToolBar component ([ed43c20](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/ed43c20))
+* feat(utils.menu): add menu utils ([b6acf6d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/b6acf6d))
+
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2016-03-16)
 
