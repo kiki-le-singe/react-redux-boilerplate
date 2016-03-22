@@ -29,6 +29,7 @@ const nodeModulesDir = paths('nodeModules');
 const deps = [
   'redux/dist/redux.min.js',
   'font-awesome/css/font-awesome.min.css',
+  'slideout/dist/slideout.min.js',
 ];
 
 const config = {

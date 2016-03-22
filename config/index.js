@@ -24,6 +24,7 @@ const config = {
     'lodash',
     'classnames',
     'superagent',
+    'slideout',
   ],
 
   // Project Structure
