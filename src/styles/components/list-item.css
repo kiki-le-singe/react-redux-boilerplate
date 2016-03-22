@@ -1,0 +1,32 @@
+.list-item {
+  position: relative;
+  border-bottom: 1px solid #cfcfcf;
+  box-shadow: 0 2px 15px #cfcfcf;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.item-content {
+  display: flex;
+}
+
+.item-inner {
+  padding: 10px 0 10px 10px;
+}
+
+.item-text {
+  color: var(--colorBlack);
+}
+
+a {
+  text-decoration: none;
+}
+
+.item-title {
+  color: var(--colorBlue);
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  font-style: italic;
+}
