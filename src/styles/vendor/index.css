@@ -14,5 +14,14 @@ section: Vendors
 The iconic font and CSS toolkit
 */
 
+/*---
+title: slideout.css
+section: Vendors
+---
+
+Slideout.js styles
+*/
+
 @import 'normalize.css/normalize.css';
 @import 'font-awesome/css/font-awesome.css';
+@import 'slideout';

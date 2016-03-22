@@ -25,8 +25,10 @@ export class Tools extends Component {
     const { tools } = this.props;
 
     return (
-      <div>
-        <List data={tools.items} />
+      <div className="page">
+        <div className="page-content">
+          <List data={tools.items} />
+        </div>
       </div>
     );
   }

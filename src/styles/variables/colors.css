@@ -1,6 +1,8 @@
 :root {
   --colorWhite: #fff;
-  --colorBlack: #000;
-  --colorGoogle: #ea4235;
-  --colorTwitter: #659fcb;
+  --colorDarkWhite: #f5f5f5;
+  --colorBlack: #333;
+  --colorGrey: #cfcfcf;
+  --colorBlue: #4078c0;
+  --colorGreen: #66bd3f;
 }

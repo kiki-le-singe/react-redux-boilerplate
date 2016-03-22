@@ -17,4 +17,4 @@ const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
 const root = (<Root history={ history } store={ store } />);
 
-ReactDOM.render(root, document.getElementById('app'));
+ReactDOM.render(root, document.getElementById('root'));

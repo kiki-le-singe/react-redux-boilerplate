@@ -20,17 +20,13 @@ function ListItem(props) {
 
   return (
     <li className="list-item">
-      <div className="content">
+      <Link className="item-link item-content" to={`/tool/${id}/${slug}`}>
         <div className="item-media"><i className={iconClassName}></i></div>
-        <Link className="item-link item-content" to={`/tool/${id}/${slug}`}>
-          <div className="item-inner">
-            <div className="item-title-row">
-              <div className="item-title">{title}</div>
-            </div>
-            <div className="item-text">{text}</div>
-          </div>
-        </Link>
-      </div>
+        <div className="item-inner">
+          <div className="item-title">{title}</div>
+          <div className="item-text">{text}</div>
+        </div>
+      </Link>
     </li>
   );
 }

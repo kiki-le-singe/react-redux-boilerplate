@@ -18,10 +18,12 @@ export function Counter(props) {
   const { counter, increment, decrement } = props;
 
   return (
-    <div>
-      <div>Clicked: {counter} times</div>
-      <p><button onClick={increment}>Increment Counter</button></p>
-      <p><button onClick={decrement}>Decrement Counter</button></p>
+    <div className="page">
+      <div className="page-content">
+        <div>Clicked: {counter} times</div>
+        <p><button onClick={increment}>Increment Counter</button></p>
+        <p><button onClick={decrement}>Decrement Counter</button></p>
+      </div>
     </div>
   );
 }

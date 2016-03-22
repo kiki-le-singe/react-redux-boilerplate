@@ -1,3 +1,19 @@
-#app, .app-container, .app-wrapper {
+html, body, #root, .app, .views, .view, .pages, .page, .page-content {
   height: var(--viewHeight);
+}
+
+body {
+  font-size: 16px;
+}
+
+.pages {
+  overflow: hidden;
+}
+
+.page-content {
+  padding-top: var(--navBarHeight);
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 44px;
+  font-size: 0.975rem;
 }

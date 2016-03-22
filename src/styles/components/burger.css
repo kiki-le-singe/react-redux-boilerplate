@@ -1,0 +1,12 @@
+.link {
+  line-height: var(--navBarHeight);
+  height: var(--navBarHeight);
+  width: var(--navBarHeight);
+  display: inline-block;
+  text-align: center;
+
+  & i {
+    line-height: var(--navBarHeight);
+    height: var(--navBarHeight);
+  }
+}

@@ -1,0 +1,30 @@
+.navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: var(--navBarHeight);
+  background: var(--colorBlue);
+  width: 100%;
+  z-index: 500;
+  color: var(--colorWhite);
+  border-bottom: 1px solid var(--colorGrey);
+  box-shadow: 0 0 5px var(--colorGrey);
+}
+
+.navbar-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  line-height: var(--navBarHeight);
+  height: var(--navBarHeight);
+  float: right;
+  padding-right: 10px;
+  margin: 0;
+  font-size: 0.975rem;
+
+  & a {
+    color: var(--colorWhite);
+  }
+}
