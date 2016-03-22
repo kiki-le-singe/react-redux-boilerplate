@@ -8,13 +8,13 @@ import React from 'react';
 import { Route, IndexRoute, Redirect } from 'react-router';
 
 import AppLayout from 'layouts/AppLayout';
-import Home from 'components/pages/Home';
-import About from 'components/pages/About';
-import Hello from 'components/pages/Hello';
-import Counter from 'components/pages/Counter';
-import Tools from 'components/pages/Tools';
-import Tool from 'components/pages/Tools/Tool';
-import NotFound from 'components/pages/NotFound';
+import Home from 'components/views/Home';
+import About from 'components/views/About';
+import Hello from 'components/views/Hello';
+import Counter from 'components/views/Counter';
+import Tools from 'components/views/Tools';
+import Tool from 'components/views/Tools/Tool';
+import NotFound from 'components/views/NotFound';
 
 export default (
   <Route path="/" component={AppLayout}>
