@@ -12,7 +12,7 @@ const propTypes = {
 
 function RootDev(props) {
   const { history, store } = props;
-  const showDevTools = () => __DEBUG__ ? (<DevTools />) : false;
+  const showDevTools = () => (__DEBUG__ ? (<DevTools />) : false);
 
   return (
     <Provider store={store}>
