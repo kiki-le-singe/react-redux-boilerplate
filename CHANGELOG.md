@@ -1,3 +1,15 @@
+<a name="2.1.1"></a>
+## 2.1.1 (2016-03-30)
+
+* release(package): release 2.1.1 ([027c463](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/027c463))
+* chore(config): add `react-dom` to the vendor dependencies ([e7583ab](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/e7583ab))
+* chore(package): upgrade packages ([b17d3fc](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/b17d3fc))
+* style(.eslintrc): remove useless rules... ([d05891b](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/d05891b))
+* style(.eslintrc): remove using babel-eslint ([b2c038a](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/b2c038a))
+* style(RootDev): fix linter ([0a70a60](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/0a70a60))
+
+
+
 <a name="2.1.0"></a>
 # 2.1.0 (2016-03-22)
 
