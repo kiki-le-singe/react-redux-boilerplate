@@ -19,6 +19,7 @@ const config = {
   // Webpack Configuration
   VENDOR_DEPENDENCIES: [
     'react',
+    'react-dom',
     'react-router',
     'redux',
     'lodash',
