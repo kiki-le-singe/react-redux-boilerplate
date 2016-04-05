@@ -1,3 +1,11 @@
+<a name="2.1.2"></a>
+## 2.1.2 (2016-04-05)
+
+* release(package): release 2.1.2 ([2502434](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/2502434))
+* chore(package): update packages ([664efc6](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/664efc6))
+
+
+
 <a name="2.1.1"></a>
 ## 2.1.1 (2016-03-30)
 
