@@ -1,3 +1,10 @@
+<a name="2.2.0"></a>
+# 2.2.0 (2016-04-08)
+
+* chore(package): upgrade packages ([9e812a7](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/9e812a7))
+
+
+
 <a name="2.1.2"></a>
 ## 2.1.2 (2016-04-05)
 
