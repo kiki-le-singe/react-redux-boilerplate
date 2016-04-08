@@ -1,14 +1,15 @@
 import express from 'express'; // Web framework
 import webpack from 'webpack';
 import path from 'path';
+import _debug from 'debug';
 
-import logger from './logger';
 import routes from './routes';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHotMiddleware from './middleware/webpack-hot';
 import projectConfig from '../config';
 import webpackConfig from '../webpack/dev.config.js';
 
+const debug = _debug('app:server');
 const app = express(); // define server
 const compiler = webpack(webpackConfig);
 
@@ -35,5 +36,5 @@ routes(app);
 ***************** */
 
 app.listen(projectConfig.SERVER_PORT, () => {
-  logger.info(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
+  debug(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
 });

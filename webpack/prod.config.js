@@ -4,9 +4,11 @@ import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import _debug from 'debug';
 
 import projectConfig, { paths } from '../config';
 
+const debug = _debug('app:webpack:config:prod');
 const srcDir = paths('src');
 const assetsDir = paths('assets');
 
@@ -25,6 +27,7 @@ const HTMLMinifier = {
   minifyCSS: true,
 };
 
+debug('Create configuration.');
 const config = {
   devtool: 'source-map',
   entry: {

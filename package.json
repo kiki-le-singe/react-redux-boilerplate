@@ -40,6 +40,7 @@
   ],
   "dependencies": {
     "classnames": "^2.2.3",
+    "debug": "^2.2.0",
     "express": "^4.13.4",
     "font-awesome": "^4.5.0",
     "lodash": "^4.9.0",
@@ -53,7 +54,6 @@
     "slideout": "^0.1.12",
     "superagent": "^1.8.3",
     "uniqid": "^1.0.0",
-    "winston": "^2.2.0",
     "yargs": "^4.5.0"
   },
   "devDependencies": {
@@ -107,7 +107,7 @@
     "clean:dist": "rm -rf dist",
     "deploy": "npm run clean:dist && npm run compile",
     "start": "npm run dev",
-    "dev": "babel-node -- server/server.dev.js",
+    "dev": "DEBUG=app:* babel-node -- server/server.dev.js",
     "dev:debug": "npm run dev -- --debug",
     "dev:quiet": "npm run dev -- --quiet",
     "dev:stub": "npm run dev -- --stub",

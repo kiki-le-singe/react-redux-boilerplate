@@ -19,9 +19,11 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import _debug from 'debug';
 
 import projectConfig, { paths } from '../config';
 
+const debug = _debug('app:webpack:config:dev');
 const srcDir = paths('src');
 const assetsDir = paths('assets');
 const nodeModulesDir = paths('nodeModules');
@@ -32,6 +34,7 @@ const deps = [
   'slideout/dist/slideout.min.js',
 ];
 
+debug('Create configuration.');
 const config = {
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: 'cheap-module-eval-source-map',
