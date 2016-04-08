@@ -1,12 +1,15 @@
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import _debug from 'debug';
 
 import { paths } from '../config';
 
+const debug = _debug('app:webpack:config:styleguide');
 const srcDir = paths('src');
 const assetsDir = paths('assets');
 
+debug('Create configuration.');
 const config = {
   entry: paths('entryApp'),
   output: {
