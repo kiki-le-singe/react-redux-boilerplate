@@ -1,3 +1,17 @@
+<a name="2.2.1"></a>
+## 2.2.1 (2016-04-08)
+
+* feat(debug): implement debug ([553a75e](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/553a75e))
+* refactor(logger): Remove implementation of logger ([5869d87](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/5869d87))
+* chore(package): add `debug` package ([8f3b9ec](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/8f3b9ec))
+* chore(package): add the DEBUG environment variable ([4e6b21d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/4e6b21d))
+* chore(package): remove `winston` package ([3512a24](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/3512a24))
+* chore(package): upgrade packages ([9e812a7](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/9e812a7))
+* docs(CHANGELOG): update CHANGELOG file ([7398a05](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/7398a05))
+* release(package): release 2.2.0 ([857c3a7](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/857c3a7))
+
+
+
 <a name="2.2.0"></a>
 # 2.2.0 (2016-04-08)
 
