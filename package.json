@@ -53,7 +53,6 @@
     "slideout": "^0.1.12",
     "superagent": "^1.8.3",
     "uniqid": "^1.0.0",
-    "winston": "^2.2.0",
     "yargs": "^4.5.0"
   },
   "devDependencies": {
