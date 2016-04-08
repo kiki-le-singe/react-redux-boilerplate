@@ -40,6 +40,7 @@
   ],
   "dependencies": {
     "classnames": "^2.2.3",
+    "debug": "^2.2.0",
     "express": "^4.13.4",
     "font-awesome": "^4.5.0",
     "lodash": "^4.9.0",
