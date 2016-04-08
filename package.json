@@ -107,7 +107,7 @@
     "clean:dist": "rm -rf dist",
     "deploy": "npm run clean:dist && npm run compile",
     "start": "npm run dev",
-    "dev": "babel-node -- server/server.dev.js",
+    "dev": "DEBUG=app:* babel-node -- server/server.dev.js",
     "dev:debug": "npm run dev -- --debug",
     "dev:quiet": "npm run dev -- --quiet",
     "dev:stub": "npm run dev -- --stub",
