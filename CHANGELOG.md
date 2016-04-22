@@ -1,3 +1,12 @@
+<a name="2.2.2"></a>
+## 2.2.2 (2016-04-22)
+
+* release(package): release 2.2.2 ([1958bda](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/1958bda))
+* style(.eslintrc): return to babel-eslint parser ([177c932](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/177c932))
+* chore(package): update some packages ([da9dedc](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/da9dedc))
+
+
+
 <a name="2.2.1"></a>
 ## 2.2.1 (2016-04-08)
 
