@@ -40,6 +40,7 @@ const config = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
     app: [
+      'react-hot-loader/patch',
       'webpack-hot-middleware/client?reload=true',
       paths('entryApp'),
     ],
