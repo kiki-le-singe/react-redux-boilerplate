@@ -26,7 +26,7 @@ if (module.hot) {
     ReactDOM.render(
       <AppContainer
         component={require('containers/Root').default}
-        props={{ history, store }}
+        props={{ history, store, routes }}
       />,
       mountApp
     );
