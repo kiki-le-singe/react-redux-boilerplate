@@ -7,6 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './redux/store';
 
 import Root from 'containers/Root';
+import routes from 'routes';
 
 // *** STYLES *** //
 // Path to svg logos icons
