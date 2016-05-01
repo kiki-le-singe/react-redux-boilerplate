@@ -1,3 +1,11 @@
+<a name="2.2.3"></a>
+## 2.2.3 (2016-05-01)
+
+* release(package): release 2.2.3 ([0e45a71](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/0e45a71))
+* docs(README): update documentation ([c41ba42](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/c41ba42))
+
+
+
 <a name="2.2.2"></a>
 ## 2.2.2 (2016-04-22)
 
