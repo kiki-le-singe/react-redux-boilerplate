@@ -4,6 +4,8 @@
 
 > I started this project to learn tools like [React](https://facebook.github.io/react/), [Redux](https://github.com/rackt/redux), [Webpack](https://webpack.github.io/), [babeljs.io](https://babeljs.io/), [ES6/ES2015](https://babeljs.io/docs/learn-es2015/)... I did it mainly for fun. And then I used it as Boilerplate for my React|Redux projects. So don't worry it works :p. It's not perfect but it works :).
 
+> If you are interested about isomorphic/universal rendering, you should take a look at this repo: [React Redux Universal Boilerplate](https://github.com/kiki-le-singe/react-redux-universal-boilerplate).
+
 > Enjoy it! :)
 
 ## Requirements
