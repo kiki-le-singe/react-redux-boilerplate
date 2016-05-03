@@ -14,21 +14,28 @@ import routes from 'routes';
 import 'assets/vendors/icons.svg.css';
 import 'styles/app.css';
 
-const mountApp = document.getElementById('root');
+const rootEl = document.getElementById('root');
 const store = configureStore();
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(hashHistory, store);
 
-ReactDOM.render(<AppContainer component={Root} props={{ history, store, routes }} />, mountApp);
+ReactDOM.render(
+  <AppContainer>
+    <Root history={history} store={store} routes={routes} />
+  </AppContainer>,
+  rootEl
+);
 
 if (module.hot) {
   module.hot.accept('containers/Root', () => {
+    // If you use Webpack 2 in ES modules mode, you can
+    // use <Root /> here rather than require() a <NextRoot />.
+    const NextRoot = require('./containers/Root').default;
     ReactDOM.render(
-      <AppContainer
-        component={require('containers/Root').default}
-        props={{ history, store, routes }}
-      />,
-      mountApp
+      <AppContainer>
+         <NextRoot history={history} store={store} routes={routes} />
+      </AppContainer>,
+      rootEl
     );
   });
 }
