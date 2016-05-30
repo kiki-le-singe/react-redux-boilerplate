@@ -1,12 +1,14 @@
-import express from 'express';
-import path from 'path';
+import Koa from 'koa';
+import serve from 'koa-static';
+import _debug from 'debug';
 
 import routes from './routes';
 import projectConfig from '../config';
 
-const app = express();
+const debug = _debug('app:server');
+const app = new Koa();
 
-app.use(express.static(path.resolve('dist')));
+app.use(serve('dist'));
 
 
 /* ******************
@@ -21,5 +23,5 @@ routes(app);
 ***************** */
 
 app.listen(projectConfig.SERVER_PORT, () => {
-  console.log(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
+  debug(`Koa server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.env} node`);
 });
