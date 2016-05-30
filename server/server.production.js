@@ -2,7 +2,7 @@ import Koa from 'koa';
 import serve from 'koa-static';
 import _debug from 'debug';
 
-import routes from './routes';
+import router from './router';
 import projectConfig from '../config';
 
 const debug = _debug('app:server');
@@ -12,10 +12,10 @@ app.use(serve('dist'));
 
 
 /* ******************
- ROUTES FOR OUR API
+ ROUTER FOR OUR API
 ******************* */
 
-routes(app);
+router(app);
 
 
 /* ****************

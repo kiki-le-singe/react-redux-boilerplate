@@ -3,7 +3,7 @@ import serve from 'koa-static';
 import webpack from 'webpack';
 import _debug from 'debug';
 
-import routes from './routes';
+import router from './router';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHotMiddleware from './middleware/webpack-hot';
 import projectConfig from '../config';
@@ -28,7 +28,7 @@ app.use(webpackHotMiddleware(compiler));
  ROUTER FOR OUR API
 ******************* */
 
-routes(app);
+router(app);
 
 
 /* ****************
