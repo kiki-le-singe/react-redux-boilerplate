@@ -22,7 +22,7 @@ function fetchTool(id) {
   return {
     types: [types.FETCH_TOOL_REQUEST, types.FETCH_TOOL_SUCCESS, types.FETCH_TOOL_FAILURE],
     shouldCallAPI: (state) => (
-      (state.tools.item && state.tools.item.id === id) ? false : true // eslint-disable-line
+      (state.tools.item && state.tools.item.id == id) ? false : true // eslint-disable-line
     ),
     callAPI: () => fetch(id),
     payload: { id },
