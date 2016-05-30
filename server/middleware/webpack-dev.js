@@ -1,14 +1,15 @@
 import { argv } from 'yargs';
-import webpackDevMiddleware from 'webpack-dev-middleware';
+import koaWebpackDevMiddleware from 'koa-webpack-dev-middleware';
+import convert from 'koa-convert';
 
 const QUIET_MODE = !!argv.quiet;
 
-export default function (compiler, publicPath) {
+export default function (compiler, options) {
   // http://webpack.github.io/docs/webpack-dev-server.html
   // http://webpack.github.io/docs/webpack-dev-middleware.html
   // http://stackoverflow.com/questions/26845101/webpack-dev-middleware-does-not-compile-output-into-folder
   const webpackDevMiddlewareOptions = {
-    publicPath, // http://webpack.github.io/docs/webpack-dev-middleware.html#publicpath
+    ...options,
     quiet: QUIET_MODE,
     noInfo: QUIET_MODE,
     stats: {
@@ -21,5 +22,5 @@ export default function (compiler, publicPath) {
     historyApiFallback: true,
   };
 
-  return webpackDevMiddleware(compiler, webpackDevMiddlewareOptions);
+  return convert(koaWebpackDevMiddleware(compiler, webpackDevMiddlewareOptions));
 }

@@ -1,34 +1,34 @@
-import express from 'express'; // Web framework
+import Koa from 'koa';
+import serve from 'koa-static';
 import webpack from 'webpack';
-import path from 'path';
 import _debug from 'debug';
 
-import routes from './routes';
+import router from './router';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHotMiddleware from './middleware/webpack-hot';
 import projectConfig from '../config';
 import webpackConfig from '../webpack/dev.config.js';
 
 const debug = _debug('app:server');
-const app = express(); // define server
+const app = new Koa();
 const compiler = webpack(webpackConfig);
+const serverOptions = { publicPath: webpackConfig.output.publicPath }; // http://webpack.github.io/docs/webpack-dev-middleware.html#publicpath
 
-
-app.use(express.static(path.resolve('src/assets')));
+app.use(serve('src/assets'));
 
 /* *******************
 webpack configuration
 ******************* */
-
-app.use(webpackDevMiddleware(compiler, webpackConfig.output.publicPath));
+// Use these middlewares to set up hot module reloading via webpack.
+app.use(webpackDevMiddleware(compiler, serverOptions));
 app.use(webpackHotMiddleware(compiler));
 
 
 /* ******************
- ROUTES FOR OUR API
+ ROUTER FOR OUR API
 ******************* */
 
-routes(app);
+router(app);
 
 
 /* ****************
@@ -36,5 +36,5 @@ routes(app);
 ***************** */
 
 app.listen(projectConfig.SERVER_PORT, () => {
-  debug(`Express server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.settings.env} node`);
+  debug(`Koa server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.env} node`);
 });
