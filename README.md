@@ -40,7 +40,7 @@ $ npm install
 $ npm start
 ```
 
-Starts up express server to serve your app at `localhost:8080`. HMR will be enabled in development.
+Starts up koa server to serve your app at `localhost:8080`. HMR will be enabled in development.
 
 ```shell
 $ npm run compile
@@ -82,7 +82,7 @@ Cleans the `dist` folder previously created and compiles your application to dis
 $ npm run prod
 ```
 
-Starts up express server to serve your app at `localhost:8080`.
+Starts up koa server to serve your app at `localhost:8080`.
 
 
 ```shell
@@ -126,7 +126,7 @@ Basic project configuration is in `~/config/index.js`
 └── __tests__                # Unit tests (Soon...)
 ├── config                   # Project configuration settings (Server, Webpack, ...)
 ├── gulp                     # Gulp configuration tasks
-├── server                   # Express application (uses webpack middleware)
+├── server                   # Koa application (uses webpack middleware)
 │   └── server.dev.js        # Server dev application
 │   └── server.production.js # Server prod application
 ├── src                      # Application source code
@@ -201,7 +201,7 @@ You can use `.css` file extensions using the latest CSS syntax with `PostCSS-css
  * [Lo-Dash](http://lodash.com/)
  * [classnames](https://www.npmjs.com/package/classnames)
  * [superagent](https://github.com/visionmedia/superagent)
- * [Express](http://expressjs.com/)
+ * [koa](http://koajs.com/)
  * [cssnext](http://cssnext.io/)
 
 ## Build Tools
