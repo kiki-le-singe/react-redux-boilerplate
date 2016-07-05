@@ -62,7 +62,7 @@ const config = {
   ]),
   plugins: [
     new ExtractTextPlugin('app.css'),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new CopyWebpackPlugin([

@@ -119,8 +119,8 @@ const config = {
       template: path.resolve(srcDir, 'index.tpl.html'),
     }),
 
-    // https://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
+    new webpack.optimize.OccurrenceOrderPlugin(),
 
     // switch the server to hot mode
     new webpack.HotModuleReplacementPlugin(),
