@@ -104,7 +104,7 @@ const config = {
       },
       {
         test: /\.(png|jpe?g)$/,
-        loader: 'file?name=img/[name].[ext]'
+        loader: 'url?limit=10000'
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
