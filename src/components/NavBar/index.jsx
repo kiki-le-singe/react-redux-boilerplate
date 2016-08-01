@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Burger from 'components/buttons/Burger';
+import Burger from 'components/buttons/Burger'
 
 export default function NavBar() {
   return (
@@ -10,5 +10,5 @@ export default function NavBar() {
         <h2 className="title"><a href="https://github.com/kiki-le-singe/react-redux-boilerplate" target="_blank">React Redux Boilerplate</a></h2>
       </div>
     </div>
-  );
+  )
 }

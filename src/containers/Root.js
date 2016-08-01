@@ -1,9 +1,3 @@
-let Root;
+const Root = __DEV__ ? require('./RootDev').default : require('./RootProd').default
 
-if (__DEV__) {
-  Root = require('./RootDev').default;
-} else {
-  Root = require('./RootProd').default;
-}
-
-export default Root;
+export default Root

@@ -1,9 +1,4 @@
-let store;
+const store = __DEV__ ?
+  require('./configureStoreDev').default : require('./configureStoreProd').default
 
-if (__DEV__) {
-  store = require('./configureStoreDev').default;
-} else {
-  store = require('./configureStoreProd').default;
-}
-
-export default store;
+export default store

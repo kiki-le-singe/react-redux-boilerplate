@@ -8,12 +8,12 @@ const API = store => next => action => { // eslint-disable-line
     types,
     callAPI,
     shouldCallAPI = () => true, // default call API everytime
-    payload = {},
-  } = action;
+    payload = {}
+  } = action
 
   if (!types) {
     // Normal action: pass it on
-    return next(action);
+    return next(action)
   }
 
   if (
@@ -21,38 +21,38 @@ const API = store => next => action => { // eslint-disable-line
     types.length !== 3 ||
     !types.every(type => typeof type === 'string')
   ) {
-    throw new Error('Expected an array of three string types.');
+    throw new Error('Expected an array of three string types.')
   }
 
   if (typeof callAPI !== 'function') {
-    throw new Error('Expected fetch to be a function.');
+    throw new Error('Expected fetch to be a function.')
   }
 
   // check if the response from request is already in the state.
   // If it is the case, not need to call API.
   if (!shouldCallAPI(store.getState())) {
-    return; // eslint-disable-line
+    return // eslint-disable-line
   }
 
-  const [requestType, successType, failureType] = types;
+  const [requestType, successType, failureType] = types
 
   next({
     type: requestType,
-    payload,
-  });
+    payload
+  })
 
   return callAPI().then(
     response => next({
       response,
       type: successType,
-      payload,
+      payload
     }),
     error => next({
       error,
       type: failureType,
-      payload,
+      payload
     })
-  );
-};
+  )
+}
 
-export default API;
+export default API

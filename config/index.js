@@ -1,8 +1,8 @@
 // https://github.com/bcoe/yargs
-import { argv } from 'yargs';
-import path from 'path';
+import { argv } from 'yargs'
+import path from 'path'
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const NODE_ENV = process.env.NODE_ENV || 'development'
 
 const config = {
 
@@ -26,7 +26,7 @@ const config = {
     'lodash',
     'classnames',
     'superagent',
-    'slideout',
+    'slideout'
   ],
 
   // Project Structure
@@ -39,14 +39,14 @@ const config = {
   DIR_TEST: '__tests__',
   DIR_STYLEGUIDE: 'styleguide',
   DIR_STYLEGUIDE_BUILD: 'build_styleguide',
-  DIR_NODE_MODULES: 'node_modules',
-};
+  DIR_NODE_MODULES: 'node_modules'
+}
 
 const paths = (dir = 'base') => {
-  const resolve = path.resolve;
+  const resolve = path.resolve
   const base = (...args) => (
     resolve.apply(resolve, [config.PATH_BASE, ...args])
-  );
+  )
   const _paths = {
     base: base(),
     entryApp: base(config.DIR_SRC, config.ENTRY_APP),
@@ -57,10 +57,10 @@ const paths = (dir = 'base') => {
     test: base(config.DIR_TEST),
     styleguide: base(config.DIR_STYLEGUIDE),
     styleguideBuild: base(config.DIR_STYLEGUIDE_BUILD),
-    nodeModules: base(config.DIR_NODE_MODULES),
-  };
+    nodeModules: base(config.DIR_NODE_MODULES)
+  }
 
-  return _paths[dir];
-};
+  return _paths[dir]
+}
 
-export { config as default, paths };
+export { config as default, paths }

@@ -1,22 +1,22 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import classnames from 'classnames';
+import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
+import classnames from 'classnames'
 
 const propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  prefixClassIcon: PropTypes.string,
-};
+  prefixClassIcon: PropTypes.string
+}
 
 const defaultProps = {
-  prefixClassIcon: 'icon-',
-};
+  prefixClassIcon: 'icon-'
+}
 
 function ListItem(props) {
-  const { id, title, text, prefixClassIcon, slug } = props;
-  const iconClassName = classnames('icon', [prefixClassIcon, slug].join(''));
+  const { id, title, text, prefixClassIcon, slug } = props
+  const iconClassName = classnames('icon', [prefixClassIcon, slug].join(''))
 
   return (
     <li className="list-item">
@@ -28,10 +28,10 @@ function ListItem(props) {
         </div>
       </Link>
     </li>
-  );
+  )
 }
 
-ListItem.defaultProps = defaultProps;
-ListItem.propTypes = propTypes;
+ListItem.defaultProps = defaultProps
+ListItem.propTypes = propTypes
 
-export default ListItem;
+export default ListItem

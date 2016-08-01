@@ -1,3 +1,3 @@
 export function toggleMenu(context) {
-  context.slideout.toggle();
+  context.slideout.toggle()
 }

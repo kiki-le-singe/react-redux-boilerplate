@@ -1,24 +1,24 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-import NavBar from 'components/NavBar';
-import ToolBar from 'components/ToolBar';
+import NavBar from 'components/NavBar'
+import ToolBar from 'components/ToolBar'
 
 const propTypes = {
-  children: PropTypes.object,
-};
+  children: PropTypes.object
+}
 
 function Main(props) {
   return (
     <main id="main" className="view view-main">
       <NavBar />
       <div className="pages">
-        { props.children }
+        {props.children}
       </div>
       <ToolBar />
     </main>
-  );
+  )
 }
 
-Main.propTypes = propTypes;
+Main.propTypes = propTypes
 
-export default Main;
+export default Main

@@ -1,34 +1,34 @@
-import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
-import { connect } from 'react-redux';
+import React, { Component, PropTypes } from 'react'
+import classnames from 'classnames'
+import { connect } from 'react-redux'
 
-import toolActions from '../../../redux/actions/ToolActions';
+import toolActions from '../../../redux/actions/ToolActions'
 
 const defaultProps = {
-  isPageCached: true,
-};
+  isPageCached: true
+}
 
 const propTypes = {
   routeParams: PropTypes.object.isRequired,
   tools: PropTypes.object.isRequired,
-  fetchTool: PropTypes.func.isRequired,
-};
+  fetchTool: PropTypes.func.isRequired
+}
 
 const mapStateToProps = (state) => ({
   tools: state.tools,
-  routing: state.routing, // Available with `react-router-redux`
-});
+  routing: state.routing // Available with `react-router-redux`
+})
 export class Tool extends Component {
 
   componentDidMount() {
-    const { fetchTool, routeParams: { id } } = this.props;
+    const { fetchTool, routeParams: { id } } = this.props
 
-    fetchTool(id);
+    fetchTool(id)
   }
 
   render() {
-    const { tools: { item } } = this.props;
-    const iconClassName = classnames('icon', ['icon-', item.slug].join(''));
+    const { tools: { item } } = this.props
+    const iconClassName = classnames('icon', ['icon-', item.slug].join(''))
 
     return (
       <div className="page">
@@ -42,11 +42,11 @@ export class Tool extends Component {
           </footer>
         </div>
       </div>
-    );
+    )
   }
 }
 
-Tool.defaultProps = defaultProps;
-Tool.propTypes = propTypes;
+Tool.defaultProps = defaultProps
+Tool.propTypes = propTypes
 
-export default connect(mapStateToProps, toolActions)(Tool);
+export default connect(mapStateToProps, toolActions)(Tool)

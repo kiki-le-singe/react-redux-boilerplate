@@ -16,25 +16,35 @@
   // - http://julienrenaux.fr/2015/03/30/introduction-to-webpack-with-practical-examples/
   // - http://bensmithett.com/smarter-css-builds-with-webpack/
 
-import webpack from 'webpack';
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import _debug from 'debug';
+import webpack from 'webpack'
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import _debug from 'debug'
 
-import projectConfig, { paths } from '../config';
+import projectConfig, { paths } from '../config'
 
-const debug = _debug('app:webpack:config:dev');
-const srcDir = paths('src');
-const assetsDir = paths('assets');
-const nodeModulesDir = paths('nodeModules');
+const debug = _debug('app:webpack:config:dev')
+const srcDir = paths('src')
+const assetsDir = paths('assets')
+const nodeModulesDir = paths('nodeModules')
 
 const deps = [
   'redux/dist/redux.min.js',
   'font-awesome/css/font-awesome.min.css',
-  'slideout/dist/slideout.min.js',
-];
+  'slideout/dist/slideout.min.js'
+]
+const {
+  SERVER_HOST,
+  SERVER_PORT,
+  VENDOR_DEPENDENCIES,
+  __CLIENT__,
+  __SERVER__,
+  __DEV__,
+  __PROD__,
+  __DEBUG__
+} = projectConfig
 
-debug('Create configuration.');
+debug('Create configuration.')
 const config = {
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: 'cheap-module-eval-source-map',
@@ -45,12 +55,12 @@ const config = {
     ],
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
-    vendors: projectConfig.VENDOR_DEPENDENCIES,
+    vendors: VENDOR_DEPENDENCIES
   },
   output: {
     path: '/',
     filename: '[name]-[hash].js',
-    publicPath: '/',
+    publicPath: '/'
   },
   resolve: {
     alias: {},
@@ -61,7 +71,7 @@ const config = {
     // ../../styles/base.css but styles/base.css
     root: [srcDir],
 
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     noParse: [],
@@ -70,8 +80,8 @@ const config = {
       {
         test: /\.js[x]?$/,
         loader: 'eslint',
-        include: [srcDir],
-      },
+        include: [srcDir]
+      }
     ],
     // http://webpack.github.io/docs/loaders.html
     // http://webpack.github.io/docs/list-of-loaders.html
@@ -80,34 +90,34 @@ const config = {
         test: /\.js[x]?$/,
         loader: 'babel',
         query: {
-          cacheDirectory: true,
+          cacheDirectory: true
         },
-        include: [srcDir],
+        include: [srcDir]
       },
       {
         test: /\.json$/,
-        loader: 'json',
+        loader: 'json'
       },
       {
         test: /\.css$/,
-        loader: 'style!css!postcss',
+        loader: 'style!css!postcss'
       },
       {
         test: /\.(png|jpe?g)$/,
-        loader: 'file?name=img/[name].[ext]',
+        loader: 'file?name=img/[name].[ext]'
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file?name=fonts/[name].[ext]',
-      },
-    ],
+        loader: 'file?name=fonts/[name].[ext]'
+      }
+    ]
   },
   // https://github.com/postcss/postcss-loader
   // http://cssnext.io/postcss/
   postcss: webpack => ([ // eslint-disable-line
     require('postcss-import')({ addDependencyTo: webpack }),
     require('postcss-url')(),
-    require('postcss-cssnext')(),
+    require('postcss-cssnext')()
   ]),
   plugins: [
     // https://github.com/ampedandwired/html-webpack-plugin
@@ -116,7 +126,7 @@ const config = {
       hash: true,
       favicon: path.resolve(assetsDir, 'favicon.ico'),
       inject: 'body',
-      template: path.resolve(srcDir, 'index.tpl.html'),
+      template: path.resolve(srcDir, 'index.tpl.html')
     }),
 
     // https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
@@ -133,25 +143,25 @@ const config = {
 
     // https://webpack.github.io/docs/list-of-plugins.html#defineplugin
     new webpack.DefinePlugin({
-      __CLIENT__: projectConfig.__CLIENT__,
-      __SERVER__: projectConfig.__SERVER__,
-      __DEV__: projectConfig.__DEV__,
-      __PROD__: projectConfig.__PROD__,
-      __DEBUG__: projectConfig.__DEBUG__,
+      __CLIENT__,
+      __SERVER__,
+      __DEV__,
+      __PROD__,
+      __DEBUG__
     }),
 
     // https://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
-    new webpack.optimize.DedupePlugin(),
-  ],
-};
+    new webpack.optimize.DedupePlugin()
+  ]
+}
 
 // Optimizing rebundling: http://christianalfoni.github.io/react-webpack-cookbook/Optimizing-rebundling.html
 // http://christianalfoni.github.io/react-webpack-cookbook/Optimizing-development.html
 deps.forEach(dep => {
-  const depPath = path.resolve(nodeModulesDir, dep);
+  const depPath = path.resolve(nodeModulesDir, dep)
 
-  config.resolve.alias[dep.split(path.sep)[0]] = depPath;
-  config.module.noParse.push(depPath);
-});
+  config.resolve.alias[dep.split(path.sep)[0]] = depPath
+  config.module.noParse.push(depPath)
+})
 
-export default config;
+export default config

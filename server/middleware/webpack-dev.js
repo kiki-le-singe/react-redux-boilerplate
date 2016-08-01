@@ -1,8 +1,8 @@
-import { argv } from 'yargs';
-import koaWebpackDevMiddleware from 'koa-webpack-dev-middleware';
-import convert from 'koa-convert';
+import { argv } from 'yargs'
+import koaWebpackDevMiddleware from 'koa-webpack-dev-middleware'
+import convert from 'koa-convert'
 
-const QUIET_MODE = !!argv.quiet;
+const QUIET_MODE = !!argv.quiet
 
 export default function (compiler, options) {
   // http://webpack.github.io/docs/webpack-dev-server.html
@@ -15,12 +15,12 @@ export default function (compiler, options) {
     stats: {
       colors: true,
       chunks: false,
-      chunkModules: false,
+      chunkModules: false
     },
     hot: true,
     lazy: false,
-    historyApiFallback: true,
-  };
+    historyApiFallback: true
+  }
 
-  return convert(koaWebpackDevMiddleware(compiler, webpackDevMiddlewareOptions));
+  return convert(koaWebpackDevMiddleware(compiler, webpackDevMiddlewareOptions))
 }

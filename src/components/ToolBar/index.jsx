@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function Toolbar() {
   return (
@@ -8,5 +8,5 @@ export default function Toolbar() {
         <a href="https://github.com/kiki-le-singe" target="_blank"><i className="fa fa-github fa-2x"></i></a>
       </div>
     </div>
-  );
+  )
 }

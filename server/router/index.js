@@ -1,15 +1,15 @@
-import Router from 'koa-router';
+import Router from 'koa-router'
 
-import tools from './tools';
+import tools from './tools'
 
 export default (app) => {
   const routerAPI = new Router({
-    prefix: '/api',
-  });
+    prefix: '/api'
+  })
 
-  tools(app, routerAPI);
+  tools(app, routerAPI)
 
   app
     .use(routerAPI.routes())
-    .use(routerAPI.allowedMethods());
-};
+    .use(routerAPI.allowedMethods())
+}

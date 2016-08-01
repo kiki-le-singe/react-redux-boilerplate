@@ -1,5 +1,5 @@
-import types from '../constants/ToolConstants';
-import { fetch } from 'services/tool';
+import types from '../constants/ToolConstants'
+import { fetch } from 'services/tool'
 
 /*
  * action creators
@@ -14,8 +14,8 @@ function fetchTools() {
     // Perform the fetching:
     callAPI: () => fetch(),
     // Arguments to inject in begin/end actions
-    payload: {},
-  };
+    payload: {}
+  }
 }
 
 function fetchTool(id) {
@@ -25,8 +25,8 @@ function fetchTool(id) {
       (state.tools.item && state.tools.item.id == id) ? false : true // eslint-disable-line
     ),
     callAPI: () => fetch(id),
-    payload: { id },
-  };
+    payload: { id }
+  }
 }
 
-export default { fetchTools, fetchTool };
+export default { fetchTools, fetchTool }
