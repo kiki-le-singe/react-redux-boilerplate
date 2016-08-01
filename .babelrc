@@ -6,10 +6,7 @@
       "presets": ["react-hmre"]
     },
     "production": {
-      "plugins": [
-        "react-remove-prop-types",
-        "transform-react-constant-elements"
-      ]
+      "presets": ["react-optimize"]
     }
   }
 }
