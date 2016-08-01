@@ -76,7 +76,7 @@ Soon...
 $ npm run deploy
 ```
 
-Cleans the `dist` folder previously created and compiles your application to disk.
+Cleans the `dist` folder previously created and compiles your application to disk, then serves the app in production mode on `localhost:3000`.
 
 ```shell
 $ npm run prod
@@ -103,7 +103,7 @@ Build style guides to disk `~/styleguide` and `~/build_styleguide`. The `build_s
 $ node server app.production.js
 ```
 
-Serves the app in production mode on `localhost:9000`.
+Serves the app in production mode on `localhost:3000`.
 
 > Don't forget to run `npm run deploy` before.
 
