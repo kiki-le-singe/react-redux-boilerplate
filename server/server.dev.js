@@ -36,5 +36,5 @@ router(app)
 ***************** */
 
 app.listen(projectConfig.SERVER_PORT, () => {
-  debug(`Koa server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in ${app.env} node`)
+  debug(`Koa server listening on projectConfig.SERVER_PORT ${projectConfig.SERVER_PORT} in dev mode`)
 })
