@@ -1,3 +1,29 @@
+<a name="2.3.0"></a>
+# 2.3.0 (2016-08-01)
+
+* refactor(config): update vendor dependencies ([e7d924e](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/e7d924e))
+* refactor(config): use port 3000 instead of 8080 ([9efd3b3](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/9efd3b3))
+* refactor(dev.config): improve performance image loading ([35d934a](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/35d934a))
+* refactor(routes): remove unused file ([08dc50a](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/08dc50a))
+* refactor(server): update debug infos ([de2558d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/de2558d))
+* docs(README): update docs ([62620e2](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/62620e2))
+* docs(README): update docs ([c0f32b0](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/c0f32b0))
+* chore(.babelrc): use react-optimize preset ([86aeb25](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/86aeb25))
+* chore(package): remove useless `--optimize-minimize` option ([0a30c32](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/0a30c32))
+* chore(package): replace express packages by koa ([602eba7](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/602eba7))
+* chore(package): update scripts ([6790a37](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/6790a37))
+* chore(package): update/remove/add some packages ([d7a689e](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/d7a689e))
+* chore(webpack.dev): remove react-hmre preset ([0d5bfaf](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/0d5bfaf))
+* style(.eslintrc): update linter ([04bff1b](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/04bff1b))
+* style(eslint): implement news eslint rules ([be718d2](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/be718d2))
+* fix(ToolActions): use type-converting equality comparison ([92d98d9](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/92d98d9))
+* fix(webpack): fix typo ([96b9a78](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/96b9a78))
+* feat(middleware.webpack): use koaWebpackMiddleware ([f621c01](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/f621c01))
+* feat(router): implement koa-router ([9fa443b](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/9fa443b))
+* feat(server): implement koa ([fcd005d](https://github.com/kiki-le-singe/react-redux-boilerplate/commit/fcd005d))
+
+
+
 <a name="2.2.3"></a>
 ## 2.2.3 (2016-05-01)
 
