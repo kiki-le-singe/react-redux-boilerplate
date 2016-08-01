@@ -40,8 +40,8 @@ const config = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
     app: [
-      'webpack-hot-middleware/client?reload=true',
-      paths('entryApp'),
+      `webpack-hot-middleware/client?reload=true&path=http://${SERVER_HOST}:${SERVER_PORT}/__webpack_hmr`,
+      paths('entryApp')
     ],
 
     // http://christianalfoni.github.io/react-webpack-cookbook/Split-app-and-vendors.html
