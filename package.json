@@ -115,7 +115,7 @@
     "dev:quiet": "npm run dev -- --quiet",
     "dev:stub": "npm run dev -- --stub",
     "prod": "babel-node server/server.production",
-    "compile": "NODE_ENV=production babel-node ./node_modules/.bin/webpack --optimize-minimize --progress --config ./webpack/prod.config",
+    "compile": "NODE_ENV=production babel-node ./node_modules/.bin/webpack --progress --config ./webpack/prod.config",
     "lint": "eslint src",
     "styleguide": "npm run clean:styleguide && npm run clean:build:styleguide && babel-node ./node_modules/.bin/webpack --config ./webpack/styleguide.config"
   }
