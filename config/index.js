@@ -14,7 +14,8 @@ const config = {
   __DEBUG__: !!argv.debug,
 
   // Server Configuration
-  SERVER_PORT: process.env.PORT || 8080,
+  SERVER_HOST: 'localhost',
+  SERVER_PORT: process.env.PORT || 3000,
 
   // Webpack Configuration
   VENDOR_DEPENDENCIES: [
